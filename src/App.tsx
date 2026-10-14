@@ -16,6 +16,7 @@ import { FinalCompletion } from '@/components/FinalCompletion';
 import { CourseSelector } from '@/components/CourseSelector';
 import { courses, courseList } from '@/data/courses';
 import type { Scene, ProgressState, Course, CourseId } from '@/types/course';
+import Logo from '../assets/Logo.png';
 
 const SELECTED_COURSE_KEY = 'selected-course';
 
@@ -95,21 +96,12 @@ function App() {
     setShowFinal(false);
   }, []);
 
-  // Course selector screen
-  if (!course) {
-    return (
-      <div className="min-h-screen relative">
-        <CinematicBackground />
-        <CourseSelector courses={courseList} onSelect={selectCourse} />
-      </div>
-    );
-  }
-
-  const chapters = course.chapters;
-  const chapter = chapters[progress.currentChapter];
-  const scene = chapter?.scenes[progress.currentScene];
-  const isLastScene = progress.currentScene >= chapter.scenes.length - 1;
-  const isLastChapter = progress.currentChapter >= chapters.length - 1;
+  // Derived course/chapter/scene state and navigation callbacks
+  const chapters = course?.chapters ?? [];
+  const chapter = course && chapters[progress.currentChapter] ? chapters[progress.currentChapter] : ({} as any);
+  const scene = chapter?.scenes ? chapter.scenes[progress.currentScene] : undefined;
+  const isLastScene = !!chapter?.scenes && progress.currentScene >= chapter.scenes.length - 1;
+  const isLastChapter = chapters.length > 0 && progress.currentChapter >= chapters.length - 1;
 
   const goToScene = useCallback((chapterIdx: number, sceneIdx: number) => {
     setTransitioning(true);
@@ -124,38 +116,51 @@ function App() {
   }, []);
 
   const nextScene = useCallback(() => {
-    if (isLastScene) {
-      setProgress((prev) => {
-        const completed = prev.completedChapters.includes(prev.currentChapter)
-          ? prev.completedChapters
-          : [...prev.completedChapters, prev.currentChapter];
+    setProgress((prev) => {
+      const curChapter = prev.currentChapter;
+      const curScene = prev.currentScene;
+      const chs = course?.chapters ?? [];
+      const curChapterObj = chs[curChapter];
+      const lastSceneIdx = curChapterObj?.scenes ? curChapterObj.scenes.length - 1 : 0;
+      const lastChapterIdx = chs.length - 1;
 
-        if (isLastChapter) {
+      if (curScene >= lastSceneIdx) {
+        const completed = prev.completedChapters.includes(curChapter) ? prev.completedChapters : [...prev.completedChapters, curChapter];
+
+        if (curChapter >= lastChapterIdx) {
           setShowFinal(true);
           return { ...prev, completedChapters: completed };
         }
 
-        const nextChapter = prev.currentChapter + 1;
+        const nextChapter = curChapter + 1;
         return {
           ...prev,
           completedChapters: completed,
           currentChapter: nextChapter,
           currentScene: 0,
         };
-      });
-    } else {
-      goToScene(progress.currentChapter, progress.currentScene + 1);
-    }
-  }, [isLastScene, isLastChapter, goToScene, progress.currentChapter, progress.currentScene]);
+      } else {
+        // advance scene within same chapter
+        return { ...prev, currentScene: curScene + 1 };
+      }
+    });
+  }, [course]);
 
   const prevScene = useCallback(() => {
-    if (progress.currentScene > 0) {
-      goToScene(progress.currentChapter, progress.currentScene - 1);
-    } else if (progress.currentChapter > 0) {
-      const prevChapter = progress.currentChapter - 1;
-      goToScene(prevChapter, chapters[prevChapter].scenes.length - 1);
-    }
-  }, [goToScene, progress.currentChapter, progress.currentScene, chapters]);
+    setProgress((prev) => {
+      const curChapter = prev.currentChapter;
+      const curScene = prev.currentScene;
+      if (curScene > 0) {
+        return { ...prev, currentScene: curScene - 1 };
+      } else if (curChapter > 0) {
+        const prevChapter = curChapter - 1;
+        const prevChapterScenes = course?.chapters?.[prevChapter]?.scenes ?? [];
+        const prevSceneIdx = prevChapterScenes.length ? prevChapterScenes.length - 1 : 0;
+        return { ...prev, currentChapter: prevChapter, currentScene: prevSceneIdx };
+      }
+      return prev;
+    });
+  }, [course]);
 
   const selectChapter = useCallback((idx: number) => {
     goToScene(idx, 0);
@@ -182,7 +187,7 @@ function App() {
     }));
   }, []);
 
-  const renderScene = (scene: Scene) => {
+  const renderScene = (scene: Scene | undefined) => {
     if (!scene) return null;
     switch (scene.type) {
       case 'opener':
@@ -218,6 +223,16 @@ function App() {
         return null;
     }
   };
+
+  // Course selector screen
+  if (!course) {
+    return (
+      <div className="min-h-screen relative">
+        <CinematicBackground />
+        <CourseSelector courses={courseList} onSelect={selectCourse} />
+      </div>
+    );
+  }
 
   if (showFinal) {
     return (
@@ -265,6 +280,7 @@ function App() {
             <Menu className="w-5 h-5 text-gray-400" />
           </button>
           <div className="flex items-center gap-3 min-w-0">
+            <img src={Logo} alt="Logo" className="w-8 h-8 mr-2 hidden sm:block" />
             <div
               className="w-2 h-2 rounded-full shrink-0"
               style={{ background: chapter.accent }}
