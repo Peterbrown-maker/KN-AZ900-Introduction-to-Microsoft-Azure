@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 import { CinematicBackground } from '@/components/CinematicBackground';
 import { Sidebar } from '@/components/Sidebar';
+import CinematicIdentity from '@/components/CinematicIdentity';
 import { ChapterOpener } from '@/components/ChapterOpener';
 import { ChapterComplete } from '@/components/ChapterComplete';
 import { Slide } from '@/components/scenes/Slide';
@@ -63,6 +64,7 @@ function App() {
   );
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showFinal, setShowFinal] = useState(false);
+  const [showCinematic, setShowCinematic] = useState(false);
   const [transitioning, setTransitioning] = useState(false);
 
   // Save progress when it changes
@@ -225,11 +227,48 @@ function App() {
   };
 
   // Course selector screen
+  // Handler to open cinematic as a dedicated page (pushes history state)
+  const openCinematicPage = useCallback(() => {
+    try {
+      window.history.pushState({}, '', '/cinematic');
+    } catch {}
+    setShowCinematic(true);
+  }, []);
+
+  useEffect(() => {
+    // handle direct navigation to /cinematic
+    if (typeof window !== 'undefined' && window.location.pathname === '/cinematic') {
+      setShowCinematic(true);
+    }
+
+    const onPop = () => {
+      if (window.location.pathname !== '/cinematic') {
+        setShowCinematic(false);
+      } else {
+        setShowCinematic(true);
+      }
+    };
+
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   if (!course) {
     return (
       <div className="min-h-screen relative">
         <CinematicBackground />
-        <CourseSelector courses={courseList} onSelect={selectCourse} />
+        <CourseSelector courses={courseList} onSelect={selectCourse} onOpenAnimation={openCinematicPage} />
+
+        {showCinematic && (
+          <CinematicIdentity
+            onClose={() => {
+              try { window.history.back(); } catch {}
+              setShowCinematic(false);
+            }}
+            reducedMotionBehavior={"still-timeline"}
+            pageMode
+          />
+        )}
       </div>
     );
   }
@@ -358,6 +397,18 @@ function App() {
           </div>
         </footer>
       </div>
+
+      {showCinematic && (
+              <CinematicIdentity
+                onClose={() => {
+                  // navigate back when closing the cinematic page
+                  try { window.history.back(); } catch {}
+                  setShowCinematic(false);
+                }}
+                reducedMotionBehavior={"still-timeline"}
+                pageMode
+              />
+      )}
     </div>
   );
 }

@@ -5,9 +5,11 @@ import type { Course } from '@/types/course';
 interface CourseSelectorProps {
   courses: Course[];
   onSelect: (courseId: Course['id']) => void;
+  // optional handler to open the cinematic identity explanation
+  onOpenAnimation?: () => void;
 }
 
-export function CourseSelector({ courses, onSelect }: CourseSelectorProps) {
+export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSelectorProps) {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-12">
       <div className="max-w-4xl w-full">
@@ -34,6 +36,47 @@ export function CourseSelector({ courses, onSelect }: CourseSelectorProps) {
             Two certification journeys. One immersive learning experience.
             Select a course to begin.
           </motion.p>
+
+          {/* Launch cinematic animation option as a course-style card */}
+          {typeof ({} as any) !== 'undefined' && (
+            <div className="mt-6">
+              <motion.button
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.99 }}
+                onClick={() => {
+                  if (typeof onOpenAnimation === 'function') onOpenAnimation();
+                }}
+                className="group relative glass rounded-2xl p-6 text-left overflow-hidden border border-white/10 hover:border-white/20 transition-all max-w-2xl mx-auto"
+                aria-label="Open cinematic identity explanation"
+              >
+                <div
+                  className="absolute -top-20 -right-20 w-36 h-36 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"
+                  style={{ background: 'linear-gradient(135deg,#8b5cf6,#22d3ee)' }}
+                />
+
+                <div className="relative flex items-center gap-4">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: '#0f172a20', border: '1px solid rgba(255,255,255,0.06)' }}
+                  >
+                    <Icons.Video className="w-6 h-6" style={{ color: '#22d3ee' }} />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-bold text-white">Watch identity animation</h3>
+                    <p className="text-sm text-gray-400 truncate">A cinematic, single-page explanation of Active Directory → Microsoft Entra ID → Azure RBAC</p>
+                  </div>
+
+                  <div className="text-sm font-semibold text-gray-200 opacity-90">
+                    Watch
+                  </div>
+                </div>
+              </motion.button>
+            </div>
+          )}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
