@@ -1,6 +1,8 @@
 import type { Course, CourseId } from '@/types/course';
 import { chapters as az900Chapters } from './chapters';
 import { dp900Chapters } from './dp900/chapters';
+import { chapters as ai901Chapters } from '@/ai901/data';
+import { AI901_STORAGE_KEY, readStoredPct as readAI901Pct } from '@/ai901/progress';
 
 export const courses: Record<CourseId, Course> = {
   az900: {
@@ -48,6 +50,23 @@ export const courses: Record<CourseId, Course> = {
       'Relational enforces. Non-relational flexes.',
       'Data lakes store everything. Warehouses answer questions.',
     ],
+  },
+  ai901: {
+    id: 'ai901',
+    kind: 'lessons',
+    chapterCount: ai901Chapters.length,
+    getProgressPct: readAI901Pct,
+    storageKey: AI901_STORAGE_KEY,
+    title: 'AI-901',
+    subtitle: 'Introduction to AI in Azure',
+    description:
+      'A cinematic journey from the first artificial neuron to agents in Microsoft Foundry — tokens, embeddings, RAG, speech, vision, document intelligence and responsible AI.',
+    accent: '#a78bfa',
+    icon: 'Sparkles',
+    // AI-901 is lesson-based and renders its own experience (src/ai901), so it has no scenes.
+    chapters: [],
+    conceptMap: [],
+    memoryLines: [],
   },
 };
 

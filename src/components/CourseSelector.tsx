@@ -7,12 +7,14 @@ interface CourseSelectorProps {
   onSelect: (courseId: Course['id']) => void;
   // optional handler to open the cinematic identity explanation
   onOpenAnimation?: () => void;
+  // optional handler to open the AI-901 Neural Network Laboratory
+  onOpenNNLab?: () => void;
 }
 
-export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSelectorProps) {
+export function CourseSelector({ courses, onSelect, onOpenAnimation, onOpenNNLab }: CourseSelectorProps) {
   return (
     <div className="min-h-screen flex items-center justify-center px-6 py-12">
-      <div className="max-w-4xl w-full">
+      <div className="max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -33,13 +35,13 @@ export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSel
             transition={{ delay: 0.4 }}
             className="text-lg text-gray-400 max-w-xl mx-auto"
           >
-            Two certification journeys. One immersive learning experience.
+            Three certification journeys. One immersive learning experience.
             Select a course to begin.
           </motion.p>
 
           {/* Launch cinematic animation option as a course-style card */}
           {typeof ({} as any) !== 'undefined' && (
-            <div className="mt-6">
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               <motion.button
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -49,7 +51,7 @@ export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSel
                 onClick={() => {
                   if (typeof onOpenAnimation === 'function') onOpenAnimation();
                 }}
-                className="group relative glass rounded-2xl p-6 text-left overflow-hidden border border-white/10 hover:border-white/20 transition-all max-w-2xl mx-auto"
+                className="group relative glass rounded-2xl p-6 text-left overflow-hidden border border-white/10 hover:border-white/20 transition-all w-full"
                 aria-label="Open cinematic identity explanation"
               >
                 <div
@@ -67,7 +69,7 @@ export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSel
 
                   <div className="flex-1 min-w-0">
                     <h3 className="text-xl font-bold text-white">Watch identity animation</h3>
-                    <p className="text-sm text-gray-400 truncate">A cinematic, single-page explanation of Active Directory → Microsoft Entra ID → Azure RBAC</p>
+                    <p className="text-sm text-gray-400 line-clamp-2">A cinematic, single-page explanation of Active Directory → Microsoft Entra ID → Azure RBAC</p>
                   </div>
 
                   <div className="text-sm font-semibold text-gray-200 opacity-90">
@@ -75,20 +77,61 @@ export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSel
                   </div>
                 </div>
               </motion.button>
+
+              <motion.button
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                whileHover={{ scale: 1.02, y: -4 }}
+                whileTap={{ scale: 0.99 }}
+                onClick={() => {
+                  if (typeof onOpenNNLab === 'function') onOpenNNLab();
+                }}
+                className="group relative glass rounded-2xl p-6 text-left overflow-hidden border border-white/10 hover:border-white/20 transition-all w-full"
+                aria-label="Open the interactive Neural Network Laboratory"
+              >
+                <div
+                  className="absolute -top-20 -right-20 w-36 h-36 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"
+                  style={{ background: 'linear-gradient(135deg,#22d3ee,#a78bfa)' }}
+                />
+
+                <div className="relative flex items-center gap-4">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: '#0f172a20', border: '1px solid rgba(255,255,255,0.06)' }}
+                  >
+                    <Icons.BrainCircuit className="w-6 h-6" style={{ color: '#a78bfa' }} />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl font-bold text-white">Neural Network Lab</h3>
+                    <p className="text-sm text-gray-400 line-clamp-2">Open every neuron and connection of a real, trainable network — forward pass to backpropagation</p>
+                  </div>
+
+                  <div className="text-sm font-semibold text-gray-200 opacity-90">
+                    Explore
+                  </div>
+                </div>
+              </motion.button>
             </div>
           )}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {courses.map((course, i) => {
             const Icon = (Icons as unknown as Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties; strokeWidth?: number }>>)[course.icon] ?? Icons.BookOpen;
             const completedKey = `${course.storageKey}-completed`;
             let progressPct = 0;
+            const chapterCount = course.chapterCount ?? course.chapters.length;
             try {
-              const raw = localStorage.getItem(course.storageKey);
-              if (raw) {
-                const parsed = JSON.parse(raw);
-                progressPct = Math.round((parsed.completedChapters?.length / course.chapters.length) * 100);
+              if (course.getProgressPct) {
+                progressPct = course.getProgressPct();
+              } else {
+                const raw = localStorage.getItem(course.storageKey);
+                if (raw) {
+                  const parsed = JSON.parse(raw);
+                  progressPct = Math.round((parsed.completedChapters?.length / chapterCount) * 100);
+                }
               }
             } catch {
               // ignore
@@ -132,7 +175,7 @@ export function CourseSelector({ courses, onSelect, onOpenAnimation }: CourseSel
                   <div className="flex items-center gap-4 mb-6">
                     <div className="flex items-center gap-1.5 text-xs text-gray-500">
                       <Icons.BookOpen className="w-3.5 h-3.5" />
-                      {course.chapters.length} chapters
+                      {chapterCount} chapters
                     </div>
                     <div className="flex items-center gap-1.5 text-xs text-gray-500">
                       <Icons.Zap className="w-3.5 h-3.5" style={{ color: course.accent }} />

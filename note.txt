@@ -1,0 +1,1799 @@
+This are my course notes "Course
+Course AI-901T00-A: Introduction to AI in Azure
+- Level
+  [Beginner](https://learn.microsoft.com/en-us/training/browse/?levels=beginner&resource_type=course)
+- Product
+  [Azure](https://learn.microsoft.com/en-us/training/browse/?products=azure&resource_type=course)
+- Role
+  [AI Engineer](https://learn.microsoft.com/en-us/training/browse/?roles=ai-engineer&resource_type=course)[Developer](https://learn.microsoft.com/en-us/training/browse/?roles=developer&resource_type=course)[Student](https://learn.microsoft.com/en-us/training/browse/?roles=student&resource_type=course)
+- Subject
+  [Application development](https://learn.microsoft.com/en-us/training/browse/?subjects=app-development&resource_type=course)[Artificial intelligence](https://learn.microsoft.com/en-us/training/browse/?subjects=artificial-intelligence&resource_type=course)[Frontend development](https://learn.microsoft.com/en-us/training/browse/?subjects=frontend-development&resource_type=course)[Generative AI](https://learn.microsoft.com/en-us/training/browse/?subjects=generative-ai&resource_type=course)
+- Languages
+  EnglishArabicChinese (Simplified)Chinese (Traditional)FrenchGermanIndonesianItalianJapaneseKoreanPortuguese (Brazil)RussianSpanish
+- Course Duration
+  1 day
+- Related certifications
+  [Microsoft Certified: Azure AI Fundamentals](https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/)
+This course introduces fundamental concepts related to artificial intelligence (AI), and the services in Microsoft Azure that can be used to create AI solutions. It teaches a mix of AI concepts and technology skills that are considered foundational to a successful career implementing AI solutions on Microsoft Azure.
+This course is for aspiring technology professionals at the beginning of their career in AI solution development. Some knowledge of Python coding syntax and programming techniques is useful. Additionally, knowledge of core cloud concepts, including cloud storage, cloud compute, and cloud-based authentication and authorization is recommended.
+You can prepare in instructor-led training or self-paced study
+- Learning Path
+  [AI concepts for developers and technology professionals](https://learn.microsoft.com/en-us/training/paths/ai-concepts/)
+  - 7 Modules
+  - Beginner
+  - AI Engineer
+  - Microsoft Foundry
+  Completed
+- Learning Path
+  [Get started with AI applications and agents on Azure](https://learn.microsoft.com/en-us/training/paths/get-started-ai-apps-agents/)
+  - 7 Modules
+  - Beginner
+  - AI Engineer
+  - Microsoft Foundry
+  Completed
+- 
+"
+[Introduction to AI concepts](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/)
+- 40 min
+- Module
+- 10 Units
+Curious about artificial intelligence? Want to understand what the buzz is about? This module introduces you to the world of AI.
+- [Introduction to AI](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)2 min
+- [Generative AI and agents](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/2-generative-ai/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Text and natural language](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/5-natural-language-processing/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Speech](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/4-speech/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Computer vision](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/3-computer-vision/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Information extraction](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/6-extract-insights/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Responsible AI](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/7-responsible-ai/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Exercise - Explore AI workloads](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/7b-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+- [Module assessment](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/8-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+- [Summary](https://learn.microsoft.com/en-us/training/modules/get-started-ai-fundamentals/9-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)2 min
+Completed100 XP
+- 2 minutes
+Choose your preferred content format
+Welcome!
+
+You're presumably here because you want to learn more about artificial intelligence (AI). Maybe you've heard about AI in the media and want to know more; or maybe you're going to be adopting AI at work or in school, and want to know more about what to expect.
+
+This training module is designed to provide a high-level overview of some core capabilities of artificial intelligence (AI) and give you an intuition of how they work. It's not a deeply technical module, and we won't be writing any code or getting into the mathematical details of the machine learning models on which AI is built. Instead, we'll focus on understanding the kinds of things that AI can do, and the basic principles on which it's based.
+
+So, let's go! Move on to the next unit and we'll start our exploration of AI.
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+ Tip
+
+[Anton avatar.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/anton-icon.png)
+
+[Ask Anton](https://aka.ms/choose-anton)
+
+Ask Anton is an example AI application that you can use to ask questions about the topics covered in this training.
+
+Choose your preferred experience:
+- [Azure-based](https://aka.ms/azk-anton): A comprehensive AI assistant that uses a large language model deployed in Azure and tools to extract information from Azure documentation. You must have an Azure subscription in which you can create a Microsoft Foundry project and deploy a model.
+- [Browser-based](https://aka.ms/ask-anton): A basic AI assistant that can answer questions about AI concepts and Microsoft Foundry, and search for relevant documentation using models that run locally in your browser.
+Ask Anton is not a supported Microsoft product or a component of Microsoft Learn or AI Skills Navigator. Just an example of an AI agent for you to explore as you learn about what's possible with AI.
+,Generative AI and agents
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+Generative AI is a branch of AI that enables software applications to generate new content; often natural language dialogs, but also images, video, code, and other formats.
+
+For example, a computing history web site could provide a generative AI chat interface into which users can enter questions about key figures, technologies, and events in the history of computing.
+
+[Screenshot of a computing history chat interface.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-chat.png)
+
+The ability to chat with the site and have it generate original responses to questions creates a compelling interactive experience for users.
+The ability to generate content is based on a language model, which has been trained with huge volumes of data - often documents from the Internet or other public sources of information.
+
+[Diagram of a generative AI application in which a user chats with a language model.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/generative-ai.png)
+
+Users interact with generative AI language models through prompts - natural language statements or questions. The language model in a generative AI solution uses the prompt to initiate the generation of a meaningful response.
+
+Generative AI models encapsulate semantic relationships between language elements (that's a fancy way of saying that the models "know" how words relate to one another), and that's what enables them to generate a meaningful sequence of text.
+
+There are large language models (LLMs) and small language models (SLMs) - the difference is based on the volume of data and the number of variables in the model. LLMs are powerful and generalize well, but can be more costly to train and use. SLMs tend to work well in scenarios that are more focused on specific topic areas or that require easily deployed small models for local applications and agents on devices.
+Agents are software applications built on generative AI that can reason over and generate natural language, automate tasks by using tools, and respond to contextual conditions to take appropriate action.
+
+[Diagram of an agent with a model, instructions, and tools.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/agent.png)
+
+AI agents have three key elements:
+- A large language model: This is the agent's brain; using generative AI for language understanding and reasoning.
+- Instructions: A system prompt that defines the agent’s role and behavior. Think of it as the agent’s job description.
+- Tools: These are what the agent uses to interact with the world. Tools can include:
+  - Knowledge tools that provide access to information, like search engines or databases.
+  - Action tools that enable the agent to perform tasks, such as sending emails, updating calendars, or controlling devices.
+With these capabilities, AI agents can take on the role of digital assistants that intelligently automate tasks and collaborate with you to work smarter and more efficiently.
+Common uses of generative AI and agents include:
+- Creating chat bots that answer user questions or engage in conversation.
+- Implementing AI assistants that assist human users by automating tasks.
+- Creating new documents or other content (often as a starting point for further iterative development)
+- Automated translation of text between languages.
+- Summarizing or explaining complex documents.
+, Text and natural language
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+Natural language processing (NLP) is a broad term that covers AI models and techniques for making sense of language. NLP is the foundation on which generative AI large language models (LLMs) are built.
+
+The techniques NLP is built on enable text analysis solutions that can analyze and summarize natural language text. For example, the computing history site could enable users to summarize articles about key historical events and extract specific names, places, and dates from them.
+
+[Screenshot of a computing history site performing text analysis.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-language.png)
+While many natural language processing scenarios are handled by generative AI models today, there are common text analysis use cases where specialist NLP tools are used to produce predictable results or apply custom rules.
+
+[Diagram of text being analyzed for sentiment, keywords, and summarization.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/text-analysis.png)
+- Language detection - determining which language (or languages) a document is written in. Language detection is often the first step in a multi-stage text processing workflow.
+- Text classification - assigning document to a specific category; including sentiment analysis to determine whether a body of text is positive, negative, or neutral.
+- Key-term extraction and entity detection - identifying key words or phrases in a document, and finding mentions of entities like people, places, and organizations. A particularly specialized form of entity detection is to detect and redact personally identifiable information (PII); such as names, addresses, telephone numbers, and other private details.
+- Summarization - Reducing the volume of text while still encapsulating the main points.
+Common uses of NLP technologies for text analysis include:
+- Analyzing document or transcripts of calls and meetings to determine key subjects and identify specific mentions of people, places, organizations, products, or other entities.
+- Analyzing social media posts, product reviews, or articles to evaluate sentiment and opinion.
+- Implementing chatbots that can answer frequently asked questions or orchestrate predictable conversational dialogs that don't require the complexity of generative AI.
+- Redacting PII before sharing or analyzing data to comply with privacy policies and legislation.
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+Speech capabilities in AI applications and agents enable users to interact with them through spoken language.
+
+For example, our computing history site could include a microphone button that allows users to ask questions verbally, and respond by synthesizing spoken answers.
+
+[Screenshot of a computing history site performing speech recognition.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-speech.png)
+[Diagram of a user's spoken input being converted to text.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/speech-recognition.png)
+
+Speech recognition is the ability of AI to "hear" and interpret speech. Usually this capability takes the form of speech-to-text (where the audio signal for the speech is transcribed into text).
+[Diagram of text being converted to audible speech.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/speech-synthesis.png)
+
+Speech synthesis is the ability of AI to vocalize words as spoken language. Usually this capability takes the form of text-to-speech in which information in text format is converted into an audible signal.
+
+AI speech technology is evolving rapidly to handle challenges like ignoring background noise, detecting interruptions, and generating increasingly expressive and human-like voices.
+Common uses of AI speech technologies include:
+- AI agents that understand spoken input, perform tasks, and respond with spoken results.
+- Automated transcription of calls or meetings.
+- Automating audio descriptions of video or text.
+- Automated speech translation between languages.
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+Computer vision is the area of artificial intelligence that deals with the analysis of visual input; such as photographs, videos, and live camera feeds.
+
+For example, we could extend the computing history site to enable users to upload images of vintage computers, which can be analyzed, identified, and described.
+
+[Screenshot of a computing history site performing image analysis.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-vision.png)
+Computer vision is accomplished by using large numbers of images to train a model.
+
+[Diagram of a computer vision model being trained with a large volume of images.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computer-vision.png)
+
+There are multiple types of computer vision model.
+- Image classification is a form of computer vision in which a model is trained with images that are labeled with the main subject of the image (in other words, what it's an image of) so that it can analyze unlabeled images and predict the most appropriate label - identifying the subject of the image.
+- Object detection is a form of computer vision in which the model is trained to identify the location of specific objects in an image.
+- Semantic segmentation is an advanced form of object detection where, rather than indicate an object's location by drawing a box around it, the model can identify the individual pixels in the image that belong to a particular object.
+- Multi-modal models combine visual features and associated text descriptions, enabling them to generate comprehensive descriptions of images.
+Common uses of computer vision include:
+- AI agents that can interpret visual input.
+- Auto-captioning or tag-generation for photographs.
+- Visual search.
+- Monitoring stock levels or identifying items for checkout in retail scenarios.
+- Security video monitoring.
+- Authentication through facial recognition.
+- Robotics and self-driving vehicles.
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+AI is commonly used to automate information extraction solutions that find information and unlock insights in unstructured data sources, such as scanned documents and forms, images, and audio or video recordings.
+
+For example, we could extend the computer vision capabilities of the computing history application to extract serial numbers and other text from images of computer components and use the information to identify the source computer.
+
+[Screenshot of a computing history site extracting text from an image.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-extraction.png)
+The basis for most document analysis solutions is a computer vision technology called optical character recognition (OCR), which can identify the location of text in an image. OCR is often combined with an analytical model that can interpret individual values in the document, and so extract specific fields. For example, to match text extracted from a receipt to fields in an expense claim submission.
+
+[Diagram of information being extracted from a receipt.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/information-extraction.png)
+
+While most data extraction models have historically focused on extracting fields from text-based forms, more advanced models that can extract information from audio recording, images, and videos are becoming more readily available.
+Common uses of AI to extract data and insights include:
+- Automated processing of forms and other documents in a business process - for example, processing an expense claim.
+- Large-scale digitization of data from paper forms. For example, scanning and archiving census records.
+- Indexing documents for search.
+- Identifying key points and follow-up actions from meeting transcripts or recordings.
+Completed100 XP
+- 3 minutes
+Choose your preferred content format
+Responsible AI is a term used to describe considerations for building AI systems that include guardrails to mitigate the risk of harmful, illegal, or offensive content generation or automated actions.
+
+For example, our computing history solution should avoid providing information to users that would help or encourage illegal or harmful activity.
+
+[Screenshot of a computing history site applying content filters to mitigate risk of harmful content generation.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-content-safety.png)
+
+Content filters are one way that AI systems mitigate the risk of harmful content generation; but a responsible AI solution requires consideration of key principles from its conception, through its design and implementation, and into its operation.
+Principles for responsible AI include:
+Some example of scenarios where responsible AI practices should be applied include:
+- An AI-powered college admissions system should be tested to ensure it evaluates all applications fairly, taking into account relevant academic criteria but avoiding unfounded discrimination based on irrelevant demographic factors.
+- An AI-powered robotic solution that uses computer vision to detect objects should avoid unintentional harm or damage. One way to accomplish this goal is to use probability values to determine "confidence" in object identification before interacting with physical objects, and avoid any action if the confidence level is below a specific threshold.
+- A facial identification system used in an airport or other secure area should delete personal images that are used for temporary access as soon as they're no longer required. Additionally, safeguards should prevent the images being made accessible to operators or users who have no need to view them.
+- An AI agent that offers speech-based interaction should also generate text captions to avoid making the system unusable for users with a hearing impairment.
+- A bank that uses an AI-based loan-approval application should disclose the use of AI, and describe features of the data on which it was trained (without revealing confidential information).
+Completed100 XP
+- 15 minutes
+You've learned a lot about AI, and the kinds of things it can do. Now it's your turn! In this exercise, you explore the computing history application we've discussed in this module, and experience the AI workloads it supports for yourself.
+
+[Screenshot of the computing history site used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/computing-history-site.png)
+
+Use the following button to start the exercise
+
+[Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2361944) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/get-started-ai-fundamentals/media/launch-exercise.png))
+Completed200 XP
+- 3 minutes
+1. 
+Which is the most accurate description of generative AI?
+Generative AI uses a language model to create original content in response to a prompt.
+Generative AI is an older form of AI that's superseded by machine learning.
+Generative AI is a complex form of AI that can only be used by specialists such as data scientists.
+2. 
+What is an AI agent?
+A technology professional who builds AI applications.
+Anyone who uses AI applications.
+An AI application that can perform tasks on behalf of a user.
+3. 
+An AI application reads email aloud to a user. Which AI speech capability is being used?
+Speech recognition
+Speech synthesis
+Sentiment analysis
+,Summary
+Completed100 XP
+- 2 minutes
+Choose your preferred content format
+Hopefully, this module gave you an insight into some of the core capabilities of AI, and an intuition into how they work. We explored many areas of AI, including:
+- Generative AI and agents
+- Natural language processing (NLP) and text analytics
+- Speech
+- Computer vision
+- Information extraction
+- Responsible AI
+Now that you have foundational understanding of AI, consider reviewing the following resources.
+- To learn more about Microsoft AI solutions, see the [Microsoft AI page](https://www.microsoft.com/ai).
+- To learn more about Microsoft's approach to responsible AI, see the [Microsoft responsible AI page](https://www.microsoft.com/ai/responsible-ai)., second part [Introduction to generative AI and agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/)
+  - 37 min
+  - Module
+  - 7 Units
+  Generative AI powers applications that can create content, answer questions, and assist with tasks. In this module, you'll explore the fundamentals of generative AI, including large language models (LLMs), prompts, and AI agents.
+  - [Introduction](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+  - [Large language models (LLMs)](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/3-language-models/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)5 min
+  - [Prompts](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/6-writing-prompts/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)5 min
+  - [AI agents](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/7-agents/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)5 min
+  - [Exercise - Explore generative AI](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/7a-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+  - [Module assessment](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/8-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)5 min
+  - [Summary](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/9-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+  ,Introduction
+  Completed100 XP
+  - 1 minute
+  Choose your preferred content format
+  Generative AI, and technologies that implement it are increasingly in the public consciousness – even among people who don't work in technology roles or have a background in computer science or machine learning. The futurist and novelist Arthur C. Clarke is quoted as observing that "any sufficiently advanced technology is indistinguishable from magic". In the case of generative AI, it does seem to have an almost miraculous ability to produce human-like original content, including poetry, prose, and even computer code.
+  
+  However, there's no wizardry involved in generative AI – just the application of mathematical techniques incrementally discovered and refined over many years of research into statistics, data science, and machine learning. You can gain a high-level understanding of how the magic trick is done by learning the core concepts and principles explored in this module. As you learn more about the generative AI technologies we have today, and how it powers a new generation of AI agents; you can help society imagine new possibilities for AI tomorrow.
+   Note
+  
+  We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+  Completed100 XP
+  - 5 minutes
+  Choose your preferred content format
+  At the core of generative AI, large language models (LLMs) - and their more compact relations, small language models (SLMs) - encapsulate the linguistic and semantic relationships between the words and phrases in a vocabulary. The model can use these relationships to reason over natural language input and generate meaningful and relevant responses.
+  
+  Fundamentally, LLMs are trained to generate completions based on prompts. Think of them as being super-powerful examples of the predictive text feature on many cellphones. A prompt starts a sequence of text predictions that results in a semantically correct completion. The trick is that the model understands the relationships between words and it can identify which words in the sequence so far are most likely to influence the next one; and use that to predict the most probable continuation of the sequence.
+  
+  For example, consider the following sentence:
+  Now, suppose you only heard the first few words: "I heard a dog ...". You know that some of these words are more helpful clues as to what the next word might be than others. You know that "heard" and "dog" are strong indicators of what comes next, and that helps you narrow down the probabilities. You know that there's a good chance the sentence will continue as "I heard a dog bark".
+  
+  You're able to guess the next word because:
+  - You have a large vocabulary of words to draw from.
+  - You've learned common linguistic structures, so you know how words relate to one another in meaningful sentences.
+  - You have an understanding of semantic concepts associated with words - you know that something you "heard" must be a sound of some kind, and you know that there are specific sounds that are made by a "dog".
+  So how do we train a model to have these same abilities?
+  The first step is to provide the model with a large vocabulary of words and phrases; and we do mean large. The latest generation of LLMs have vocabularies that consist of hundreds of thousands of tokens, based on large volumes of training data from across the Internet and other sources.
+  
+  Wait a minute. Tokens?
+  
+  While we tend to think of language in terms of words, LLMs break down their vocabulary into tokens. Tokens include words, but also sub-words (like the "un" in "unbelievable" and "unlikely"), punctuation, and other commonly used sequences of characters. The first step in training a large language model therefore is to break down the training text into its distinct tokens, and assign a unique integer identifier to each one, like this:
+  - I (1)
+  - heard (2)
+  - a (3)
+  - dog (4)
+  - bark (5)
+  - loudly (6)
+  - at (7)
+  - a (3) already assigned
+  - cat (8)
+  and so on.
+  
+  As you add more training data, more tokens will be added to the vocabulary and assigned identifiers; so you might end up with tokens for words like "puppy", "skateboard", "car", and others.
+   Note
+  
+  In this simple example, we've tokenized the example text based on words. In reality there would also be sub-words, punctuation, and other tokens.
+  Now that we have a set of tokens with unique IDs, we need to find a way to relate them to one another. To do this, we assign each token a vector (an array of multiple numeric values, like [1, 23, 45]). Each vector has multiple numeric elements or dimensions, and we can use these to encode linguistic and semantic attributes of the token to help provide a great deal of information about what the token means and how it relates to other tokens, in an efficient format.
+  
+  We need to transform the initial vector representations of the tokens into new vectors with linguistic and semantic characteristics embedded in them, based on the contexts in which they appear in the training data. Because the new vectors have semantic values embedded in them, we call them embeddings.
+  
+  To accomplish this task, we use a transformer model. This kind of model consists of two "blocks":
+  - An encoder block that creates the embeddings by applying a technique called attention. The attention layer examines each token in turn, and determines how it's influenced by the tokens around it. To make the encoding process more efficient, multi-head attention is used to evaluate multiple elements of the token in parallel and assign weights that can be used to calculate the new vector element values. The results of the attention layer are fed into a fully connected neural network to find the best vector representation of the embedding.
+  - A decoder layer that uses the embeddings calculated by the encoder to determine the next most probable token in a sequence started by a prompt. The decoder also uses attention and a feed-forward neural network to make its predictions.
+  [Diagram of the Transformer architecture with the encoding and decoding layers.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/simplified-transformer-architecture.png)
+   Note
+  
+  We've greatly simplified the transformer architecture and process in the description and diagram. Don't worry too much about the specific details of how attention works - the key point is that it helps capture linguistic and semantic characteristics of each token based on the contexts in which it's used. If you want a deeper dive into the transformer architecture and how it uses attention, you can read the original [Attention is all you need](https://arxiv.org/abs/1706.03762) paper.
+  Initially, the token vector values are assigned randomly, before being fed through the transformer to create embedding vectors. The token vectors are fed into the transformer along with a positional encoding that indicates where the token appears in the sequence of training text (we need to do this because the order in which tokens appear in the sequence is relevant to how they relate to one another). For example, our tokens might start off looking like this:
+   Note
+  
+  We've kept things simple by using vectors with only three elements (which will help us visualize them in three-dimensions later). In reality, the vectors have thousands of elements.
+  To determine the vector representations of tokens that include embedded contextual information, the transformer uses attention layers. An attention layer considers each token in turn, within the context of the sequence of tokens in which it appears. The tokens around the current one are weighted to reflect their influence and the weights are used to calculate the element values for the current token's embedding vector. For example, when considering the token "bark" in the context of "I heard a dog bark", the tokens for "heard" and "dog" will be assigned more weight than "I" or "a", since they're stronger indicators for "bark".
+  
+  Initially, the model doesn't "know" which tokens influence others; but as it's exposed to larger volumes of text, it can iteratively learn which tokens commonly appear together, and start to find patterns that help assign values to the vector elements that reflect the linguistic and semantic characteristics of the tokens, based on their proximity and frequency of use together. The process is made more efficient by using multi-head attention to consider different elements of the vectors in parallel.
+  
+  The result of the encoding process is a set of embeddings; vectors that include contextual information about how the tokens in the vocabulary relate to one another. A real transformer produces embeddings that include thousands of elements, but to keep things simple, let's stick to vectors with only three vectors in our example. The result of the encoding process for our vocabulary might look something like this:
+  We can think of the elements of the embeddings as dimensions in a multi-dimensional vector-space. In our simple example, our embeddings only have three elements, so we can visualize them as vectors in three-dimensional space, like this:
+  
+  [Diagram of embedding vectors for tokens in three-dimensions.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/embed-example.png)
+  
+  Because the dimensions are calculated based on how the tokens relate linguistically to one another, tokens that are used in similar contexts (and therefore have similar meanings) result in vectors with similar directions. For example, the embeddings for "dog" and "puppy" point in more or less the same direction, which isn't too different from the embedding for "cat"; but very different from the embedding for "skateboard" or "car". We can measure how close tokens are to one another semantically by calculating the cosine similarity of their vectors.
+  Now that we have a set of embeddings that encapsulate the contextual relationship between tokens, we can use the decoder block of a transformer to iteratively predict the next word in a sequence based on a starting prompt.
+  
+  Once again, attention is used to consider each token in context; but this time the context to be considered can only include the tokens that precede the token we're trying to predict. The decoder model is trained, using data for which we already have the full sequence, by applying a technique called masked attention; in which the tokens after the current token are ignored. Since we already know the next token during training, the transformer can compare it to the predicted token and adjust the learned weights in later training iterations to reduce the error in the model.
+  
+  When predicting a new completion, for which the next tokens are unknown, the attention layers calculate possible vectors for the next token and the feed-forward network is used to help determine the most probable candidate. The predicted value is then added to the sequence, and the whole process repeats to predict the next token; and so on, until the decoder predicts that the sequence has ended.
+  
+  For example, given the sequence "When my dog was a ...", the model will evaluate the tokens in the sequence so far, use attention to assign weights, and predict that the next most probable token is "puppy" rather than, say, "cat" or "skateboard".
+  Completed100 XP
+  - 5 minutes
+  Choose your preferred content format
+  A prompt is simply the input you give to an LLM to get a response. It might be a question or a command, or just a casual comment to start a conversation. The model responds to a prompt with a completion.
+  There are two main types of prompts:
+  - System prompts that set the behavior and tone of the model, and any constraints it should adhere to. For example, "You're a helpful assistant that responds in a cheerful, friendly manner.". System prompts determine constraints and styles for the model's responses.
+  - User prompts that elicit a response to a specific question or instruction. For example, "Summarize the key considerations for adopting generative AI described in GenAI_Considerations.docx for a corporate executive. Format the summary as no more than six bullet points with a professional tone.".
+  [Diagram of a system and user prompt.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/system-prompt.png)
+  
+  Usually, the system prompt is set by the application that uses the model. User prompts can be entered by a human user in a chat application; or in some cases generated by the application on the user’s behalf. The model responds to user prompts while obeying the overall guidance in the system prompt.
+  To keep a conversation consistent and relevant, generative AI apps often keep track of the conversation history; and include summarized versions of it in subsequent prompts. This ensures there’s an ongoing context for the conversation that the model can build on.
+  
+  [Diagram of a conversation with multiple prompts and completions.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/conversation-history.png)
+  
+  For example, suppose the model responds to the system and user prompts described previously with the following completion:
+  You could respond with a follow-up question, such as "What are common privacy-related risks?. The prompt would include the new question, but also the previous prompts and responses; providing context to the model so that it understands the question in relation to Generative AI adoption.
+  To add even more context, generative AI applications can use a technique called retrieval augmented generation (RAG). This approach involves retrieving information, like documents or emails, and using it to augment the prompt with relevant data. The response generated by the model is then grounded in the information that was provided.
+  
+  For example, suppose you submit a prompt like "What's the maximum I can claim for travel expenses on a business trip?". With no other information, a model will respond with a generic answer - probably telling you to consult your organization's expenses policy documentation. A better solution would be to build an expenses assistant app that initially queries the organization's expenses policy documentation, retrieving sections related to "travel expenses"; and then includes the retrieved information in the prompt that is sent to the model, along with your original question. Now the model can use the expenses policy information in the prompt to provide context, and respond with a more relevant answer.
+  
+  [Diagram of a retrieval augmented generation being used to provide context in a prompt.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/retrieval-augmented-generation.png)
+  The quality of responses from generative AI assistants not only depends on the language model used, but on the prompts you submit to it.
+  
+  [Diagram of a clear and specific prompt with context, examples, and a request for structure.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/writing-prompts.png)
+  
+  To get better results from your prompts:
+  - Be clear and specific – prompts with explicit instructions or questions work better than vague language.
+  - Add context - mention the topic, audience, or format you want.
+  - Use examples, If you want a certain style, provide an example of what you mean.
+  - Ask for structure, Like bullet points, tables, or numbered lists.
+  Using well-designed prompts can make a huge difference to the results you’ll get from your generative AI model.
+  Completed100 XP
+  - 5 minutes
+  Choose your preferred content format
+  Imagine having a digital assistant that doesn’t just answer questions, but actually gets things done! Welcome to the world of AI agents.
+  
+  Agents are software applications built on generative AI that can reason over and generate natural language, automate tasks by using tools, and respond to contextual conditions to take appropriate action.
+  [Diagram of an agent with a model, instructions, and tools.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/agent.png)
+  
+  AI agents have three key elements:
+  - A large language model: This is the agent's brain; using generative AI for language understanding and reasoning.
+  - Instructions: A system prompt that defines the agent’s role and behavior. Think of it as the agent’s job description.
+  - Tools: These are what the agent uses to interact with the world. Tools can include:
+    - Knowledge tools that provide access to information, like search engines or databases.
+    - Action tools that enable the agent to perform tasks, such as sending emails, updating calendars, or controlling devices.
+  With these capabilities, AI agents can take on the role of digital assistants that intelligently automate tasks and collaborate with you to work smarter and more efficiently.
+  Agents can also work with one another, in multi-agent systems. Instead of one agent doing everything, multiple agents can collaborate—each with its own specialty. One might gather data, another might analyze it, and a third might take action. Together, they form an AI-powered workforce that can handle complex workflows, just like a human team.
+  
+  [Diagram of a multi-agent system.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/multiple-agents.png)
+  
+  Agents communicate with each other through prompts, using generative AI to determine what tasks are required and which agents are responsible for completing them.
+  
+  Agentic AI is set to be the next advance in how we use technology to find information and get work done.
+  Completed100 XP
+  - 15 minutes
+  Now it's your chance to explore generative AI!
+  
+  In this exercise, you'll use a chat playground to interact with a generative AI model, and observe the effect of system prompts, tools, and grounding the model with data.
+  
+  [Screenshot of the chat playground app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/chat-playground.png)
+  
+  Use the following button to start the exercise
+  
+  [Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2339547) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/fundamentals-generative-ai/media/launch-exercise.png))
+  Completed200 XP
+  - 5 minutes
+  1. 
+  What is a large language model (LLM)?
+  A type of AI model designed to generate human-like text.
+  A model that only processes images, not text.
+  A small, efficient model for mobile devices.
+  2. 
+  What is the purpose of tokenization?
+  To sort the words in a sentence alphabetically
+  To break down text into smaller units.
+  To convert text into binary code for processing by computers.
+  3. 
+  What are embeddings?
+  Extra words added by a transformer model to enhance text generation.
+  Small language models used for specific tasks.
+  Vector-based representations of tokens that capture their semantic meaning.
+  4. 
+  What does an attention layer do in a transformer model?
+  Removes irrelevant words from the input text.
+  Examines the relationships between each token and the tokens around it.
+  Flags inappropriate content in the generated text.
+  5. 
+  What is the purpose of a system prompt?
+  To provide context and instructions to the AI model.
+  To configure a generative AI model to run on a particular operating system.
+  To store user preferences for future interactions.
+  6. 
+  What is an agent in the context of AI?
+  An AI system that can perform tasks on behalf of a user.
+  A generative AI model that operates in secret.
+  A human operator to whom generative AI models escalate requests they can't handle.,Summary
+  Completed100 XP
+  - 1 minute
+  Choose your preferred content format
+  Generative AI is a rapidly developing field of AI that supports new language generation, code development, image creation, and more. In this module, you've explored how generative AI uses large language models to make sense of language, and how you can interact with these models using prompts. You've also learned how AI agents, built on generative AI, can act as digital assistants that collaborate with you to find information and accomplish tasks.
+   Tip
+  
+  For more information about some of the concepts discussed in this module, take a look at the following links:
+  - [What are large language models (LLMs)?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-are-large-language-models-llms)
+  - [What is retrieval-augmented generation (RAG)?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-retrieval-augmented-generation-rag)
+  - [Agent Factory: The new era of agentic AI—common use cases and design patterns](https://azure.microsoft.com/blog/agent-factory-the-new-era-of-agentic-ai-common-use-cases-and-design-patterns)
+  - 30 min
+  - Module
+  - 7 Units
+  Natural language processing (NLP) supports applications that can analyze text to infer semantic meaning.
+  - [Introduction](https://learn.microsoft.com/en-us/training/modules/introduction-language/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+  - [Tokenization](https://learn.microsoft.com/en-us/training/modules/introduction-language/2-how-it-works/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+  - [Statistical text analysis.](https://learn.microsoft.com/en-us/training/modules/introduction-language/3-statistical-techniques/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+  - [Semantic language models](https://learn.microsoft.com/en-us/training/modules/introduction-language/4-semantic-models/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)4 min
+  - [Exercise - Explore text analytics](https://learn.microsoft.com/en-us/training/modules/introduction-language/4b-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+  - [Module assessment](https://learn.microsoft.com/en-us/training/modules/introduction-language/5-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+  - [Summary](https://learn.microsoft.com/en-us/training/modules/introduction-language/6-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)" ,Introduction
+    Completed100 XP
+    - 1 minute
+    Choose your preferred content format
+    Within artificial intelligence (AI), text analysis is a subset of natural language processing (NLP) that enables machines to extract meaning, structure, and insights from unstructured text. Organizations use text analysis to transform customer feedback, support tickets, contracts, and social media posts into actionable intelligence.
+    
+    Techniques to process and analyze text evolved over many years, from simple statistical calculations based on term-frequency to vector-based language models that encapsulate semantic meaning. Some common use cases for text analysis include:
+    - Language detection: Determining the language (or languages) in which text is written - often as the first step in a multi-step text processing workflow.
+    - Key term extraction: Identifying important words and phrases in text, to help determine the topics and themes it discusses.
+    - Entity detection: Identifying named entities mentioned in text; for example, places, people, dates, and organizations.
+    - Personally identifiable information (PII) detection: Identifying and redacting personal details in text, such as names, addresses, telephone numbers, financial account details, and other sensitive information.
+    - Text classification: Categorizing text documents based on their contents. For example, filtering email as spam or not spam.
+    - Sentiment analysis: A particular form of text classification that predicts the sentiment of text - for example, categorizing social media posts as positive, neutral, or negative.
+    - Text summarization: Reducing the volume of text while retaining its salient points. For example, generating a short one-paragraph summary from a multi-page document.
+    Text analysis is challenging because language is complex, and computers find it hard to understand. Ultimately, all text analysis techniques are based on the requirement to extract meaning from natural language text.
+     Note
+    
+    We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+    Completed100 XP
+    - 3 minutes
+    Choose your preferred content format
+    The first step in analyzing a body of text (referred to as a corpus) is to break it down into tokens. For the sake of simplicity, you can think of each distinct word in the text as a token. In reality, tokens can be generated for partial words or combinations of words and punctuation.
+    
+    For example, consider this phrase from a famous US presidential speech: "We choose to go to the moon". The phrase can be broken down into the following tokens, with numeric identifiers:
+    1. We
+    2. choose
+    3. to
+    4. go
+    5. to
+    6. the
+    7. moon
+    Notice that "to" (token number 3) is used twice in the corpus. The phrase "We choose to go to the moon" can be represented by the tokens.
+    
+    With each token assigned a discrete value, we can easily count their frequency in the text and use that to determine the most commonly used terms; which might help identify the main subject of the text.
+    
+    We've used a simple example in which tokens are identified for each distinct word in the text. However, consider the following pre-processing techniques that might apply to tokenization depending on the specific text analysis problem you're trying to solve:
+    Completed100 XP
+    - 3 minutes
+    Choose your preferred content format
+    Having broken down a text corpus into its constituent tokens, and prepared them for analysis; there are some common statistical analysis techniques you can use to infer meaning from the text.
+    Perhaps the most obvious way to ascertain the topics discussed in a document is to simply count the number of times each normalized token appears. The assumption is that terms that are used more frequently in the document can help identify the subjects or themes discussed. Put simply, if you can determine the most commonly used words in a given document, you can often get a good idea of what the document is about.
+    
+    For example, consider the following text:
+    After tokenizing, normalizing, and applying lemmatization to the text, the frequency of each term can be counted and tabulated; producing the following partial results:
+    From these results, the most frequently occurring terms indicate that the text discusses AI and its business benefits.
+    Simple frequency analysis in which you count the number of occurrences of each token can be an effective way to analyze a single document, but when you need to differentiate across multiple documents within the same corpus, you need a way to determine which tokens are most relevant in each individual document.
+    
+    For example, consider the following two text samples:
+    The top three most frequent terms in these samples are shown in the following tables:
+    
+    Sample A:
+    Sample B:
+    As you can see from the results, the most common words in both samples are the same ("agent", "Microsoft", and "AI"). This tells us that both documents cover a similar overall theme, but doesn't help us discriminate between the individual documents. Examining the counts of less frequently used terms might help, but you can easily imagine an analysis of a corpus based on Microsoft's AI documentation, which would result in a large number of terms that are common across all documents; making it hard to determine the specific topics covered in each document.
+    
+    To address this problem, Term Frequency - Inverse Document Frequency (TF-IDF) is a technique that calculates scores based on how often a word or term appears in one document compared to its more general frequency across the entire collection of documents. Using this technique, a high degree of relevance is assumed for words that appear frequently in a particular document, but relatively infrequently across a wide range of other documents. To calculate TF-IDF for terms in an individual document, you can use the following three-step process:
+    1. Calculate Term Frequency (TF): This is simply how many times a word appears in a document. For example, if the word "agent" appears 6 times in a document, then tf(agent) = 6.
+    2. Calculate Inverse Document Frequency (IDF): This checks how common or rare a word is across all documents. If a word appears in every document, it’s not special. The formula used to calculate IDF is idf(t) = log(N / df(t)) (where N is total number of documents and df(t) is the number of documents that contain the word t)
+    3. Combine them to calculate TF-IDF: Multiply TF and IDF to get the score: tfidf(t, d) = tf(t, d) * log(N / df(t))
+    A high TF-IDF score indicates that a word appears often in one document but rarely in others. A low score indicates that word is common in many documents. In two samples about AI agents, because "AI", "Microsoft", and "agent" appear in both samples (N = 2, df(t) = 2), their IDF is log(2/2) = 0, so they carry no discriminative weight in TF‑IDF. The top three TF-IDF results for the samples are:
+    
+    Sample A:
+    Sample B:
+    From these results, it's clearer that sample A is about declarative agent creation with Copilot Studio, while sample B is about code-based agent development with Microsoft Foundry.
+    Bag-of-words is the name given to a feature extraction technique that represents text tokens as a vector of word frequencies or occurrences, ignoring grammar and word order. This representation becomes the input for machine learning algorithms like Naive Bayes, a probabilistic classifier that applies Bayes’ theorem to predict the probable class of a document based on word frequency.
+    
+    For example, you might use this technique to train a machine learning model that performs email spam filtering. The words "miracle cure", "lose weight fast", and "anti-aging" may appear more frequently in spam emails about dubious health products than your regular emails, and a trained model might flag messages containing these words as potential spam.
+    
+    You can implement sentiment analysis by using the same method to classify text by emotional tone. The bag-of-words provides the features, and model uses those features to estimate probabilities and assign sentiment labels like "positive" or "negative".
+    TextRank is an unsupervised graph-based algorithm that models text as a network of connected nodes. For example, each sentence in a document could be considered a node, and the connections (edges) between them are scored based on the similarity of the words they contain. TextRank is commonly used to summarize text based on identifying a subset of sentences within a document that best represent its overall subject.
+    
+    The TextRank algorithm applies the same principle as Google's PageRank algorithm (which ranks web pages based on links between them) to text. The key idea is that a sentence is important if it's similar to many other important sentences. The algorithm works through the following steps:
+    1. Build a graph: Each sentence becomes a node, and edges that connect them are weighted by similarity (often measured using word overlap or cosine similarity between sentence vectors).
+    2. Calculate ranks iteratively: Each node's score is calculated based on the scores of the nodes connected to it. The formula is: TextRank(Sᵢ) = (1-d) + d * Σ(wⱼᵢ / Σwⱼₖ) * TextRank(Sⱼ) (where d is a damping factor, typically 0.85, wⱼᵢ is the weight of the edge from sentence j to sentence i, and the sum iterates over all sentences connected to i).
+    3. Extract top-ranked sentences: After convergence, the sentences with the highest scores are selected as the summary.
+    For example, consider the following document about cloud computing:
+    To generate a summary of this document, the TextRank process begins by splitting this document into sentences:
+    1. Cloud computing provides on-demand access to computing resources.
+    2. Computing resources include servers, storage, and networking.
+    3. Azure is Microsoft's cloud computing platform.
+    4. Organizations use cloud platforms to reduce infrastructure costs.
+    5. Cloud computing enables scalability and flexibility.
+    Next, edges are created between sentences with weights based on similarity (word overlap). For this example, the edge weights might be:
+    - Sentence 1 <-> Sentence 2: 0.5 (shares "computing resources")
+    - Sentence 1 <-> Sentence 3: 0.6 (shares "cloud computing")
+    - Sentence 1 <-> Sentence 4: 0.2 (shares "cloud")
+    - Sentence 1 <-> Sentence 5: 0.7 (shares "cloud computing")
+    - Sentence 2 <-> Sentence 3: 0.2 (limited overlap)
+    - Sentence 2 <-> Sentence 4: 0.1 (limited overlap)
+    - Sentence 2 <-> Sentence 5: 0.1 (shares "computing")
+    - Sentence 3 <-> Sentence 4: 0.5 (shares "cloud platforms")
+    - Sentence 3 <-> Sentence 5: 0.4 (shares "cloud computing")
+    - Sentence 4 <-> Sentence 5: 0.3 (limited overlap)
+    [Diagram of connected sentence nodes.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/text-rank.png)
+    
+    After calculating TextRank scores iteratively using these weights, sentences 1, 3, and 5 might receive the highest scores because they connect well to other sentences through shared terminology and concepts. These sentences would be selected to form a concise summary: "Cloud computing provides on-demand access to computing resources. Azure is Microsoft's cloud computing platform. Cloud computing enables scalability and flexibility."
+     Note
+    
+    Generating a document summary by selecting the most relevant sentences is a form of extractive summarization. In this approach, no new text is generated - the summary consists of a subset of the original text. More recent developments in semantic modeling also enable abstractive summarization, in which new language that summarizes the key themes of the source document is generated.
+    TextRank can also be applied at the word level for keyword extraction, where words (rather than sentences) become nodes, and edges represent co-occurrence within a fixed window. The highest-ranked words are extracted as key terms representing the document's main topics.
+    Completed100 XP
+    - 4 minutes
+    Choose your preferred content format
+    As the state of the art for NLP has advanced, the ability to train models that encapsulate the semantic relationship between tokens has led to the emergence of powerful deep learning language models. At the heart of these models is the encoding of language tokens as vectors (multi-valued arrays of numbers) known as embeddings.
+    
+    This vector-based approach to modeling text became common with techniques like Word2Vec and GloVe, in which text tokens are represented as dense vectors with multiple dimensions. During model training, the dimension values are assigned to reflect semantic characteristics of each token based on their usage in the training text. The mathematical relationships between the vectors can then be exploited to perform common text analysis tasks more efficiently than older purely statistical techniques. A more recent advancement in this approach is to use a technique called attention to consider each token in context, and calculate the influence of the tokens around it. The resulting contextualized embeddings, such as those found in the GPT family of models, provide the basis of modern generative AI.
+    Vectors represent points in multidimensional space, defined by coordinates along multiple axes. Each vector describes a direction and distance from the origin. Semantically similar tokens should result in vectors that have a similar orientation – in other words they point in similar directions.
+    
+    For example, consider the following three-dimensional embeddings for some common words:
+    We can visualize these vectors in three-dimensional space as shown here:
+    
+    [Diagram of a 3D visualization of word vectors.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/vectors.png)
+    
+    The vectors for "dog" and "cat" are similar (both domestic animals), as are "puppy" and "kitten" (both young animals). The words "tree", "young", and ball" have distinctly different vector orientations, reflecting their different semantic meanings.
+    
+    The semantic characteristic encoded in the vectors makes it possible to use vector-based operations that compare words and enable analytical comparisons.
+    Since the orientation of vectors is determined by their dimension values, words with similar semantic meanings tend to have similar orientations. This means you can use calculations such as the cosine similarity between vectors to make meaningful comparisons.
+    
+    For example, to determine the "odd one out" between "dog", "cat", and "tree", you can calculate the cosine similarity between pairs of vectors. The cosine similarity is calculated as:
+    
+    cosine_similarity(A, B) = (A · B) / (||A|| * ||B||)
+    
+    Where A · B is the dot product and ||A|| is the magnitude of vector A.
+    
+    Calculating similarities between the three words:
+    - dog [0.8, 0.6, 0.1] and cat [0.7, 0.5, 0.2]:
+      - Dot product: (0.8 × 0.7) + (0.6 × 0.5) + (0.1 × 0.2) = 0.56 + 0.30 + 0.02 = 0.88
+      - Magnitude of dog: √(0.8² + 0.6² + 0.1²) = √(0.64 + 0.36 + 0.01) = √1.01 ≈ 1.005
+      - Magnitude of cat: √(0.7² + 0.5² + 0.2²) = √(0.49 + 0.25 + 0.04) = √0.78 ≈ 0.883
+      - Cosine similarity: 0.88 / (1.005 × 0.883) ≈ 0.992 (high similarity)
+    - dog [0.8, 0.6, 0.1] and tree [0.2, 0.1, 0.9]:
+      - Dot product: (0.8 × 0.2) + (0.6 × 0.1) + (0.1 × 0.9) = 0.16 + 0.06 + 0.09 = 0.31
+      - Magnitude of tree: √(0.2² + 0.1² + 0.9²) = √(0.04 + 0.01 + 0.81) = √0.86 ≈ 0.927
+      - Cosine similarity: 0.31 / (1.005 × 0.927) ≈ 0.333 (low similarity)
+    - cat [0.7, 0.5, 0.2] and tree [0.2, 0.1, 0.9]:
+      - Dot product: (0.7 × 0.2) + (0.5 × 0.1) + (0.2 × 0.9) = 0.14 + 0.05 + 0.18 = 0.37
+      - Cosine similarity: 0.37 / (0.883 × 0.927) ≈ 0.452 (low similarity)
+    [Diagram of cosine similarity visualization showing dog, cat, and tree vectors.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/cosine-similarity.png)
+    
+    The results show that "dog" and "cat" are highly similar (0.992), while "tree" has lower similarity to both "dog" (0.333) and "cat" (0.452). Therefore, tree is clearly the odd one out.
+    You can add or subtract vectors to produce new vector-based results; which can then be used to find tokens with matching vectors. This technique enables intuitive arithmetic-based logic to determine appropriate terms based on linguistic relationships.
+    
+    For example, using the vectors from earlier:
+    - dog + young = [0.8, 0.6, 0.1] + [0.1, 0.1, 0.3] = [0.9, 0.7, 0.4] = puppy
+    - cat + young = [0.7, 0.5, 0.2] + [0.1, 0.1, 0.3] = [0.8, 0.6, 0.5] = kitten
+    [Diagram of vector addition showing dog + young = puppy and cat + young = kitten.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/vector-addition.png)
+    
+    These operations work because the vector for "young" encodes the semantic transformation from an adult animal to its young counterpart.
+     Note
+    
+    In practice, vector arithmetic rarely produces exact matches; instead, you would search for the word whose vector is closest (most similar) to the result.
+    The arithmetic works in reverse as well:
+    - puppy - young = [0.9, 0.7, 0.4] - [0.1, 0.1, 0.3] = [0.8, 0.6, 0.1] = dog
+    - kitten - young = [0.8, 0.6, 0.5] - [0.1, 0.1, 0.3] = [0.7, 0.5, 0.2] = cat
+    Vector arithmetic can also answer analogy questions like "puppy is to dog as kitten is to ?"
+    
+    To solve this, calculate: kitten - puppy + dog
+    - [0.8, 0.6, 0.5] - [0.9, 0.7, 0.4] + [0.8, 0.6, 0.1]
+    - = [-0.1, -0.1, 0.1] + [0.8, 0.6, 0.1]
+    - = [0.7, 0.5, 0.2]
+    - = cat
+    [Diagram of vector arithmetic showing kitten - puppy + dog = cat.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/vector-analogy.png)
+    
+    These examples demonstrate how vector operations can capture linguistic relationships and enable reasoning about semantic patterns.
+    Vector-based semantic models provide powerful capabilities for many common text analysis tasks.
+    Semantic embeddings enable extractive summarization by identifying sentences with vectors that are most representative of the overall document. By encoding each sentence as a vector (often by averaging or pooling the embeddings of its constituent words), you can calculate which sentences are most central to the document's meaning. These central sentences can be extracted to form a summary that captures the key themes.
+    Vector similarity can identify the most important terms in a document by comparing each word's embedding to the document's overall semantic representation. Words whose vectors are most similar to the document vector, or most central when considering all word vectors in the document, are likely to be key terms that represent the main topics.
+    Semantic models can be fine-tuned to recognize named entities (people, organizations, locations, etc.) by learning vector representations that cluster similar entity types together. During inference, the model examines each token's embedding and its context to determine whether it represents a named entity and, if so, what type.
+    For tasks like sentiment analysis or topic categorization, documents can be represented as aggregate vectors (such as the mean of all word embeddings in the document). These document vectors can then be used as features for machine learning classifiers, or compared directly to class prototype vectors to assign categories. Because semantically similar documents have similar vector orientations, this approach effectively groups related content and distinguishes different categories.
+    Completed100 XP
+    - 15 minutes
+    Now it's your chance to explore text analytics, and see for yourself the kinds of language-related tasks you can use AI to accomplish.
+    
+    [Screenshot of the language playground app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/language-playground.png)
+    
+    Use the following button to start the exercise
+    
+    [Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2339548) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-language/media/launch-exercise.png))
+    Completed200 XP
+    - 3 minutes
+    1. 
+    What is the purpose of tokenization?
+    To translate text into another language.
+    To summarize large documents.
+    To break down text into smaller units for analysis.
+    2. 
+    Which of the following techniques is used to determine the importance of words in a specific document within the context of a larger collection of documents?
+    Naïve Bayes
+    TF-IDF (Term Frequency-Inverse Document Frequency)
+    Word2Vec
+    3. 
+    Which of the following best describes the role of embedding vectors in natural language processing (NLP)?
+    They duplicate tokens in multiple languages.
+    They define stopwords that should be ignored.
+    They capture semantic token relationships in multiple dimensions.
+    ,Summary
+    Completed100 XP
+    - 1 minute
+    Choose your preferred content format
+    In this module, you learned about text analytics and concepts such as tokenization, frequency analysis, and text classification. You've also been introduced to semantic language models that encode language tokens as vectors for grouping related words.
+     Tip
+    
+    To learn more about natural language processing and text analytics, see these articles:
+    - [What is natural language processing (NLP)?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-natural-language-processing-nlp).
+    - [Azure Language in Foundry Tools](https://azure.microsoft.com/products/ai-foundry/tools/language).
+    - 28 min
+    - Module
+    - 7 Units
+    Imagine AI apps and agents that you can talk to. Explore the concepts behind AI speech, including speech recognition and synthesis.
+    - [Introduction](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+    - [Speech-enabled solutions](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/2-speech-solutions/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)2 min
+    - [Speech recognition](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/3-speech-recognition/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+    - [Speech synthesis](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/4-speech-synthesis/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+    - [Exercise - Explore AI speech](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/5-exercise-speech/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+    - [Module assessment](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/6-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+    - [Summary](https://learn.microsoft.com/en-us/training/modules/introduction-ai-speech/7-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)",Introduction
+      Completed100 XP
+      - 1 minute
+      Choose your preferred content format
+      Speech is one of the most natural ways humans communicate, and bringing speech capabilities to AI applications creates more intuitive, accessible, and engaging user experiences. Whether you're building a voice assistant, creating accessible applications, or developing conversational AI agents, understanding speech technologies is essential for modern AI solutions.
+      
+      In this module, you'll explore the two fundamental speech capabilities that power voice-enabled applications: speech recognition (converting spoken words to text) and speech synthesis (converting text to natural-sounding speech). You'll discover how these technologies work together to create seamless voice interactions and learn about the real-world scenarios where speech can transform user experiences.
+       Note
+      
+      We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+      Completed100 XP
+      - 2 minutes
+      Choose your preferred content format
+      Speech capabilities transform how users interact with AI applications and agents. Speech recognition converts spoken words into text, while speech synthesis generates natural-sounding audio from text. Together, these technologies enable hands-free operation, improve accessibility, and create more natural conversational experiences.
+      
+      Integrating speech into your AI solutions helps you:
+      - Expand accessibility: Serve users with visual impairments or mobility challenges.
+      - Increase productivity: Enable multitasking by removing the need for keyboards and screens.
+      - Enhance user experience: Create natural conversations that feel more human and engaging.
+      - Reach global audiences: Support multiple languages and regional dialects.
+      Speech recognition, also called speech-to-text, listens to audio input and transcribes it into written text. This capability powers a wide range of business and consumer applications.
+      Service centers use speech recognition to:
+      - Transcribe customer calls in real time for agent reference and quality assurance.
+      - Route callers to the right department based on what they say.
+      - Analyze call sentiment and identify common customer issues.
+      - Generate searchable call records for compliance and training.
+      Business value: Reduces manual note-taking, improves response accuracy, and captures insights that improve service quality.
+      Virtual assistants and AI agents rely on speech recognition to:
+      - Accept voice commands for hands-free control of devices and applications.
+      - Answer questions using natural language understanding.
+      - Complete tasks like setting reminders, sending messages, or searching information.
+      - Control smart home devices, automotive systems, and wearable technology.
+      Business value: Increases user engagement, simplifies complex workflows, and enables operation in situations where screens aren't practical.
+      Organizations transcribe conversations to:
+      - Create searchable meeting notes and action item lists.
+      - Provide real-time captions for participants who are deaf or hard of hearing.
+      - Generate summaries of interviews, focus groups, and research sessions.
+      - Extract key discussion points for documentation and follow-up.
+      Business value: Saves hours of manual transcription work, ensures accurate records, and makes spoken content accessible to everyone.
+      Clinical professionals use speech recognition to:
+      - Dictate patient notes directly into electronic health records.
+      - Update treatment plans without interrupting patient care.
+      - Reduce administrative burden and prevent physician burnout.
+      - Improve documentation accuracy by capturing details in the moment.
+      Business value: Increases time available for patient care, improves record completeness, and reduces documentation errors.
+      Speech synthesis, also called text-to-speech, converts written text into spoken audio. This technology creates voices for applications that need to communicate information audibly.
+      AI agents use speech synthesis to:
+      - Respond to users with natural-sounding voices instead of requiring them to read text.
+      - Create personalized interactions by adjusting tone, pace, and speaking style.
+      - Handle customer inquiries through voice channels like phone systems.
+      - Provide consistent brand experiences across voice and text interfaces.
+      Business value: Makes AI agents more approachable, reduces customer effort, and extends service availability to voice-only channels.
+      Applications generate audio to:
+      - Read web content, articles, and documents aloud for users with visual impairments.
+      - Support users with reading disabilities like dyslexia.
+      - Enable content consumption while driving, exercising, or performing other tasks.
+      - Provide audio alternatives for text-heavy interfaces.
+      Business value: Expands your audience reach, demonstrates commitment to inclusion, and improves user satisfaction.
+      Systems use speech synthesis to:
+      - Announce important alerts, reminders, and status updates.
+      - Provide navigation instructions in mapping and GPS applications.
+      - Deliver time-sensitive information without requiring users to look at screens.
+      - Communicate system status in industrial and operational environments.
+      Business value: Ensures critical information reaches users even when visual attention isn't available, improving safety and responsiveness.
+      Educational platforms use speech synthesis to:
+      - Create narrated lessons and course content without recording studios.
+      - Provide pronunciation examples for language learning.
+      - Generate audio versions of written materials for different learning preferences.
+      - Scale content production across multiple languages.
+      Business value: Reduces content creation costs, supports diverse learning styles, and accelerates course development timelines.
+      Content creators use speech synthesis to:
+      - Generate character voices for games and interactive experiences.
+      - Produce podcast drafts and audiobook prototypes.
+      - Create voiceovers for videos and presentations.
+      - Personalize audio content based on user preferences.
+      Business value: Lowers production costs, enables rapid prototyping, and creates customized experiences at scale.
+      The most powerful speech-enabled applications combine both capabilities to create conversational experiences:
+      - Voice-driven customer service: Agents listen to customer questions (recognition), process the request, and respond with helpful answers (synthesis).
+      - Interactive voice response (IVR) systems: Callers speak their needs, and the system guides them through options using natural dialogue.
+      - Language learning applications: Students speak practice phrases (recognition), and the system provides feedback and corrections (synthesis).
+      - Voice-controlled vehicles: Drivers give commands hands-free (recognition), and the system confirms actions and provides updates (synthesis).
+      These combined scenarios create fluid, two-way conversations that feel natural and reduce the friction users experience with traditional interfaces.
+       Tip
+      
+      Start with a single speech capability focused on your highest-value scenario. Prove the concept works before expanding to more complex conversational flows.
+      Before you add speech capabilities to your application, evaluate these factors:
+      - Audio quality requirements: Background noise, microphone quality, and network bandwidth affect speech recognition accuracy.
+      - Language and dialect support: Verify that your target languages and regional variations are supported.
+      - Privacy and compliance: Understand how audio data is processed, stored, and protected to meet regulatory requirements.
+      - Latency expectations: Real-time conversations require low-latency processing, while batch transcription can tolerate delays.
+      - Accessibility standards: Ensure your speech implementation meets WCAG guidelines and doesn't create barriers for some users.
+       Important
+      
+      Always provide alternative input and output methods. Some users may prefer or require text-based interfaces even when speech is available.
+      Completed100 XP
+      - 3 minutes
+      Choose your preferred content format
+      Speech recognition, also called speech-to-text, enables applications to convert spoken language into written text. The journey from sound wave to text involves six coordinated stages: capturing audio, preparing features, modeling acoustic patterns, applying language rules, decoding the most likely words, and refining the final output.
+      Speech recognition begins when a microphone converts sound waves into a digital signal. The system samples the analog audio thousands of times per second—typically 16,000 samples per second (16 kHz) for speech applications—and stores each measurement as a numeric value.
+      
+      [Diagram of an audio waveform.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-ai-speech/media/wave-form-spectogram.png)
+       Note
+      
+      Why sampling rate matters:
+      - Higher rates (like 44.1 kHz for music) capture more detail but require more processing.
+      - Speech recognition balances clarity and efficiency at 8 kHz to 16 kHz.
+      - Background noise, microphone quality, and distance from the speaker directly impact downstream accuracy.
+      Before moving to the next stage, the system often applies basic filters to remove hums, clicks, or other background noise that could confuse the model.
+      Raw audio samples contain too much information for efficient pattern recognition. Pre-processing transforms the waveform into a compact representation that highlights speech characteristics while discarding irrelevant details like absolute volume.
+      MFCC is the most common feature extraction technique in speech recognition. It mimics how the human ear perceives sound by emphasizing frequencies where speech energy concentrates and compressing less important ranges.
+      1. Divide audio into frames: Split the signal into overlapping 20–30 millisecond windows.
+      2. Apply Fourier transform: Convert each frame from time domain to frequency domain, revealing which pitches are present.
+      3. Map to Mel scale: Adjust frequency bins to match human hearing sensitivity—we distinguish low pitches better than high ones.
+      4. Extract coefficients: Compute a small set of numbers (often 13 coefficients) that summarize the spectral shape of each frame.
+      [Diagram of an MFCC feature map.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-ai-speech/media/audio-features.png)
+      
+      The result is a sequence of feature vectors—one per frame—that captures what the audio sounds like without storing every sample. These vectors become the input for acoustic modeling.
+      
+      The vectors are extracted column-wise, with each vector representing the 13 MFCC feature coefficient values for each time-frame:
+      ```
+      Frame 1: [ -113.2,  45.3,  12.1,  -3.4,  7.8,  ... ]  # 13 coefficients
+      Frame 2: [ -112.8,  44.7,  11.8,  -3.1,  7.5,  ... ]
+      Frame 3: [ -110.5,  43.9,  11.5,  -2.9,  7.3,  ... ]
+      
+      ```
+      Acoustic models learn the relationship between audio features and phonemes—the smallest units of sound that distinguish words. English uses about 44 phonemes; for example, the word "cat" comprises three phonemes: /k/, /æ/, and /t/.
+      Modern acoustic models use transformer architectures, a type of deep learning network that excels at sequence tasks. The transformer processes the MFCC feature vectors and predicts which phoneme is most likely at each moment in time.
+      
+      Transformer models achieve effective phoneme prediction through:
+      - Attention mechanism: The model examines surrounding frames to resolve ambiguity. For example, the phoneme /t/ sounds different at the start of "top" versus the end of "bat."
+      - Parallel processing: Unlike older recurrent models, transformers analyze multiple frames simultaneously, improving speed and accuracy.
+      - Contextualized predictions: The network learns that certain phoneme sequences occur frequently in natural speech.
+      The output of acoustic modeling is a probability distribution over phonemes for each audio frame. For instance, frame 42 might show 80% confidence for /æ/, 15% for /ɛ/, and 5% for other phonemes.
+       Note
+      
+      Phonemes are language-specific. A model trained on English phonemes can't recognize Mandarin tones without retraining.
+      Phoneme predictions alone don't guarantee accurate transcription. The acoustic model might confuse "their" and "there" because they share identical phonemes. Language models resolve ambiguity by applying knowledge of vocabulary, grammar, and common word patterns. Some ways in which the model guides word sequence prediction include:
+      - Statistical patterns: The model knows "The weather is nice" appears more often in training data than "The whether is nice."
+      - Context awareness: After hearing "I need to," the model expects verbs like "go" or "finish," not nouns like "table."
+      - Domain adaptation: Custom language models trained on medical or legal terminology improve accuracy for specialized scenarios.
+      Decoding algorithms search through millions of possible word sequences to find the transcription that best matches both acoustic and language model predictions. This stage balances two competing goals: staying faithful to the audio signal while producing readable, grammatically correct text.
+      The most common technique, beam search, maintains a shortlist (the "beam") of top-scoring partial transcriptions as it processes each audio frame. At every step, it extends each hypothesis with the next most likely word, prunes low-scoring paths, and keeps only the best candidates.
+      
+      For a three-second utterance, the decoder might evaluate thousands of hypotheses before selecting "Please send the report by Friday" over alternatives like "Please sent the report buy Friday."
+       Caution
+      
+      Decoding is computationally intensive. Real-time applications balance accuracy and latency by limiting beam width and hypothesis depth.
+      The decoder produces raw text that often requires cleanup before presentation. Post-processing applies formatting rules and corrections to improve readability and accuracy.
+      - Capitalization: Convert "hello my name is sam" to "Hello my name is Sam."
+      - Punctuation restoration: Add periods, commas, and question marks based on prosody and grammar.
+      - Number formatting: Change "one thousand twenty three" to "1,023."
+      - Profanity filtering: Mask or remove inappropriate words when required by policy.
+      - Inverse text normalization: Convert spoken forms like "three p m" to "3 PM."
+      - Confidence scoring: Flag low-confidence words for human review in critical applications like medical transcription.
+      Azure Speech returns the final transcription along with metadata like word-level timestamps and confidence scores, enabling your application to highlight uncertain segments or trigger fallback behaviors.
+      Each stage builds on the previous one:
+      1. Audio capture provides the raw signal.
+      2. Pre-processing extracts MFCC features that highlight speech patterns.
+      3. Acoustic modeling predicts phoneme probabilities using transformer networks.
+      4. Language modeling applies vocabulary and grammar knowledge.
+      5. Decoding searches for the best word sequence.
+      6. Post-processing formats the text for human readers.
+      By separating concerns, modern speech recognition systems achieve high accuracy across languages, accents, and acoustic conditions. When transcription quality falls short, you can often trace the issue to one stage—poor audio capture, insufficient language model training, or overly aggressive post-processing—and adjust accordingly.
+      Completed100 XP
+      - 3 minutes
+      Choose your preferred content format
+      Speech synthesis—also called text-to-speech (TTS)—converts written text into spoken audio. You encounter speech synthesis when virtual assistants read notifications, navigation apps announce directions, or accessibility tools help users consume written content audibly.
+      
+      Speech synthesis systems process text through four distinct stages. Each stage transforms the input incrementally, building toward a final audio waveform that sounds natural and intelligible.
+      Text normalization prepares raw text for pronunciation by expanding abbreviations, numbers, and symbols into spoken forms.
+      
+      Consider the sentence: "Dr. Smith ordered 3 items for $25.50 on 12/15/2023."
+      
+      A normalization system converts it to: "Doctor Smith ordered three items for twenty-five dollars and fifty cents on December fifteenth, two thousand twenty-three."
+      
+      Common normalization tasks include:
+      - Expanding abbreviations ("Dr." becomes "Doctor", "Inc." becomes "Incorporated")
+      - Converting numbers to words ("3" becomes "three", "25.50" becomes "twenty-five point five zero")
+      - Handling dates and times ("12/15/2023" becomes "December fifteenth, two thousand twenty-three")
+      - Processing symbols and special characters ("$" becomes "dollars", "@" becomes "at")
+      - Resolving homographs based on context ("read" as present tense versus past tense)
+      Text normalization prevents the system from attempting to pronounce raw symbols or digits, which would produce unnatural or incomprehensible output.
+       Tip
+      
+      Different domains require specialized normalization rules. Medical text handles drug names and dosages differently than financial text handles currency and percentages.
+      Linguistic analysis breaks normalized text into phonemes (the smallest units of sound) and determines how to pronounce each word. The linguistic analysis stage:
+      1. Segments text into words and syllables.
+      2. Looks up word pronunciations in lexicons (pronunciation dictionaries).
+      3. Applies G2P rules or neural models to handle unknown words.
+      4. Marks syllable boundaries and identifies stressed syllables.
+      5. Determines phonetic context for adjacent sounds.
+      Grapheme-to-phoneme (G2P) conversion maps written letters (graphemes) to pronunciation sounds (phonemes). English spelling doesn't reliably indicate pronunciation, so G2P systems use both rules and learned patterns.
+      
+      For example:
+      - The word "though" converts to /θoʊ/
+      - The word "through" converts to /θruː/
+      - The word "cough" converts to /kɔːf/
+      Each word contains the letters "ough", but the pronunciation differs dramatically.
+      
+      Modern G2P systems use neural networks trained on pronunciation dictionaries. These models learn patterns between spelling and sound, handling uncommon words, proper names, and regional variations more gracefully than rule-based systems.
+      
+      When determining phonemes, linguistic analysis often uses a transformer model to help consider context. For example, the word "read" is pronounced differently in "I read books" (present tense: /riːd/) versus "I read that book yesterday" (past tense: /rɛd/).
+      Prosody refers to the rhythm, stress, and intonation patterns that make speech sound natural. Prosody generation determines how to say words, not just which sounds to produce.
+      Prosody encompasses several vocal characteristics:
+      - Pitch contours: Rising or falling pitch patterns that signal questions versus statements
+      - Duration: How long to hold each sound, creating emphasis or natural rhythm
+      - Intensity: Volume variations that highlight important words
+      - Pauses: Breaks between phrases or sentences that aid comprehension
+      - Stress patterns: Which syllables receive emphasis within words and sentences
+      Prosody has a significant effect on how spoken text is interpreted. For example, consider how the following sentence changes meaning depending on which syllable or word is emphasized:
+      - "I never said he ate the cake."
+      - "I never said he ate the cake."
+      - "I never said he ate the cake."
+      - "I never said he ate the cake."
+      Modern speech synthesis systems use transformer neural networks to predict prosody. Transformers excel at understanding context across entire sentences, not just adjacent words.
+      1. Input encoding: The transformer receives the phoneme sequence with linguistic features (punctuation, part of speech, sentence structure)
+      2. Contextual analysis: Self-attention mechanisms identify relationships between words (for example, which noun a pronoun references, where sentence boundaries fall)
+      3. Prosody prediction: The model outputs predicted values for pitch, duration, and energy at each phoneme
+      4. Style factors: The system considers speaking style (neutral, expressive, conversational) and speaker characteristics
+      Transformers predict prosody by learning from thousands of hours of recorded speech paired with transcripts. The model discovers patterns: questions rise in pitch at the end, commas signal brief pauses, emphasized words lengthen slightly, and sentence-final words often drop in pitch.
+      - Syntax: Clause boundaries indicate where to pause
+      - Semantics: Important concepts receive emphasis
+      - Discourse context: Contrasting information or answers to questions may carry extra stress
+      - Speaker identity: Each voice has characteristic pitch range and speaking rate
+      - Emotional tone: Excitement, concern, or neutrality shape prosodic patterns
+      The prosody predictions create a target specification: "Produce the phoneme /æ/ at 180 Hz for 80 milliseconds with moderate intensity, then pause for 200 milliseconds."
+       Important
+      
+      Prosody dramatically affects naturalness. Robotic-sounding speech often results from flat, monotone prosody—not from imperfect phoneme pronunciation.
+      Speech synthesis generates the final audio waveform based on the phoneme sequence and prosody specifications.
+      Modern systems use neural vocoders—deep learning models that generate audio samples directly. Popular vocoder architectures include WaveNet, WaveGlow, and HiFi-GAN.
+      1. Acoustic feature generation: An acoustic model (often a transformer) converts phonemes and prosody targets into mel-spectrograms—visual representations of sound frequencies over time
+      2. Vocoding: The neural vocoder converts mel-spectrograms into raw audio waveforms (sequences of amplitude values at 16,000-48,000 samples per second)
+      3. Post-processing: The system applies filtering, normalization, or audio effects to match target output specifications
+       Note
+      
+      What makes neural vocoders effective:
+      - High fidelity: Generate audio quality approaching studio recordings
+      - Naturalness: Capture subtle vocal characteristics like breathiness and voice quality
+      - Efficiency: Real-time generation on modern hardware (important for interactive applications)
+      - Flexibility: Adapt to different speakers, languages, and speaking styles
+      The vocoder essentially performs the inverse of what automatic speech recognition does—while speech recognition converts audio into text, the vocoder converts linguistic representations into audio.
+      When you request speech synthesis for "Dr. Chen's appointment is at 3:00 PM":
+      1. Text normalization expands it to "Doctor Chen's appointment is at three o'clock P M"
+      2. Linguistic analysis converts it to phonemes: /ˈdɑktər ˈtʃɛnz əˈpɔɪntmənt ɪz æt θri əˈklɑk pi ɛm/
+      3. Prosody generation predicts pitch rising slightly on "appointment", a pause after "is", and emphasis on "three"
+      4. Speech synthesis generates an audio waveform matching those specifications
+      The entire process typically completes in under one second on modern hardware.
+      ,Exercise - Explore AI speech
+      Completed100 XP
+      - 15 minutes
+      Now it's your chance to explore speech in an AI application! In this exercise, you'll use voice mode to interact with a model in the chat playground.
+      
+      [Screenshot of the chat playground app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-ai-speech/media/chat-playground.png)
+      
+      Use the following button to start the exercise
+      
+      [Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2339573) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-ai-speech/media/launch-exercise.png))
+      Completed200 XP
+      - 3 minutes
+      1. 
+      What activity happens during the pre-processing stage of speech recognition?
+      The audio is converted to .wmv format.
+      Background noise is added to the audio signal.
+      Feature vectors are extracted from the audio waveform for modeling.
+      2. 
+      What are phonemes?
+      Artifacts that are removed from the signal as part of the clean-up process.
+      The smallest unit of sound in speech.
+      AI models that generate audio.
+      3. 
+      Why is it important to generate prosody in speech synthesis?
+      Prosody maximizes the volume of the audio output.
+      Prosody translates the speech to the language of the listener.
+      Prosody ensures natural pronunciation and speech cadence.,Summary
+      Completed100 XP
+      - 1 minute
+      Choose your preferred content format
+      In this module, you explored the fundamental speech technologies that enable natural voice interactions in AI applications. You learned how speech recognition converts spoken words into text and how speech synthesis generates human-like audio from written content.
+      
+      Throughout this module, you discovered:
+      - Speech scenarios and applications: Speech technologies transform user experiences across customer service, accessibility, conversational AI, healthcare documentation, and e-learning. You explored how combining speech recognition and synthesis creates fluid two-way conversations that feel natural and reduce user friction.
+      - Speech recognition fundamentals: You examined the six-stage pipeline that converts audio to text—from capturing sound waves to producing formatted transcriptions. You learned how MFCC features extract meaningful patterns from audio, how transformer-based acoustic models predict phonemes, and how language models resolve ambiguity by applying vocabulary and grammar knowledge.
+      - Speech synthesis fundamentals: You discovered the four-stage process that transforms text into natural speech—text normalization, linguistic analysis, prosody generation, and audio synthesis. You explored how grapheme-to-phoneme conversion handles spelling variations, how transformer models predict natural rhythm and emphasis, and how neural vocoders generate high-fidelity audio waveforms.,firth part "[Introduction to computer vision concepts](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/)
+        - 34 min
+        - Module
+        - 9 Units
+        Introduction to computer vision concepts
+        - [Introduction](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+        - [Computer vision tasks and techniques](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/2-overview/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+        - [Images and image processing](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/3-understand-image-processing/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+        - [Convolutional neural networks](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/4-computer-vision-models/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+        - [Vision transformers and multimodal models](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/5-modern-vision-models/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+        - [Image generation](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/5a-generate-images/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)2 min
+        - [Exercise - Explore computer vision](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/5b-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+        - [Module assessment](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/6-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+        - [Summary](https://learn.microsoft.com/en-us/training/modules/introduction-computer-vision/7-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min",Introduction
+          Completed100 XP
+          - 1 minute
+          Choose your preferred content format
+          Computer vision is one of the core areas of artificial intelligence (AI), and focuses on creating solutions that enable AI applications to process visual information.
+          
+          Consider these scenarios:
+          - An autonomous vehicle needs to detect and respond to traffic and pedestrians.
+          - A store uses smart checkouts with cameras to determine the products in a customer's basket.
+          - A doorbell camera is used to detect people at your front door.
+          These use cases, and many others, rely on computer vision.
+          
+          Of course, computers don't have biological eyes that work the way ours do, but they're capable of processing images; either from a live camera feed or from digital photographs or videos. This ability to process images is the key to creating software that can emulate human visual perception. In this module, we'll examine the building blocks that underlie modern computer vision solutions.
+           Note
+          
+          We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          The term "computer vision" refers to a range of tasks and techniques in which AI software processes visual input; typically from images, videos, or live camera streams. Computer vision is a well-established field of AI, and the techniques used to extract information from visual input have evolved significantly over the years.
+          One of the oldest computer vision solutions is a technique called image classification, in which a model that has been trained with a large number of images is used to predict a text label based on an image's contents.
+          
+          For example, suppose a grocery store wants to implement smart checkout system that identifies produce automatically. For example, the customer could place fruits or vegetables on a scale at the checkout, and an AI application connected to a camera could automatically identify the types of produce (apple, orange, banana, and so on) and charge the appropriate amount based on its weight. For this solution to work, a model would need to be trained with a large volume of images, each labeled with the correct name. The result is a model that can use the visual features of an image to predict its main subject.
+          
+          [Photographs of an orange, and apple, and a banana.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/image-classification.png)
+          Suppose the grocery store wants a more sophisticated system, in which the checkout can scan multiple items on the checkout and identify each of them. A common approach to this type of problem is called "object detection". Object detection models examine multiple regions in an image to find individual objects and their locations. The resulting prediction from the model includes which objects were detected, and the specific regions of the image in which they appear - indicated by the coordinates of the rectangular bounding box.
+          
+          [Photograph of an orange, apple, and banana with bounding boxes.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/object-detection.png)
+          Another, more sophisticated way to detect objects in an image, is called "semantic segmentation". In this approach, a model is trained to find objects, and classify individual pixels in the image based on the object to which they belong. The result of this process is a much more precise prediction of the location of objects in the image.
+          
+          [Photograph of an orange, apple, and banana with overlaid masks.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/semantic-segmentation.png)
+          The latest multimodal computer vision models are trained to find contextual relationships between objects in images and the text that describes them. The result is an ability to semantically interpret an image to determine what objects and activities it depicts; and generate appropriate descriptions or suggest relevant tags.
+          
+          [Photograph of a person eating an apple.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/image-analysis.png)
+          
+          A person eating an apple.
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          To a computer, an image is an array of numeric pixel values. For example, consider the following array:
+          ```
+           0   0   0   0   0   0   0  
+           0   0   0   0   0   0   0
+           0   0  255 255 255  0   0
+           0   0  255 255 255  0   0
+           0   0  255 255 255  0   0
+           0   0   0   0   0   0   0
+           0   0   0   0   0   0   0
+          
+          ```
+          The array consists of seven rows and seven columns, representing the pixel values for a 7x7 pixel image (which is known as the image's resolution). Each pixel has a value between 0 (black) and 255 (white); with values between these bounds representing shades of gray. The image represented by this array looks similar to the following (magnified) image:
+          
+          [Diagram of a grayscale image.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/white-square.png)
+          
+          The array of pixel values for this image is two-dimensional (representing rows and columns, or x and y coordinates) and defines a single rectangle of pixel values. A single layer of pixel values like this represents a grayscale image. In reality, most digital images are multidimensional and consist of three layers (known as channels) that represent red, green, and blue (RGB) color hues. For example, we could represent a color image by defining three channels of pixel values that create the same square shape as the previous grayscale example:
+          ```
+          Red:
+           150  150  150  150  150  150  150  
+           150  150  150  150  150  150  150
+           150  150  255  255  255  150  150
+           150  150  255  255  255  150  150
+           150  150  255  255  255  150  150
+           150  150  150  150  150  150  150
+           150  150  150  150  150  150  150
+          
+          Green:
+           0    0    0    0    0    0    0          
+           0    0    0    0    0    0    0
+           0    0   255  255  255   0    0
+           0    0   255  255  255   0    0
+           0    0   255  255  255   0    0
+           0    0    0    0    0    0    0
+           0    0    0    0    0    0    0
+          
+          Blue:
+           255  255  255  255  255  255  255  
+           255  255  255  255  255  255  255
+           255  255   0    0    0   255  255
+           255  255   0    0    0   255  255
+           255  255   0    0    0   255  255
+           255  255  255  255  255  255  255
+           255  255  255  255  255  255  255
+          
+          ```
+          Here's the resulting image:
+          
+          [Diagram of a color image.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/color-square.png)
+          
+          The purple squares are represented by the combination:
+          ```
+          Red: 150 
+          Green: 0 
+          Blue: 255 
+          
+          ```
+          The yellow squares in the center are represented by the combination:
+          ```
+          Red: 255
+          Green: 255
+          Blue: 0
+          
+          ```
+          A common way to perform image processing tasks is to apply filters that modify the pixel values of the image to create a visual effect. A filter is defined by one or more arrays of pixel values, called filter kernels. For example, you could define filter with a 3x3 kernel as shown in this example:
+          ```
+          -1 -1 -1
+          -1  8 -1
+          -1 -1 -1
+          
+          ```
+          The kernel is then convolved across the image, calculating a weighted sum for each 3x3 patch of pixels and assigning the result to a new image. It's easier to understand how the filtering works by exploring a step-by-step example.
+          
+          Let's start with the grayscale image we explored previously:
+          ```
+           0   0   0   0   0   0   0  
+           0   0   0   0   0   0   0
+           0   0  255 255 255  0   0
+           0   0  255 255 255  0   0
+           0   0  255 255 255  0   0
+           0   0   0   0   0   0   0
+           0   0   0   0   0   0   0
+          
+          ```
+          First, we apply the filter kernel to the top left patch of the image, multiplying each pixel value by the corresponding weight value in the kernel and adding the results:
+          ```
+          (0 x -1) + (0 x -1) + (0 x -1) +
+          (0 x -1) + (0 x 8) + (0 x -1) +
+          (0 x -1) + (0 x -1) + (255 x -1) = -255
+          
+          ```
+          The result (-255) becomes the first value in a new array. Then we move the filter kernel along one pixel to the right and repeat the operation:
+          ```
+          (0 x -1) + (0 x -1) + (0 x -1) +
+          (0 x -1) + (0 x 8) + (0 x -1) +
+          (0 x -1) + (255 x -1) + (255 x -1) = -510
+          
+          ```
+          Again, the result is added to the new array, which now contains two values:
+          ```
+          -255  -510
+          
+          ```
+          The process is repeated until the filter has been convolved across the entire image, as shown in this animation:
+          
+          [Diagram of a filter.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/filter.gif)
+          
+          The filter is convolved across the image, calculating a new array of values. Some of the values might be outside of the 0 to 255 pixel value range, so the values are adjusted to fit into that range. Because of the shape of the filter, the outside edge of pixels isn't calculated, so a padding value (usually 0) is applied. The resulting array represents a new image in which the filter has transformed the original image. In this case, the filter has had the effect of highlighting the edges of shapes in the image.
+          
+          To see the effect of the filter more clearly, here's an example of the same filter applied to a real image:
+          Because the filter is convolved across the image, this kind of image manipulation is often referred to as convolutional filtering. The filter used in this example is a particular type of filter (called a Laplace filter) that highlights the edges on objects in an image. There are many other kinds of filter that you can use to create blurring, sharpening, color inversion, and other effects.
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          The ability to use filters to apply effects to images is useful in image processing tasks, such as you might perform with image editing software. However, the goal of computer vision is often to extract meaning, or at least actionable insights, from images; which requires the creation of machine learning models that are trained to recognize features based on large volumes of existing images.
+           Tip
+          
+          This unit assumes you are familiar with the fundamental principles of machine learning, and that you have conceptual knowledge of deep learning with neural networks. If you are new to machine learning, consider completing the [Introduction to machine learning concepts](https://learn.microsoft.com/en-us/training/modules/fundamentals-machine-learning/) module on Microsoft Learn.
+          One of the most common machine learning model architectures for computer vision is a convolutional neural network (CNN), a type of deep learning architecture. CNNs use filters to extract numeric feature maps from images, and then feed the feature values into a deep learning model to generate a label prediction. For example, in an image classification scenario, the label represents the main subject of the image (in other words, what is this an image of?). You might train a CNN model with images of different kinds of fruit (such as apple, banana, and orange) so that the label that is predicted is the type of fruit in a given image.
+          
+          During the training process for a CNN, filter kernels are initially defined using randomly generated weight values. Then, as the training process progresses, the models predictions are evaluated against known label values, and the filter weights are adjusted to improve accuracy. Eventually, the trained fruit image classification model uses the filter weights that best extract features that help identify different kinds of fruit.
+          
+          The following diagram illustrates how a CNN for an image classification model works:
+          
+          [Diagram of a convolutional neural network.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/convolutional-neural-network.png)
+          1. Images with known labels (for example, 0: apple, 1: banana, or 2: orange) are fed into the network to train the model.
+          2. One or more layers of filters is used to extract features from each image as it is fed through the network. The filter kernels start with randomly assigned weights and generate arrays of numeric values called feature maps. Additional layers may "pool" or "downsize" the feature maps to create smaller arrays that emphasize the key visual features extracted by the filters.
+          3. The feature maps are flattened into a single dimensional array of feature values.
+          4. The feature values are fed into a fully connected neural network.
+          5. The output layer of the neural network uses a softmax or similar function to produce a result that contains a probability value for each possible class, for example [0.2, 0.5, 0.3].
+          During training the output probabilities are compared to the actual class label - for example, an image of a banana (class 1) should have the value [0.0, 1.0, 0.0]. The difference between the predicted and actual class scores is used to calculate the loss in the model, and the weights in the fully connected neural network and the filter kernels in the feature extraction layers are modified to reduce the loss.
+          
+          The training process repeats over multiple epochs until an optimal set of weights has been learned. Then, the weights are saved and the model can be used to predict labels for new images for which the label is unknown.
+           Note
+          
+          CNN architectures usually include multiple convolutional filter layers and additional layers to reduce the size of feature maps, constrain the extracted values, and otherwise manipulate the feature values. These layers have been omitted in this simplified example to focus on the key concept, which is that filters are used to extract numeric features from images, which are then used in a neural network to predict image labels.
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          CNNs have been at the core of computer vision solutions for many years. While they're commonly used to solve image classification problems as described previously, they're also the basis for more complex computer vision models. For example, object detection models combine CNN feature extraction layers with the identification of regions of interest in images to locate multiple classes of object in the same image. Many advances in computer vision over the decades have been driven by improvements in CNN-based models.
+          
+          However, in another AI discipline - natural language processing (NLP), another type of neural network architecture, called a transformer has enabled the development of sophisticated models for language.
+          Transformers work by processing huge volumes of data, and encoding language tokens (representing individual words or phrases) as vector-based embeddings (arrays of numeric values). A technique called attention is used to assign embedding values that reflect different aspects of how each token is used in the context of other tokens. You can think of the embeddings as vectors in multidimensional space, in which each dimension embeds a linguistic attribute of a token based on its context in the training text, creating semantic relationships between tokens. Tokens that are commonly used in similar contexts define vectors that are more closely aligned than unrelated words.
+          
+          [Diagram of token vectors in a 3D space.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/language-encoder.png)
+          
+          Tokens that are semantically similar are encoded in similar directions, creating a semantic language model that makes it possible to build sophisticated NLP solutions for text analysis, translation, language generation, and other tasks.
+           Note
+          
+          In reality, encoders in transformer networks create vectors with many more dimensions, defining complex semantic relationships between tokens based on linear algebraic calculations. The math involved is complex, as is the architecture of a transformer model. Our goal here is just to provide a conceptual understanding of how encoding creates a model that encapsulates relationships between entities.
+          The success of transformers as a way to build language models has led AI researchers to consider whether the same approach would be effective for image data. The result is the development of vision transformer (ViT) models, in which a model is trained using a large volume of images. Instead of encoding text-based tokens, the transformer extracts patches of pixel values from the image, and generates a linear vector from the pixel values.
+          
+          [Diagram of a photo with patches assigned to vectors.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/vision-transformer.png)
+          
+          The same attention technique that's used in language models to embed contextual relationships between tokens, is used to determine contextual relationships between the patches. The key difference is that instead of encoding linguistic characteristics into the embedding vectors, the embedded values are based on visual features, like color, shape, contrast, texture, and so on. The result is a set of embedding vectors that creates a multidimensional "map" of visual features based on how they are commonly seen in the training images.
+          
+          [Diagram of vision embeddings.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/vision-encoder.png)
+          
+          As with language models, the embeddings result in visual features that are used in similar context being assigned similar vector directions. For example, the visual features common in a hat may be contextually related to the visual features that are common in a head; because the two things are often seen together. The model has no understanding of what a "hat" or a "head" is; but it can infer a semantic relationship between the visual characteristics.
+          A language transformer creates embeddings that define a linguistic vocabulary that encode semantic relationships between words. A vision transformer creates a visual vocabulary that does the same for visual features. When the training data includes images with associated text descriptions, we can combine the encoders from both of these transformers in a multimodal model; and use a technique called cross-model attention to define a unified spatial representation of the embeddings, like this.
+          
+          [Diagram of a multi-modal model that combines language and vision embeddings.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/multi-modal-model.png)
+          
+          This combination of language and vision embeddings enables the model to discern semantic relationships between language and visual features. This capability in turn enables the model to predict complex descriptions for images it hasn't previously seen, by recognizing visual features and searching the shared vector space for associated language.
+          
+          [Photograph of a person in a park with a hat and a backpack.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/image-description.png)
+          
+          A person in a park with a hat and a backpack
+          Completed100 XP
+          - 2 minutes
+          Choose your preferred content format
+          The same multimodal model architecture that enables AI to create natural language responses to visual input, can also be used to enable it to create images in response to natural language prompts. By identifying the visual features associated with language, an image synthesis model can take a description of a desired image or video and generate it.
+          
+          Most modern image-generation models use a technique called diffusion, in which a prompt is used to identify a set of related visual features that can be combined to create an image. The image is then created iteratively, starting with a random set of pixel values and removing "noise" to create structure. After each iteration, the model evaluates the image so far to compare it to the prompt, until a final image that depicts the desired scene is produced.
+          
+          For example, the prompt "A dog carrying a stick in its mouth" might result in a diffusion process with the following iterations:
+          
+          [Diagram of a series of images of a dog with increasing visual structure.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/diffusion.png)
+          
+          Some models can apply a similar process to generating video. The video generation process uses the same technique to identify visual features that are associated with language tokens, but also takes into account factors like the physical behavior of objects in the real world (such as ensuring that a dog walks with its feet on the ground) and the temporal progression (so that the video depicts a logical sequence of activity).
+          Completed100 XP
+          - 15 minutes
+          Now it's your chance to explore computer vision! In this exercise, you'll use a computer vision model to identify the contents of images.
+          
+          [Screenshot of the chat playground app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/chat-playground.png)
+          
+          Use the following button to start the exercise
+          
+          [Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2339549) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-computer-vision/media/launch-exercise.png))
+          ,Module assessment
+          Completed200 XP
+          - 3 minutes
+          1. 
+          Computer vision is based on the manipulation and analysis of what kinds of values in an image?
+          Timestamps in photograph metadata
+          Pixels
+          Image file names
+          2. 
+          What is the primary role of filters in a convolutional neural network (CNN) used for image classification?
+          To apply visual effects to enhance image appearance.
+          To extract numeric features from images for use in a neural network.
+          To compress image size for faster processing.
+          3. 
+          Which description best matches a Vision Transformer (ViT?
+          A tool that applies filters to images, changing their visual appearance.
+          An AI agent that converts a large language model to a vision model.
+          A model that uses attention to process image patches and create contextual embeddings.
+          
+          Completed100 XP
+          - 1 minute
+          Choose your preferred content format
+          Computer vision is built on the analysis and manipulation of numeric pixel values in images. Machine learning models are trained using a large volume of images to enable common computer vision scenarios, such as image classification, object detection, semantic segmentation, caption generation, and others.
+          
+          The models used for computer vision tasks have evolved from statistics-based image classifiers through convolutional neural networks to today's transformer-based multimodal models. Cutting-edge models can not only interpret visual input, but also generate visual output.
+           Tip
+          
+          For more information, see [What is Azure Vision?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-computer-vision).
+          - 28 min
+          - Module
+          - 7 Units
+          AI information extraction enables you to extract data values from documents, images, and other unstructured data sources.
+          - [Introduction](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+          - [Overview of information extraction](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/2-overview/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)2 min
+          - [Optical character recognition (OCR)](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/3-vision-extraction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Field extraction and mapping](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/4-form-extraction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Exercise - Explore AI information extraction](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/6b-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+          - [Module assessment](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/7-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Summary](https://learn.microsoft.com/en-us/training/modules/introduction-information-extraction/8-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+          ",Introduction
+          Completed100 XP
+          - 1 minute
+          Choose your preferred content format
+          AI information extraction solutions are commonly used extract structured data fields from unstructured media such as documents, images, and even videos and audio recordings.
+           Note
+          
+          While we'll focus on information extraction from documents and images in this module, AI solutions are emerging that use speech recognition and other advanced techniques to extract information from different media formats, such as videos and audio recordings.
+          Scenarios for information extraction range from simple apps that can read contact information from a photograph of a business card, to highly complex business workflow automation systems that analyze and process financial and legal documents.
+          
+          [Diagram of a business card with extracted fields.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/business-card.png)
+          
+          Some common examples of information extraction scenarios include:
+          Invoice processing solutions can analyze invoices to extract:
+          - Vendor information: Company names, addresses, and contact details.
+          - Transaction details: Invoice numbers, dates, and payment terms.
+          - Line items: Product descriptions, quantities, unit prices, and totals.
+          - Tax information: Tax rates, amounts, and exempt items.
+          Receipt processing solutions might need to read receipts to extract:
+          - Merchant details: Store names, locations, and transaction IDs.
+          - Purchase information: Items purchased, prices, and discounts.
+          - Payment details: Payment methods, change amounts, and loyalty points.
+          Financial statements can be processed to extract:
+          - Account information: Account numbers, balances, and transaction histories.
+          - Performance metrics: Revenue, expenses, and profit margins.
+          - Compliance data: Regulatory reporting fields, and audit trail information.
+          Contract processing solutions can be used to extract:
+          - Party information: Contracting parties, signatories, and witnesses.
+          - Terms and conditions: Effective dates, renewal terms, and termination clauses.
+          - Financial terms: Payment schedules, penalties, and insurance requirements.
+          Regulatory forms that might need to be processed include:
+          - Tax documents: W-2s, 1099s, and other tax forms.
+          - Insurance forms: Policy numbers, claim amounts, and incident details.
+          - Government forms: Application data and certification requirements.
+          Medical records can be processed to retrieve:
+          - Patient information: Demographics, medical record numbers, and insurance details.
+          - Clinical data: Diagnoses, treatments, medication lists, and vital signs.
+          - Administrative data: Appointment schedules, billing codes, and provider information.
+          Shipping documents often contain vital details such as:
+          - Shipment details: Tracking numbers, weights, and dimensions.
+          - Address information: Sender and recipient details, and delivery instructions.
+          - Customs documentation: Commodity codes, values, and geographical origin.
+          Purchase Orders are commonly processed to extract:
+          - Vendor information: Supplier details and contact information.
+          - Product specifications: Item codes, descriptions, and quantities.
+          - Delivery requirements: Schedules, locations, and special instructions.
+          Using AI to extract information can be the foundation of workload automation systems for these scenarios, and many more.
+           Note
+          
+          We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+          ,Overview of information extraction
+          Completed100 XP
+          - 2 minutes
+          Choose your preferred content format
+          Information extraction is a workload that combines multiple AI techniques to extract data from content - often digital documents. A comprehensive information extraction solution involves elements of computer vision to detect text in image-based data; and machine learning, or increasingly generative AI, to semantically map the extracted text to specific data fields.
+          
+          [Diagram of the information extraction process.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/information-extraction.png)
+          1. Text detection and extraction from images using optical character recognition (OCR).
+          2. Value identification and mapping from the OCR results to data fields.
+          For example, an AI-powered expense claim processing solution might automatically extract the relevant fields from receipts to process claims more efficiently.
+          - Vendor: Fourth Coffee
+          - Date: 2024-08-15
+          - Subtotal: $6.48
+          - Tax: $0.49
+          - Total Claim: $6.97
+          When planning an information extraction solution, it's important to consider the requirements and constraints that the system must address. Some key considerations include:
+          - Document characteristics. The documents from which you need to extract data are the basis of the whole solution. Consider factors like:
+            - Layout consistency: Standardized forms favor template-based approaches, while a need to process multiple formats and layouts might require a more complex machine learning based solution.
+            - Volume requirements: High-volume processing benefits from automated machine learning models that run on optimized system hardware.
+            - Accuracy requirements: Critical applications might need human-in-the-loop validation.
+          - Technical infrastructure requirements and constraints. Your solution will require hardware and software infrastructure to run. Consider factors like:
+            - Security and privacy: The documents you're processing might contain sensitive or confidential data. Your solution must include adequate measures to secure access to the data and compliance with any industry requirements for storing and processing protected data.
+            - Processing power: Deep learning and generative AI models commonly used in information extraction solutions require significant computational resources.
+            - Latency requirements: Real-time processing might limit model complexity.
+            - Scalability needs: Cloud-based solutions offer better scalability for variable workloads.
+            - Integration complexity: Consider API compatibility and data format requirements.
+           Tip
+          
+          In many cases, information extraction solutions can be built using software services, such as Azure Document Intelligence in Microsoft Foundry Tools and Azure Content Understanding in Microsoft Foundry Tools. Using services such as these as the foundation for your solution can greatly reduce the development effort required while providing highly scalable, industry-proven performance, accuracy, and integration capabilities.
+          ,Optical character recognition (OCR)
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          Optical Character Recognition (OCR) is a technology that automatically converts visual text in images - whether from scanned documents, photographs, or digital files—into editable, searchable text data. Rather than manually transcribing information, OCR enables automated data extraction from:
+          - Scanned invoices and receipts
+          - Digital photographs of documents
+          - PDF files containing images of text
+          - Screenshots and captured content
+          - Forms and handwritten notes
+          The OCR pipeline consists of five essential stages that work together to transform visual information into text data.
+          
+          [Diagram of the OCR pipeline.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/optical-character-recognition.png)
+          
+          The stages in the OCR process are:
+          1. Image acquisition and input.
+          2. Preprocessing and image enhancement.
+          3. Text region detection.
+          4. Character recognition and classification.
+          5. Output generation and post-processing.
+          Let's examine each stage in more depth.
+          The pipeline begins when an image containing text enters the system. This could be:
+          - A photograph taken with a smartphone camera.
+          - A scanned document from a flatbed or document scanner.
+          - A frame extracted from a video stream.
+          - A PDF page rendered as an image.
+           Tip
+          
+          Image quality at this stage significantly impacts the final accuracy of text extraction.
+          Before text detection begins, the following techniques are used to optimize the image for better recognition accuracy:
+          - Noise reduction removes visual artifacts, dust spots, and scanning imperfections that could interfere with text detection. The specific techniques used to perform noise reduction include:
+            - Filtering and image processing algorithms: Gaussian filters, median filters, and morphological operations.
+            - Machine learning models: Denoising autoencoders and convolutional neural networks (CNNs) trained specifically for document image cleanup.
+          - Contrast adjustment enhances the difference between text and background to make characters more distinct. Again, there are multiple possible approaches:
+            - Classical methods: Histogram equalization, adaptive thresholding, and gamma correction.
+            - Machine learning: Deep learning models that learn optimal enhancement parameters for different document types.
+          - Skew correction detects and corrects document rotation, ensuring text lines are properly aligned horizontally. Techniques for skew correction include:
+            - Mathematical techniques: Hough transform for line detection, projection profiles, and connected component analysis.
+            - Neural network models: Regression CNNs that predict rotation angles directly from image features.
+          - Resolution optimization adjusts image resolution to the optimal level for character recognition algorithms. You can optimize image resolution with:
+            - Interpolation methods: Bicubic, bilinear, and Lanczos resampling algorithms.
+            - Super-resolution models: Generative adversarial networks (GANs) and residual networks that intelligently upscale low-resolution text images.
+          The system analyzes the preprocessed image to identify areas that contain text by using the following techniques:
+          - Layout analysis distinguishes between text regions, images, graphics, and white space areas. Techniques for layout analysis include:
+            - Traditional approaches: Connected component analysis, run-length encoding, and projection-based segmentation.
+            - Deep learning models: Semantic segmentation networks like U-Net, Mask R-CNN, and specialized document layout analysis models (for example, LayoutLM, or PubLayNet-trained models).
+          - Text block identification groups individual characters into words, lines, and paragraphs based on spatial relationships. Common approaches include:
+            - Classical methods: Distance-based clustering, white space analysis, and morphological operations
+            - Neural networks: Graph neural networks and transformer models that understand spatial document structure
+          - Reading order determination establishes the sequence in which text should be read (left-to-right, top-to-bottom for English). The correct order can be determined by:
+            - Rule-based systems: Geometric algorithms using bounding box coordinates and spatial heuristics.
+            - Machine learning models: Sequence prediction models and graph-based approaches that learn reading patterns from training data.
+          - Region classification identifies different types of text regions (headers, body text, captions, tables).
+            - Feature-based classifiers: Support vector machines (SVMs) using handcrafted features like font size, position, and formatting
+            - Deep learning models: Convolutional neural networks and vision transformers trained on labeled document datasets
+          This is the core of the OCR process where individual characters are identified:
+          - Feature extraction: Analyzes the shape, size, and distinctive characteristics of each character or symbol.
+            - Traditional methods: Statistical features like moments, Fourier descriptors, and structural features (loops, endpoints, intersections)
+            - Deep learning approaches: Convolutional neural networks that automatically learn discriminative features from raw pixel data
+          - Pattern matching: Compares extracted features against trained models that recognize different fonts, sizes, and writing styles.
+            - Template matching: Direct comparison with stored character templates using correlation techniques
+            - Statistical classifiers: Hidden Markov Models (HMMs), Support Vector Machines, and k-nearest neighbors using feature vectors
+            - Neural networks: Multi-layer perceptrons, CNNs, and specialized architectures like LeNet for digit recognition
+            - Advanced deep learning: Residual networks (ResNet), DenseNet, and EfficientNet architectures for robust character classification
+          - Context analysis: Uses surrounding characters and words to improve recognition accuracy through dictionary lookups and language models.
+            - N-gram models: Statistical language models that predict character sequences based on probability distributions.
+            - Dictionary-based correction: Lexicon lookup with edit distance algorithms (such as Levenshtein distance) for spelling correction.
+            - Neural language models: LSTM and transformer-based models (like BERT variants) that understand contextual relationships.
+            - Attention mechanisms: Transformer models that focus on relevant parts of the input when making character predictions.
+          - Confidence scoring: Assigns probability scores to each recognized character based on how certain the system is about its identification.
+            - Bayesian approaches: Probabilistic models that quantify uncertainty in character predictions.
+            - Softmax outputs: Neural network final layer activations converted to probability distributions.
+            - Ensemble methods: Combining predictions from multiple models to improve confidence estimates.
+          The final stage converts recognition results into usable text data:
+          - Text compilation: Assembles individual character recognitions into complete words and sentences.
+            - Rule-based assembly: Deterministic algorithms that combine character predictions using spatial proximity and confidence thresholds.
+            - Sequence models: Recurrent neural networks (RNNs) and Long Short-Term Memory (LSTM) networks that model text as sequential data.
+            - Attention-based models: Transformer architectures that can handle variable-length sequences and complex text layouts.
+          - Format preservation: Maintains document structure including paragraphs, line breaks, and spacing.
+            - Geometric algorithms: Rule-based systems using bounding box coordinates and white space analysis.
+            - Layout understanding models: Graph neural networks and document AI models that learn structural relationships.
+            - Multi-modal transformers: Models like LayoutLM that combine text and layout information for structure preservation.
+          - Coordinate mapping: Records the exact position of each text element within the original image.
+            - Coordinate transformation: Mathematical mapping between image pixels and document coordinates.
+            - Spatial indexing: Data structures like R-trees and quad-trees for efficient spatial queries.
+            - Regression models: Neural networks trained to predict precise text positioning coordinates.
+          - Quality validation: Applies spelling and grammar checks to identify potential recognition errors.
+            - Dictionary-based validation: Lookup against comprehensive word lists and specialized domain vocabularies.
+            - Statistical language models: N-gram models and probabilistic parsers for grammar and context validation.
+            - Neural language models: Pre-trained models like GPT or BERT fine-tuned for OCR error detection and correction.
+            - Ensemble validation: Combining multiple validation approaches to improve error detection accuracy.
+          Completed100 XP
+          - 3 minutes
+          Choose your preferred content format
+          Field extraction is the process of taking text output from OCR and mapping individual text values it to specific, labeled data fields that correspond to meaningful business information. While OCR tells you what text exists in a document, field extraction tells you what that text means and where it belongs in your business systems.
+          Field extraction follows a systematic pipeline that transforms OCR output into structured data.
+          
+          [Diagram of the field extraction pipeline.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/field-extraction.png)
+          
+          The stages in the field extraction process are:
+          1. OCR output ingestion.
+          2. Field detection and candidate identification.
+          3. Field mapping and association.
+          4. Data normalization and standardization.
+          5. Integration with business processes and systems.
+          Let's explore these stages in more detail.
+          The process begins with the structured output from the OCR pipeline, which can include:
+          - Raw text content: The actual characters and words extracted from the document
+          - Positional metadata: Bounding box coordinates, page locations, and reading order information
+          - Confidence scores: OCR engine confidence levels for each text element
+          - Layout information: Document structure, line breaks, paragraph boundaries
+           Note
+          
+          Unlike simple text processing, field extraction heavily relies on where text appears in the document, not just what it says. The position of "12345" might help determine whether it's an invoice number, customer ID, or phone number.
+          This stage identifies potential field value in the OCR output. There are multiple approaches that can be used, independently or in combination, to determine the likely fields in the OCR results.
+          Templates for field detection rely on rule-based pattern matching. Field identification can be accomplished using techniques such as:
+          - Predefined document layouts with known field positions and anchor keywords.
+          - Searches for label-value pairs like "Invoice Number:", "Date:", "Total:".
+          - Regular expressions and string matching algorithms.
+          Advantages of a template-based approach include high accuracy for known document types, fast processing, and explainable results.
+          
+          Limitations of the approach include the requirement for manual template creation, and complexity caused by layout variations or field naming inconsistencies.
+          Instead of hard-coded logic to extract fields based on known names and locations, you can use a corpus of example documents to train a machine learning model that extracts the fields based on learned relationships. Transformer-based models in particular are good at applying contextual cues to identify patterns, and so are often the basis of a field detection solution.
+          
+          Training approaches for field detection machine learning models include:
+          - Supervised learning: Trained on labeled datasets with known field locations.
+          - Self-supervised learning: Pre-trained on large document corpora to understand layout patterns.
+          - Multi-modal learning: Combines text, visual, and positional features.
+          - Advanced model architectures, such as:
+            - Graph Neural Networks (GNNs) that model spatial relationships between text elements as graph connections.
+            - Attention mechanisms that focus on relevant document regions when predicting field values.
+            - Sequence-to-sequence models that transform unstructured text sequences into structured field assignments.
+          Recent advances in large language models (LLMs) have led to the emergence of generative AI-based field detection techniques, which enable more efficient and effective field detection through:
+          - Prompt-based extraction in which you provide the LLM with document text and a schema definition, and it matches the text to the fields in the schema.
+          - Few-shot learning in which you can train models with minimal examples to extract custom fields.
+          - Chain-of-thought reasoning that guides models through step-by-step field identification logic.
+          After candidate values are identified, they must be mapped to specific schema fields:
+          In many cases, data fields in a document or form are discrete values that can be mapped to keys - for example, the vendor name, date, and total amount in a receipt or invoice. Common techniques used for key-value pairing include:
+          - Proximity analysis:
+            - Spatial clustering: Group nearby text elements using distance algorithms.
+            - Reading order analysis: Follow natural text flow to associate labels with values.
+            - Geometric relationships: Use alignment, indentation, and positioning patterns.
+          - Linguistic pattern recognition:
+            - Named entity recognition (NER): Identify specific entity types (dates, amounts, names).
+            - Part-of-speech tagging: Understand grammatical relationships between labels and values.
+            - Dependency parsing: Analyze syntactic relationships in text.
+          Some documents include more complex structures of text, such as tables. For example, a receipt or invoice might include a table of line items with columns for the item name, price, and the quantity purchased.
+          
+          The presence of a table can be determined using several techniques, including:
+          - Specialized convolutional neural network (CNN) architectures for table structure recognition.
+          - Object detection approaches adapted for table cell identification.
+          - Graph-based parsing approaches that model table structure as graph relationships between cells.
+          To map the values in the cells in a table to fields, the field extraction solution might employ one or more of the following techniques:
+          - Row-column association to map table cells to specific field schemas.
+          - Header detection to identify column headers to understand field meanings.
+          - Hierarchical processing to handle nested table structures and sub-totals.
+          Field extraction accuracy depends on many factors, and the algorithms and models used to implement the solution are subject to potential misidentification or value interpretation errors. To account for this, various techniques are employed to evaluate the accuracy of the predicted field values; including:
+          - OCR confidence: Inheriting confidence scores from the underlying text recognition.
+          - Pattern matching confidence: Scoring based on how well extraction matches expected patterns.
+          - Context validation: Verifying that field values make sense in document context.
+          - Cross-field validation: Checking relationships between extracted fields (for example, verifying that line item subtotals sum to the overall invoice total).
+          Raw extracted values are generally transformed into consistent formats (for example to ensure that all extracted dates are expressed in the same date format) and checked for validity.
+          Examples of format standardization that can be implemented include:
+          - Date normalization:
+            - Format detection: Identify various date formats (MM/DD/YYYY, DD-MM-YYYY, etc.).
+            - Parsing algorithms: Convert to standardized ISO formats.
+            - Ambiguity resolution: Handle cases where date format is unclear.
+          - Currency and numeric processing:
+            - Symbol recognition: Handle different currency symbols and thousand separators.
+            - Decimal normalization: Standardize decimal point representation across locales.
+            - Unit conversion: Convert between different measurement units as needed.
+          - Text standardization:
+            - Case normalization: Apply consistent capitalization rules.
+            - Encoding standardization: Handle different character encodings and special characters.
+            - Abbreviation expansion: Convert common abbreviations to full forms.
+          As well as formatting the extracted fields, the standardization process enables further validation of the values that have been extracted through techniques like:
+          - Rule-based validation:
+            - Format checking: Verify extracted values match expected patterns (phone numbers, email addresses).
+            - Range validation: Ensure numeric values fall within reasonable bounds.
+            - Required field checking: Confirm all mandatory fields are present.
+          - Statistical validation:
+            - Outlier detection: Identify unusually high or low values that might indicate extraction errors.
+            - Distribution analysis: Compare extracted values against historical patterns.
+            - Cross-document validation: Check consistency across related documents.
+          The final stage of the process usually involves integrating the extracted field values into a business process or system:
+          The extracted fields might need to be further transformed or reformatted so they align with application schemas used for data ingestion into downstream systems. For example:
+          - Database schemas: Map extracted fields to specific database columns and tables.
+          - API payloads: Format data for REST API consumption by downstream systems.
+          - Message queues: Prepare structured messages for asynchronous processing.
+          The schema-mapping process might involve transformations such as:
+          - Field renaming: Map extracted field names to target system conventions.
+          - Data type conversion: Ensure values match expected data types in target systems.
+          - Conditional logic: Apply business rules for field transformation and derivation.
+          Another common task after the extraction process has finished is to evaluate and report on the quality of the extracted data. The report can include information such as:
+          - Field-level confidence scores: Individual confidence ratings for each extracted field.
+          - Document-level quality assessment: Overall extraction success metrics.
+          - Error categorization: Classify extraction failures by type and cause.
+          Completed100 XP
+          - 15 minutes
+          Now it's your chance to explore AI-powered information extraction! In this exercise, you'll use optical character recognition combined with a large language model to extract and interpret fields from receipts.
+          
+          [Screenshot of the Information Extractor app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/information-extractor.png)
+          
+          Use the following button to start the exercise
+          
+          [Button to launch the exercise.](https://go.microsoft.com/fwlink/?linkid=2339457) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/introduction-information-extraction/media/launch-exercise.png))
+          Completed200 XP
+          - 3 minutes
+          1. 
+          Which of these statements accurately defines AI information extraction?
+          Using SQL code to query a database.
+          Copying files from cloud storage to local disks.
+          Analyzing unstructured content to identify and extract relevant fields and values.
+          2. 
+          How is OCR used in the information extraction process?
+          Online Content Retrieval (OCR) is used to copy cloud data to a local device for processing.
+          Optical character recognition (OCR) is used to convert images of text into machine-readable text data.
+          Open Conversion Routine (OCR) is a method for converting JSON data into images.
+          3. 
+          How does generative AI enhance the data extraction process?
+          By using semantic language models to accurately match extracted values to data fields.
+          By manually coding extraction rules for each document type.
+          By generating new documents from scratch.,Summary
+          Completed100 XP
+          - 1 minute
+          Choose your preferred content format
+          In this module, you learned how organizations can use AI-powered information extraction to process content. Extracting key information from unstructured content and storing it in structured formats, such as databases, is essential but often time-consuming and error-prone. AI-powered information extraction uses techniques like optical character recognition (OCR), text analysis, machine learning, and generative AI to automate the identification and extraction of data.
+           Tip
+          
+          For more information about developing information extraction solutions on Microsoft Azure, see:
+          - [Azure Document Intelligence in Foundry Tools](https://azure.microsoft.com/products/ai-foundry/tools/document-intelligence).
+          - [Azure Content Understanding in Foundry Tools](https://azure.microsoft.com/products/ai-foundry/tools/content-understanding).
+          - 34 min
+          - Module
+          - 8 Units
+          Retrieval-augmented generation (RAG) helps generative AI applications produce responses that are grounded in relevant information. In this module, you'll explore how a RAG solution prepares, retrieves, and uses data to generate answers.
+          - [Introduction](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/1-introduction/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)1 min
+          - [Understand retrieval-augmented generation](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/2-understand-rag/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Prepare data for retrieval](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/3-prepare-data/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Retrieve information and generate a response](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/4-retrieve-generate/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Evaluate a RAG solution](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/5-evaluate-rag/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)3 min
+          - [Exercise - Explore RAG](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/6-exercise/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)15 min
+          - [Module assessment](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/7-knowledge-check/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)5 min
+          - [Summary](https://learn.microsoft.com/en-us/training/modules/rag-fundamentals/8-summary/?ns-enrollment-type=learningpath&ns-enrollment-id=learn.ai-technical-concepts)",Introduction
+            Completed100 XP
+            - 1 minute
+            Choose your preferred content format
+            Large language models (LLMs) can generate fluent and useful responses, but their training data doesn't contain every piece of information that an application might need. A model might not know about your organization's private documents, and its training data can become outdated. It can also produce a plausible response that isn't supported by reliable evidence.
+            
+            Retrieval-augmented generation (RAG) addresses these limitations by combining search with generative AI. Before asking a model to answer a question, a RAG application finds relevant information and adds it to the prompt. The model can then use that information to produce a more relevant, grounded response.
+            
+            In this module, you'll explore the main stages of RAG and the key decisions that influence the quality of a RAG solution.
+             Note
+            
+            We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+            Completed100 XP
+            - 3 minutes
+            Choose your preferred content format
+            A language model generates responses from patterns learned during training and the context supplied in its prompt. The model's training gives it broad language and reasoning capabilities, but it has some important limitations:
+            - Knowledge boundaries: The model doesn't automatically know private information, such as an organization's product catalog, support articles, or policies.
+            - Knowledge freshness: Information learned during training can become outdated.
+            - Verifiability: A model can generate a confident response that isn't supported by a reliable source.
+            For example, suppose a company wants to use an AI agent to help employees with expense claims policies and procedures. The model used by the agent might have some inherent semantic understanding of expense-related terminology and concepts from its training data; but when asked for company-specific information, such as "How much can I claim for a taxi ride?", the model can only provide a general response.
+            
+            [Screenshot of an expenses agent returning a general response to a question.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/ungrounded-response.png)
+            
+            To generate responses that are specific to the company's expenses policies, the agent needs access to specialized knowledge to provide context to the user's question.
+            RAG solves the context problem by combining two capabilities:
+            - Retrieval: Searching selected data sources for information relevant to a user's question.
+            - Augmented generation: Adding the retrieved information to the prompt as context and asking a language model to generate an answer based on that context.
+            To answer the question "How much can I claim for a taxi ride?", A RAG application can search the organization's expense policy documentation, retrieve the section about limits for taxi and rideshare expenses, and include that section in the prompt. The model can then answer using the organization's information rather than relying only on its training.
+            
+            [Screenshot of an expenses agent returning a grounded response to a question.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/grounded-response.png)
+            
+            The result is described as a grounded response because the answer is based on supplied source content. A RAG application can also return citations or links so the user can inspect that content.
+             Note
+            
+            RAG doesn't change the language model's learned parameters. Instead, it supplies relevant knowledge at run time, when the user makes a request. Over time, if the organization's expense policies change, the documentation (and the index used to search it) can be updated; so the agent continues to provide up-to-date and relevant information without any need to retrain the model.
+            ,Prepare data for retrieval
+            Completed100 XP
+            - 3 minutes
+            Choose your preferred content format
+            Retrieval can only find information that has been made searchable. Before a RAG application can answer questions, it needs an indexing pipeline that prepares source data.
+            
+            The indexing pipeline typically performs the following tasks:
+            
+            [Diagram of the text extraction and indexing pipeline.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/prepare-rag.png)
+            1. Extracts the source text.
+            2. Chunks the text into focused passages.
+            3. Encodes the text tokens as embedding vectors that encapsulate semantic attributes.
+            4. Creates an index that can be used to search the embeddings.
+            Let's explore each of these tasks in more depth.
+            A RAG knowledge source might include product manuals, policies, webpages, database records, support tickets, or other approved content. The preparation process commonly includes these steps:
+            1. Load content from each source.
+            2. Extract useful text and structure from formats such as PDF files, presentations, webpages, or tables.
+            3. Clean content by removing repeated headers, navigation text, or other elements that aren't useful for answering questions.
+            4. Add metadata such as a title, source URL, category, access permissions, and last-updated date.
+            Source quality matters. Duplicate, outdated, or contradictory documents can lead to poor retrieval and unreliable answers. Access controls are also essential: users should only retrieve content they're authorized to view.
+            Documents are often too large to send to a model in full. They're divided into smaller passages called chunks. Each chunk should contain enough context to be meaningful while remaining focused on a specific topic.
+            
+            For example, a travel policy could be split by section into separate chunks for flights, hotels, meals, and ground transportation. A question about hotel limits can then retrieve the hotel section without adding the entire policy to the prompt.
+            
+            Chunking involves a tradeoff:
+            - Chunks that are too large can contain irrelevant information and consume more of the model's context window.
+            - Chunks that are too small can separate a statement from headings, definitions, or other information needed to understand it.
+            Chunks often overlap slightly so that important context isn't lost at a boundary.
+            RAG solutions commonly use an embedding model to convert each chunk into an embedding: a numerical vector that represents semantic characteristics of the content. Chunks with similar meanings have embeddings that are close to one another in vector space, even when they use different words.
+            The solution stores the chunks, their embeddings, and useful metadata in a search index or vector-enabled data store. The index might support:
+            - Keyword search, which is effective when exact words, identifiers, or product codes matter.
+            - Vector search, which finds semantically similar content.
+            - Hybrid search, which combines keyword and vector search.
+            Preparing data isn't a one-time task. The indexing pipeline should add new content, update changed content, and remove content that is no longer valid so retrieval reflects the current source of truth.
+            Completed100 XP
+            - 3 minutes
+            Choose your preferred content format
+            After content has been indexed, a RAG application can use it to answer a user's question. This phase happens at run time and usually follows a sequence of steps.
+            
+            [Diagram of the retrieval and prompt augmentation process.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/use-rag.png)
+            1. A user submits a prompt.
+            2. A search of the index retrieves relevant contextual text.
+            3. The context is added to the prompt.
+            4. The augmented prompt is submitted to the model, which returns a grounded response.
+            First, the application prepares the user's input as a search query. For vector search, it uses the same kind of embedding model used during indexing to convert the query into a vector. The search system compares the query vector with stored chunk vectors and returns the closest matches.
+            
+            For the question "What is the hotel allowance for an overseas conference?", semantic search might retrieve a policy section titled "International lodging expenses" even though the wording isn't identical.
+            
+            Retrieval can be refined in several ways:
+            - Apply metadata filters, such as a region, product, date, document type, or user permission.
+            - Combine keyword and vector results with hybrid search.
+            - Rank candidate results to place the most relevant passages first.
+            - Limit the number of results to avoid filling the prompt with weak or repetitive context.
+            The aim isn't to retrieve the most content. It's to retrieve the smallest set of content that provides sufficient, relevant evidence for the answer.
+            The application constructs a prompt that typically contains:
+            - System instructions that define the assistant's behavior.
+            - The user's question.
+            - The retrieved chunks as grounding context.
+            - Instructions to answer from the supplied context, acknowledge when the context is insufficient, and include citations when available.
+            For example, the application might instruct the model: "Answer the question using only the provided policy excerpts. If the excerpts don't contain the answer, say that you couldn't find it. Cite the source title."
+            
+            The prompt must distinguish trusted application instructions from retrieved content. Retrieved documents should be treated as data, not as instructions, because source content could contain text that attempts to redirect the model.
+            The language model uses the augmented prompt to generate the response. A well-designed application returns the answer together with links or citations to the retrieved sources. Citations help users verify the response and recognize when a source might be outdated or inappropriate.
+            
+            RAG reduces the likelihood of unsupported answers, but it doesn't eliminate them. The model might misinterpret good context, or the retriever might supply incomplete information. Applications should therefore be designed to say when the available evidence is insufficient and to support human review in high-impact scenarios.
+            Completed100 XP
+            - 3 minutes
+            Choose your preferred content format
+            A RAG application is a pipeline, so a good-sounding answer alone doesn't prove that the whole solution works well. Evaluation should examine both the information retrieved and the response generated from it.
+            Retrieval evaluation asks whether the search system returns useful source content.
+            
+            [Diagram of context retrieval.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/evaluate-retrieval.png)
+            
+            For a set of representative questions, consider:
+            - Relevance: Do the retrieved chunks address the question?
+            - Coverage: Is all the information needed for a complete answer present?
+            - Ranking: Are the strongest results placed ahead of weaker ones?
+            - Security and freshness: Is the content authorized for the user and still current?
+            If the correct information isn't retrieved, changing the generation prompt alone won't solve the problem. You might need to improve source content, chunk boundaries, metadata, query processing, search strategy, or ranking.
+            Generation evaluation considers how the model uses retrieved context.
+            
+            [Diagram of response generation.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/evaluate-generation.png)
+            
+            Considerations for evaluating generated content include:
+            - Groundedness: Is each claim supported by the retrieved content?
+            - Relevance: Does the response directly answer the user's question?
+            - Completeness: Does the answer include the important information in the context?
+            - Citation quality: Do citations point to sources that support the associated claims?
+            - Appropriate uncertainty: Does the application avoid guessing when the context is insufficient?
+            A useful test set contains realistic questions, expected source passages, and criteria for acceptable answers. It should also include difficult cases, such as ambiguous questions, questions with no answer in the data, outdated documents, and attempts to retrieve unauthorized information.
+            Retrieving and processing more chunks can improve coverage, but it also increases prompt size, response time, and cost. Too much context can even make it harder for the model to focus on the most relevant evidence. RAG design therefore involves balancing answer quality with latency and cost.
+            
+            [Diagram of balanced criteria.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/evaluate-overall.png)
+            
+            Monitoring real usage can reveal unanswered questions, weak citations, slow searches, and changes in content quality. Use these observations to improve the pipeline, and reevaluate it whenever data, models, prompts, or retrieval settings change.
+            Completed100 XP
+            - 15 minutes
+            Now it's your chance to explore RAG in a simple chat agent.
+            
+            In this exercise, you'll examine how providing a knowledge source to contextualize prompts improves the agent's responses.
+            
+            [Screenshot of the chat playground app used in the lab.](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/chat-playground.png)
+            
+            Use the following button to start the exercise
+            
+            [Button to launch the exercise.](https://go.microsoft.com/fwlink/?LinkId=2373030) ([image](https://learn.microsoft.com/en-us/training/wwl-data-ai/rag-fundamentals/media/launch-exercise.png))
+            Completed200 XP
+            - 5 minutes
+            1. 
+            What is the main purpose of retrieval-augmented generation (RAG)?
+            To retrain a language model whenever source information changes.
+            To ground generated responses in relevant information retrieved from a data source.
+            To replace a language model with a search engine.
+            2. 
+            Why are large documents commonly divided into chunks before they're indexed?
+            So the solution can retrieve focused passages that fit efficiently into a prompt.
+            So every chunk can be used to train a separate language model.
+            So the original documents no longer need to be stored.
+            3. 
+            What does an embedding represent in a RAG solution?
+            A numerical vector that captures semantic characteristics of content.
+            A set of instructions that defines the model's behavior.
+            A final answer generated for a user.
+            4. 
+            Which search approach can find a passage about 'company travel costs' when the query asks about 'business trip expenses,' even if the words differ?
+            Semantic vector search.
+            An exact filename match.
+            Random document selection.
+            5. 
+            A RAG response is fluent but contains an incorrect policy limit. What should be examined first?
+            Whether the correct and current policy passage was retrieved and supplied as context.
+            Whether the language model can produce a longer response.
+            Whether more unrelated documents can be added to the prompt.
+            ,Summary
+            Completed100 XP
+            - 1 minute
+            Choose your preferred content format
+            Retrieval-augmented generation (RAG) combines search with generative AI to produce responses grounded in relevant information. In this module, you learned how an indexing pipeline prepares source content by cleaning it, dividing it into chunks, creating embeddings, and storing it in a searchable index. You then explored how a RAG application retrieves relevant chunks, adds them to a prompt, and uses a language model to generate a response with supporting sources.
+            
+            You also learned that RAG quality depends on the complete pipeline. Effective solutions evaluate retrieval and generation separately, protect access to source content, keep indexes current, and balance answer quality with latency and cost.
+            For more information about the concepts discussed in this module, explore the following resources:
+            - [What are large language models (LLMs)?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-are-large-language-models-llms)
+            - [What is retrieval-augmented generation (RAG)?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-retrieval-augmented-generation-rag)
+            - [What is LLM evaluation?](https://azure.microsoft.com/resources/cloud-computing-dictionary/what-is-llm-evaluation)
+
+
+
+
+            This should be the intro slides .....
+            (I want this slides to be cinematic intro ... optimistic feeling ... smooth and soft .... opening ..... for this course )
+
+            What is Artificial Intelligence /
+
+            Ai is intelligence demonstrated by machines-which in turn are known as "AIs".The history ofAI dates back to the 1950s,when the first modern computers were built . 
+            ....from classical or symbolic AIs to AIs based on data and stats.Tpday , machine learning- the use of large data sets to train AI models such as artificail neural networks , to erfom tasks without being explicitly programmed to do so.......
+            
+
+            AN ELECTRIC BRAIN .(I also want to see the virtual brain animation before the text as the heading --- live )
+
+            Alan Turing had that a machine could carry out any computation with the right combination of symbols ... 
+
+            In 1943 ,SCIENTIST WALTER mCcULLOCH demonstrated THAT networks of units  based on human nerve cells , or neurons , passing electric signalback and fourth , could copy a turing machine .They suggested that the brain might be a kind of living computer , meaning that a program that ran on the human brain might also run on an electric brain .This theory is known as the principle of " multiple realizability". 
+
+            brain is a living computer ----------------- ( hardware ) -------------------but there's something running on it ----- whatever that is running on there can run also on an electric brain .  ( virtual brain )--- empty hardware |||Please correct this as am not sure what am trying to say ... " I want the ... 
+ 
+            ARTIFICIAL NEURONS .
+
+            Each of the 86 billion neurons n the human brain is effectively  a tiny processor , receiving electrical signal (inputs) from other neurons and sending out signals of its won (outputs).mCcULLOCH and Pitts realized that neurons can act as logic gates - devices that can switch on and off , depending on the input .The scientists described an imaginary neuron called a threshold logic unit".This neuron works first by ading the values of its inputs (signal from other neuron s) and then multiplying the values by a variable called a "weight" -This is the strength of a connection between neurons .If the inout signals exceed a certain value , the neuron is triggered to send an outpuyt signal .This triggering is called the 'activation function'.
+            (create a virtual representation of this )
+
+            REPLICATING THE MIND .
+
+            according to the principle of multiple realizability , the same computer programs can be run , or "realized", on different devices .computationalists argue that human thought is computable, and so can be realized by a macine as well as brain.If this is true , then it should be possible to write a program that replicates a human mind , which could then be copied and tranfered like any other program .This means that a person's mind could be uploaded to remote server , downloaded to a robot , and even duplicated innumerable times .
+
+            
+            Transparent tHINKING 
+            ..... Human-Human interaction { An individual knows what they themselves mean by "beelte",but they cannot be sure that it means the same thing to someone else .} 
+            The philosopher ludwig wittgen... (1889-1951) argued that a persons thoughts were like objects in a closed box - a box ito whihch only they coud "see'.We can never know what another person is really thinking or exactly what things mean to them , since the "box" is closed to us .A machine intelligence , however , could be examined in ways a human mind cannot .If the machine said it was thini of beelte ,its programming could be exposed - "opening the box"- to show precisely what it meant by "beetle".Such developments might , in turn ,shed light on the machnisms of human consiousness and thining . 
+            
+            
+            
+            Transparent Processing 
+            
+            Machine -learning models process data and make predictions using highly complex artificail neural netowkrrs (ANN) .The inner worlings of these models are often sid to be a "black box" since they are too complicated and abstract for humans to " observe ".This means that the results they produce cannot be properly undertood  and checked for errors or biases.An alternative approach , known as  "interpretable machine learning"  or "white box AI" , shines a light into the black box .White box AIs are desgined to give not just the result , but a breakdown of te processes they followed to react it .
+
+            
+
+            -----------------------
+
+            When Should I eat this apple ?  || Is a neuron that question ? ||  Is the algorithm that changes weights and create questions during training ... or questions like that are already created and only weight adjusted ? ||>>>>>>>>>>>>>
+
+Should I snack on an apple ?
+
+Inputs :
+Is it healthy? YES=1 * Weights (10) = 10
+Will it be filling ? NO=0 * Weights (5)=0
+Is it cheap?YES=1 * Weights (7) =7 
+
+10+0+7=17
+
+Minus 10 (the bias )=7
+
+Output :
+<0 =NO
+
+>0 =YES
+
+iF POSITIVE ANSWER THEN ANSWER IS PASSED TO THE OTHER NEARON .... now I want you to answer my above questions ... what is a neuron is it a question ...? does it ask the inout a questions ... since an algo is the neural network itself ? ...

@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json",
+    "test": "esbuild tests/nnlab.engine.test.ts --bundle --platform=node --format=esm --outfile=.test-dist/nnlab.engine.test.mjs --log-level=warning && node --test .test-dist/nnlab.engine.test.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",

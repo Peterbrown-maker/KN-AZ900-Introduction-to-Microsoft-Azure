@@ -1,0 +1,205 @@
+import type { Chapter } from '../types';
+import { sc, ms, mt, ord, ref } from './helpers';
+
+export const ch09: Chapter = {
+  id: 'speech',
+  number: 9,
+  title: 'Speech AI',
+  short: 'Speech',
+  icon: 'AudioLines',
+  accent: '#2dd4bf',
+  tagline: 'Teaching machines to listen — and to speak.',
+  description: 'Speech-enabled scenarios, the six-stage speech recognition pipeline, the four-stage speech synthesis pipeline, prosody, and Azure Speech with Voice Live in Foundry.',
+  summary: [
+    'Speech recognition (speech-to-text) converts audio into text; speech synthesis (text-to-speech) converts text into audio.',
+    'Recognition: capture → pre-process (MFCC) → acoustic model (phonemes) → language model → decoding (beam search) → post-processing.',
+    'Synthesis: text normalisation → linguistic analysis (G2P) → prosody generation → audio synthesis (neural vocoder).',
+    'Prosody (pitch, duration, intensity, pauses, stress) makes speech natural; flat prosody sounds robotic.',
+    'Azure Speech in Foundry Tools provides STT and TTS; Voice Live combines STT, reasoning and TTS for real-time voice agents.',
+  ],
+  lessons: [
+    {
+      id: 'l9-solutions',
+      title: 'Speech-enabled solutions',
+      minutes: 10,
+      sources: ['notes'],
+      objectives: ['Distinguish speech recognition from speech synthesis.', 'Identify business scenarios and considerations for speech.'],
+      intro: 'Speech is one of the most natural ways humans communicate. Bringing speech to AI creates intuitive, accessible, engaging experiences.',
+      blocks: [
+        { kind: 'table', headers: ['', 'Speech recognition', 'Speech synthesis'], rows: [
+          ['Also called', 'Speech-to-text (STT)', 'Text-to-speech (TTS)'],
+          ['Direction', 'Audio → text', 'Text → audio'],
+          ['AI "skill"', 'Hearing', 'Speaking'],
+          ['Example', 'Transcribing a meeting', 'Reading an article aloud'],
+        ] },
+        { kind: 'sim', id: 'speech-sorter', caption: 'Sort each scenario: recognition, synthesis, or both?' },
+        { kind: 'h', text: 'Why add speech?' },
+        { kind: 'list', items: ['**Expand accessibility** — users with visual impairments or mobility challenges.', '**Increase productivity** — hands-free multitasking.', '**Enhance user experience** — natural conversations.', '**Reach global audiences** — many languages and dialects.'] },
+        { kind: 'table', headers: ['Recognition scenarios', 'Synthesis scenarios'], rows: [
+          ['Customer service: real-time call transcription, routing, sentiment, searchable records', 'Conversational agents responding with natural voices on phone channels'],
+          ['Voice assistants: commands, Q&A, reminders, smart home, cars', 'Accessibility: reading web content and documents aloud; dyslexia support'],
+          ['Meeting transcription and live captions for deaf/hard-of-hearing participants', 'Notifications and alerts, navigation instructions'],
+          ['Healthcare: dictating notes into electronic health records', 'E-learning narration and pronunciation; entertainment voices and voiceovers'],
+        ] },
+        { kind: 'p', text: '**Combined** scenarios create two-way conversations: voice customer service, interactive voice response (IVR), language learning apps, voice-controlled vehicles.' },
+        { kind: 'h', text: 'Considerations before adding speech' },
+        { kind: 'list', items: ['**Audio quality** — background noise, microphone quality, bandwidth affect accuracy.', '**Language and dialect support**.', '**Privacy and compliance** — how audio is processed, stored, protected.', '**Latency** — real-time conversation vs batch transcription.', '**Accessibility standards** — meet WCAG; don\'t create new barriers.'] },
+        { kind: 'callout', tone: 'tip', title: 'Always offer alternatives', text: 'Provide alternative input and output methods. Some users prefer or require text even when speech is available. Start with one high-value speech scenario before building complex conversational flows.' },
+      ],
+      terms: [
+        { term: 'Speech-to-text (STT)', def: 'Converting spoken audio into written text (speech recognition).' },
+        { term: 'Text-to-speech (TTS)', def: 'Converting text into spoken audio (speech synthesis).' },
+        { term: 'IVR', def: 'Interactive voice response: phone systems that understand callers and respond by voice.' },
+      ],
+      traps: [{ claim: 'Live captions for a video call use speech synthesis.', truth: 'Captions turn speech into text — speech recognition.' }],
+      memory: 'Recognition hears; synthesis speaks.',
+      recap: ['STT vs TTS.', 'Combined = conversation.', 'Plan for noise, languages, privacy, latency, accessibility.'],
+      references: [ref.speech],
+      checks: [
+        sc('q9-1a', 'A navigation app announces "Turn left in 200 metres." Which capability is used?', [
+          ['Speech synthesis', 'Correct.'], ['Speech recognition', 'Recognition listens.'], ['Translation', 'No language change.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['wl-speech', 'wl-scen'],
+    },
+    {
+      id: 'l9-recognition',
+      title: 'How speech recognition works',
+      minutes: 14,
+      sources: ['notes'],
+      objectives: ['Describe the six stages of speech recognition.', 'Explain MFCC features, phonemes, language models and beam search.'],
+      intro: 'The journey from sound wave to text involves six coordinated stages.',
+      blocks: [
+        { kind: 'sim', id: 'speech-stt', caption: 'Step through the six stages, from waveform to formatted transcript.' },
+        { kind: 'steps', items: [
+          { title: '1. Audio capture', text: 'A microphone converts sound waves to a digital signal, sampled typically **16,000 times per second (16 kHz)** for speech (8–16 kHz is common; music uses 44.1 kHz). Basic filters remove hums and clicks.' },
+          { title: '2. Pre-processing (MFCC)', text: '**Mel-Frequency Cepstral Coefficients**: split audio into overlapping 20–30 ms frames → Fourier transform to frequencies → map to the Mel scale (human hearing) → extract ~13 coefficients per frame. Result: a sequence of compact feature vectors.' },
+          { title: '3. Acoustic modelling', text: 'A transformer predicts **phoneme** probabilities for each frame (e.g. frame 42: 80% /æ/, 15% /ɛ/). Attention resolves ambiguity using surrounding frames.' },
+          { title: '4. Language modelling', text: 'Vocabulary, grammar and patterns resolve ambiguity: "The weather is nice" beats "The whether is nice". Domain models improve medical or legal accuracy.' },
+          { title: '5. Decoding', text: '**Beam search** keeps a shortlist of top-scoring partial transcriptions, extends them, and prunes weak paths — choosing "Please send the report by Friday" over "Please sent the report buy Friday".' },
+          { title: '6. Post-processing', text: 'Capitalisation, punctuation, number formatting ("one thousand twenty three" → 1,023), profanity filtering, inverse text normalisation ("three p m" → 3 PM), confidence scoring.' },
+        ] },
+        { kind: 'p', text: '**Phonemes** are the smallest units of sound that distinguish words. English has about 44; "cat" is /k/ /æ/ /t/. Phonemes are language-specific: a model trained on English phonemes can\'t recognise Mandarin tones without retraining.' },
+        { kind: 'p', text: 'Azure Speech returns the transcript with metadata such as **word-level timestamps and confidence scores**, so apps can highlight uncertain words or trigger fallbacks. Because stages are separate, a quality problem can usually be traced to one stage: poor capture, weak language model, or aggressive post-processing.' },
+        { kind: 'callout', tone: 'warn', title: 'Trade-off', text: 'Decoding is computationally intensive. Real-time apps limit beam width and hypothesis depth to balance accuracy and latency.' },
+      ],
+      terms: [
+        { term: 'MFCC', def: 'Mel-frequency cepstral coefficients: compact audio features mimicking human hearing.' },
+        { term: 'Phoneme', def: 'The smallest unit of sound that distinguishes words.' },
+        { term: 'Acoustic model', def: 'Maps audio features to phoneme probabilities.' },
+        { term: 'Beam search', def: 'A decoding algorithm keeping the top candidate sequences at each step.' },
+      ],
+      traps: [{ claim: 'Pre-processing adds background noise or converts audio to .wmv.', truth: 'Pre-processing extracts feature vectors (MFCC) from the waveform for modelling.' }],
+      memory: 'Capture, Features, Phonemes, Words, Search, Polish.',
+      recap: ['Six stages.', 'MFCC → phonemes → words.', 'Language models fix homophones.'],
+      references: [ref.speech],
+      checks: [
+        sc('q9-2a', 'What activity happens during the pre-processing stage of speech recognition?', [
+          ['The audio is converted to .wmv format.', 'No.'], ['Background noise is added to the audio signal.', 'No.'], ['Feature vectors are extracted from the audio waveform for modelling.', 'Correct.'],
+        ], 2, ''),
+        sc('q9-2b', 'What are phonemes?', [
+          ['Artifacts removed during clean-up', 'No.'], ['The smallest units of sound in speech', 'Correct.'], ['AI models that generate audio', 'No.'],
+        ], 1, ''),
+      ],
+      objectiveIds: ['wl-speech'],
+    },
+    {
+      id: 'l9-synthesis',
+      title: 'How speech synthesis works',
+      minutes: 14,
+      sources: ['notes'],
+      objectives: ['Describe the four stages of speech synthesis.', 'Explain G2P conversion, prosody and neural vocoders.'],
+      intro: 'Speech synthesis builds toward a final audio waveform in four stages.',
+      blocks: [
+        { kind: 'sim', id: 'speech-tts', caption: 'Type a sentence and watch it pass through normalisation, phonemes, prosody and waveform. Press play to hear your browser\'s voice.' },
+        { kind: 'steps', items: [
+          { title: '1. Text normalisation', text: '"Dr. Smith ordered 3 items for $25.50 on 12/15/2023" → "Doctor Smith ordered three items for twenty-five dollars and fifty cents on December fifteenth, two thousand twenty-three." Expands abbreviations, numbers, dates, symbols, and resolves homographs.' },
+          { title: '2. Linguistic analysis', text: 'Segments words and syllables, looks up pronunciations in lexicons, applies **grapheme-to-phoneme (G2P)** rules or neural models for unknown words, marks stress. "though" /θoʊ/, "through" /θruː/, "cough" /kɔːf/ — same "ough", different sounds. Context decides "read" /riːd/ vs /rɛd/.' },
+          { title: '3. Prosody generation', text: 'A transformer predicts **pitch contours, duration, intensity, pauses and stress** from syntax, semantics, discourse, speaker identity and emotional tone — e.g. "produce /æ/ at 180 Hz for 80 ms, then pause 200 ms".' },
+          { title: '4. Speech synthesis (vocoding)', text: 'An acoustic model produces **mel-spectrograms**; a **neural vocoder** (WaveNet, WaveGlow, HiFi-GAN) converts them into waveform samples at 16,000–48,000 per second; post-processing filters and normalises.' },
+        ] },
+        { kind: 'h', text: 'Why prosody matters' },
+        { kind: 'sim', id: 'prosody', caption: 'Emphasise different words in "I never said he ate the cake" and see how the meaning changes.' },
+        { kind: 'callout', tone: 'note', title: 'Robotic speech', text: 'Robotic-sounding speech usually comes from **flat, monotone prosody**, not imperfect phoneme pronunciation.' },
+        { kind: 'p', text: 'The vocoder performs essentially the inverse of speech recognition: recognition turns audio into text; the vocoder turns linguistic representations into audio. The whole process typically completes in under a second.' },
+      ],
+      terms: [
+        { term: 'Text normalisation', def: 'Expanding numbers, symbols and abbreviations into speakable words.' },
+        { term: 'G2P', def: 'Grapheme-to-phoneme conversion: mapping spelling to sounds.' },
+        { term: 'Prosody', def: 'Rhythm, stress and intonation of speech.' },
+        { term: 'Neural vocoder', def: 'A deep learning model that generates audio waveforms from spectrograms.' },
+      ],
+      traps: [{ claim: 'Prosody maximises volume or translates speech.', truth: 'Prosody ensures natural pronunciation, rhythm and cadence.' }],
+      memory: 'Normalise, Pronounce, Perform, Produce.',
+      recap: ['Four stages.', 'G2P handles irregular spelling.', 'Prosody = naturalness.'],
+      references: [ref.speech],
+      checks: [
+        sc('q9-3a', 'Why is it important to generate prosody in speech synthesis?', [
+          ['Prosody maximises the volume of the audio output.', 'No.'], ['Prosody translates the speech to the language of the listener.', 'No.'], ['Prosody ensures natural pronunciation and speech cadence.', 'Correct.'],
+        ], 2, ''),
+        ord('q9-3b', 'Order the speech synthesis stages.', ['Text normalisation', 'Linguistic analysis', 'Prosody generation', 'Audio synthesis (vocoder)'], 'Text is normalised into speakable words, converted to phonemes, given prosody, and finally rendered as audio by a vocoder.'),
+      ],
+      objectiveIds: ['wl-speech'],
+    },
+    {
+      id: 'l9-azure',
+      title: 'Azure Speech and Voice Live in Foundry',
+      minutes: 11,
+      sources: ['official'],
+      objectives: ['Describe Azure Speech in Foundry Tools capabilities.', 'Explain speech-to-speech and the Voice Live API.', 'Describe responding to spoken prompts with a multimodal model.'],
+      intro: 'In Azure, speech capabilities come from **Azure Speech in Foundry Tools** — and for real-time voice agents, from **Voice Live**.',
+      blocks: [
+        { kind: 'callout', tone: 'verify', title: 'Verified from Microsoft Learn', text: 'Summarised from "Get started with speech in Azure → Creating a speech-capable agent", checked 29 October 2026.' },
+        { kind: 'table', headers: ['Capability', 'What it does'], rows: [
+          ['Speech to text', 'Real-time or batch transcription with timestamps and confidence'],
+          ['Text to speech', 'Natural neural voices; style and pronunciation control (e.g. via SSML)'],
+          ['Speech translation', 'Speak in one language, get text or speech in another'],
+          ['Voice Live API', 'Real-time speech-to-speech conversations for voice agents, fully managed'],
+        ] },
+        { kind: 'h', text: 'Speech-to-speech' },
+        { kind: 'steps', items: [
+          { title: 'Speech-to-text', text: 'Convert the user\'s audio into text.' },
+          { title: 'Processing / reasoning', text: 'Analyse, translate or summarise — or let an agent decide what to say.' },
+          { title: 'Text-to-speech', text: 'Convert the response back into audio.' },
+        ] },
+        { kind: 'p', text: 'The **Voice Live API** combines all three into one fully managed service, so you don\'t wire STT, model and TTS together yourself. It handles interruptions, can return visuals such as **avatars**, and can trigger actions. You choose a **generative AI model** for your voice agent; Voice Live uses it alongside its own acoustic models. You can try it in a Foundry playground, or enable **Voice mode** for a Foundry agent so speech configuration is encapsulated in the agent itself.' },
+        { kind: 'p', text: 'Alternatively, some **multimodal models** accept audio directly, so a deployed model can respond to spoken prompts without a separate STT step (an AI-901 objective). Your choice depends on latency, control, voice quality and cost.' },
+        { kind: 'code', lang: 'bash', caption: 'Voice Live Python package', code: 'pip install azure-ai-voicelive pyaudio python-dotenv azure-identity' },
+        { kind: 'callout', tone: 'tip', title: 'Simulated lab', text: 'The speech labs in this course run entirely in your browser. To practise with Azure Speech for real, complete the Microsoft Learn exercise (requires an Azure subscription).' },
+      ],
+      terms: [
+        { term: 'Azure Speech in Foundry Tools', def: 'Azure service for speech recognition, synthesis and translation.' },
+        { term: 'Voice Live API', def: 'Managed real-time speech-to-speech service for voice agents.' },
+        { term: 'Speech-to-speech', def: 'Spoken input → processing → spoken output.' },
+      ],
+      traps: [{ claim: 'Voice Live replaces the need to choose a generative model.', truth: 'You still choose a generative AI model; Voice Live combines it with acoustic models and speech services.' }],
+      memory: 'Voice Live = Listen + Think + Speak, managed for you.',
+      recap: ['Azure Speech provides STT, TTS, translation.', 'Voice Live builds real-time voice agents.', 'Multimodal models can take audio input.'],
+      references: [ref.foundrySpeech],
+      checks: [
+        sc('q9-4a', 'You need a voice agent that converses in real time with minimal plumbing between speech recognition, a model and speech output. What should you use?', [
+          ['Azure Speech Voice Live API', 'Correct.'], ['Azure Content Understanding', 'Extraction service.'], ['TF-IDF', 'Text statistics.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['f-speech', 'f-spoken', 'wl-speech'],
+      handsOn: 'Try Voice Live in the Foundry playground and run the sample app. Requires an Azure subscription and a microphone.',
+    },
+  ],
+  quiz: [
+    mt('c9-1', 'Match each stage to its pipeline.', [
+      ['MFCC feature extraction', 'Speech recognition'], ['Beam search decoding', 'Speech recognition'], ['Grapheme-to-phoneme conversion', 'Speech synthesis'], ['Neural vocoder', 'Speech synthesis'],
+    ], 'MFCC extraction and beam-search decoding belong to speech recognition (audio → text). G2P conversion and neural vocoders belong to speech synthesis (text → audio).'),
+    sc('c9-2', 'An acoustic model confuses "their" and "there". Which stage resolves this?', [
+      ['Language modelling', 'Correct — context and grammar.'], ['Audio capture', 'No.'], ['Vocoding', 'Synthesis stage.'],
+    ], 0, ''),
+    ms('c9-3', 'Which affect speech recognition accuracy? (Choose all that apply.)', [
+      ['Background noise', 'Yes.'], ['Microphone quality', 'Yes.'], ['Speaker distance', 'Yes.'], ['Screen brightness', 'No.'],
+    ], [0, 1, 2], ''),
+    sc('c9-4', '"Dr." becomes "Doctor" and "$5" becomes "five dollars". Which stage is this?', [
+      ['Text normalisation', 'Correct.'], ['Prosody generation', 'No.'], ['Decoding', 'Recognition stage.'],
+    ], 0, ''),
+    sc('c9-5', 'Which typical sampling rate is used for speech recognition?', [
+      ['16 kHz', 'Correct.'], ['192 kHz', 'Far higher than needed.'], ['1 Hz', 'No.'],
+    ], 0, ''),
+  ],
+};

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Menu } from 'lucide-react';
 import { CinematicBackground } from '@/components/CinematicBackground';
@@ -19,9 +19,14 @@ import { courses, courseList } from '@/data/courses';
 import type { Scene, ProgressState, Course, CourseId } from '@/types/course';
 import Logo from '../assets/Logo.png';
 
+// AI-901 is a lesson-based course with its own shell; load it only when selected.
+const AI901App = lazy(() => import('@/ai901/AI901App'));
+
 const SELECTED_COURSE_KEY = 'selected-course';
 
 function loadSelectedCourse(): CourseId | null {
+  // Deep links into AI-901 (e.g. #/ai901/lesson/...) open that course directly.
+  if (typeof window !== 'undefined' && window.location.hash.startsWith('#/ai901')) return 'ai901';
   try {
     return (localStorage.getItem(SELECTED_COURSE_KEY) as CourseId) ?? null;
   } catch {
@@ -69,7 +74,8 @@ function App() {
 
   // Save progress when it changes
   useEffect(() => {
-    if (!course) return;
+    // Lesson-based courses (AI-901) manage their own progress store under their own key.
+    if (!course || course.kind === 'lessons') return;
     try {
       localStorage.setItem(course.storageKey, JSON.stringify(progress));
     } catch {
@@ -253,11 +259,19 @@ function App() {
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
+  if (course?.kind === 'lessons') {
+    return (
+      <Suspense fallback={<div className="min-h-screen grid place-items-center bg-midnight-950"><div className="w-8 h-8 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin" /></div>}>
+        <AI901App onBack={backToCourseSelect} />
+      </Suspense>
+    );
+  }
+
   if (!course) {
     return (
       <div className="min-h-screen relative">
         <CinematicBackground />
-        <CourseSelector courses={courseList} onSelect={selectCourse} onOpenAnimation={openCinematicPage} />
+        <CourseSelector courses={courseList} onSelect={selectCourse} onOpenAnimation={openCinematicPage} onOpenNNLab={() => { window.location.hash = '#/ai901/lab'; selectCourse('ai901'); }} />
 
         {showCinematic && (
           <CinematicIdentity
@@ -369,7 +383,7 @@ function App() {
             </button>
 
             <div className="flex items-center gap-1.5">
-              {chapter.scenes.map((_, i) => (
+              {chapter.scenes.map((_: unknown, i: number) => (
                 <button
                   key={i}
                   onClick={() => goToScene(progress.currentChapter, i)}

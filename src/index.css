@@ -51,6 +51,89 @@
   .nav-btn {
     @apply flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-300 active:scale-95;
   }
+
+  /* AI-901 course */
+  .ai-btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl font-semibold text-sm transition-all duration-200 active:scale-[0.97] disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100;
+    background: var(--accent, #22d3ee);
+    color: #050a17;
+    box-shadow: 0 0 0 0 transparent;
+  }
+  .ai-btn:not(:disabled):hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--accent, #22d3ee) 45%, transparent);
+  }
+  .ai-btn-ghost {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/15 text-gray-200 font-medium text-sm transition-colors duration-200 hover:border-white/30 hover:bg-white/5 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .nn-card {
+    @apply rounded-2xl border border-white/10 p-4;
+    background: rgba(8, 14, 32, 0.78);
+  }
+  .nn-h {
+    @apply text-[11px] font-bold uppercase tracking-[0.18em] text-gray-300;
+  }
+  .nn-icon {
+    @apply w-8 h-8 grid place-items-center rounded-lg bg-black/60 border border-white/10 text-gray-200 hover:bg-white/10;
+  }
+  .ai-panel {
+    @apply rounded-2xl border border-white/10;
+    background: rgba(10, 17, 38, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+/* Let grid items shrink below their content width so single-column (mobile) grids never overflow. */
+.ai901 .grid > * {
+  min-width: 0;
+}
+.ai901 :focus-visible {
+  outline: 2px solid var(--accent, #22d3ee);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+/* SVG objects in the NN Lab draw their own focus rings (circle/line highlights). */
+.ai901 svg :focus-visible {
+  outline: none;
+}
+.ai-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  accent-color: var(--accent, #22d3ee);
+}
+.ai-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--accent, #22d3ee);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+.ai-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent, #22d3ee);
+  cursor: pointer;
+}
+.ai901 select option {
+  background: #0b1328;
+}
+
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  .ai-noprint, canvas.fixed, .fixed.inset-0.-z-10 { display: none !important; }
+  .ai901 .ai-panel, .ai901 table, .ai901 pre { background: #fff !important; border-color: #ccc !important; backdrop-filter: none !important; }
+  .ai901 * { color: #111 !important; text-shadow: none !important; box-shadow: none !important; }
+  .ai901 main { padding: 0 !important; max-width: none !important; }
+  .ai-print-break { break-before: page; }
+  .ai-print-break:first-of-type { break-before: auto; }
 }
 
 @layer utilities {

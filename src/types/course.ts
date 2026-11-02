@@ -161,10 +161,16 @@ export interface ProgressState {
   totalAssessmentQuestions?: number;
 }
 
-export type CourseId = 'az900' | 'dp900';
+export type CourseId = 'az900' | 'dp900' | 'ai901';
 
 export interface Course {
   id: CourseId;
+  /** 'scenes' (default) uses the shared scene player; 'lessons' courses render their own app. */
+  kind?: 'scenes' | 'lessons';
+  /** Chapter count for lesson-based courses, whose `chapters` (scenes) array is empty. */
+  chapterCount?: number;
+  /** Progress reader for courses whose stored progress has a different shape. */
+  getProgressPct?: () => number;
   storageKey: string;
   title: string;
   subtitle: string;

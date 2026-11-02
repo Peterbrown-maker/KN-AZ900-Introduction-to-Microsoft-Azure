@@ -1,0 +1,227 @@
+import type { Chapter } from '../types';
+import { sc, ms, mt, ord, ref } from './helpers';
+
+export const ch10: Chapter = {
+  id: 'vision',
+  number: 10,
+  title: 'Computer Vision',
+  short: 'Computer Vision',
+  icon: 'Eye',
+  accent: '#60a5fa',
+  tagline: 'To a computer, every image is a grid of numbers.',
+  description: 'Classification, detection and segmentation; pixels and convolutional filters; CNNs; vision transformers and multimodal models; image and video generation; vision in Foundry.',
+  summary: [
+    'Image classification → one label; object detection → labels + bounding boxes; semantic segmentation → pixel-level masks.',
+    'Images are arrays of pixel values (0–255); colour images have red, green and blue channels.',
+    'Filters (kernels) are convolved across images to create effects such as edge detection.',
+    'CNNs learn filter weights to extract feature maps, flatten them, and classify with a fully connected network + softmax.',
+    'Vision transformers embed image patches with attention; multimodal models combine vision and language embeddings.',
+    'Diffusion models generate images by iteratively removing noise guided by a prompt.',
+  ],
+  lessons: [
+    {
+      id: 'l10-tasks',
+      title: 'Computer vision tasks',
+      minutes: 12,
+      sources: ['notes'],
+      objectives: ['Distinguish image classification, object detection and semantic segmentation.', 'Describe multimodal image analysis.'],
+      intro: 'Autonomous vehicles detecting pedestrians, smart checkouts identifying produce, doorbells spotting visitors — all rely on computer vision.',
+      blocks: [
+        { kind: 'sim', id: 'vision-lab', caption: 'The same image, four ways: classification, detection, segmentation and multimodal description. Adjust the confidence threshold.' },
+        { kind: 'table', headers: ['Task', 'Output', 'Grocery checkout example'], rows: [
+          ['Image classification', 'One label for the image\'s main subject', '"apple" — charge by weight'],
+          ['Object detection', 'Each object\'s label + bounding-box coordinates', 'apple, orange, banana with boxes — scan many items at once'],
+          ['Semantic segmentation', 'Class for every pixel (masks)', 'Exact outline of each fruit'],
+          ['Multimodal analysis', 'Natural-language description / tags', '"A person eating an apple."'],
+        ] },
+        { kind: 'p', text: 'Image classification is one of the oldest techniques: train a model with many labelled images so it predicts a label from visual features. Object detection examines multiple regions to find objects and their locations. Semantic segmentation classifies individual pixels, giving a much more precise location. The latest **multimodal** models learn contextual relationships between objects in images and the text that describes them.' },
+      ],
+      terms: [
+        { term: 'Image classification', def: 'Predicting a single label for an image.' },
+        { term: 'Object detection', def: 'Locating and labelling multiple objects with bounding boxes.' },
+        { term: 'Semantic segmentation', def: 'Classifying every pixel to produce object masks.' },
+        { term: 'Bounding box', def: 'A rectangle (coordinates) around a detected object.' },
+      ],
+      traps: [{ claim: 'Object detection identifies the exact pixels belonging to an object.', truth: 'Detection gives bounding boxes; segmentation gives pixel-level masks.' }],
+      memory: 'Label it, box it, paint it, describe it.',
+      recap: ['Classification = what.', 'Detection = what + where (box).', 'Segmentation = what + exactly where (pixels).'],
+      references: [ref.vision],
+      checks: [
+        sc('q10-1a', 'A self-driving car must know the exact road-surface pixels to stay in lane. Which technique fits?', [
+          ['Semantic segmentation', 'Correct.'], ['Image classification', 'Only one label.'], ['Speech recognition', 'Wrong workload.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['wl-vision', 'wl-scen'],
+    },
+    {
+      id: 'l10-pixels',
+      title: 'Images, pixels and convolutional filters',
+      minutes: 12,
+      sources: ['notes'],
+      objectives: ['Describe how images are represented as numeric arrays.', 'Explain how a filter kernel is convolved across an image.'],
+      intro: 'To a computer, an image is an array of numeric pixel values.',
+      blocks: [
+        { kind: 'p', text: 'A 7×7 grayscale image is a 2-D array where 0 is black, 255 is white, and values between are greys. Its size is its **resolution**. Most images have three **channels** — red, green and blue. In the notes\' example, purple = (R 150, G 0, B 255) and yellow = (R 255, G 255, B 0).' },
+        { kind: 'sim', id: 'convolution-lab', caption: 'Step the 3×3 kernel across the image. Each output value is the weighted sum of the patch beneath it. Try different kernels.' },
+        { kind: 'p', text: 'A **filter** is defined by a **kernel** — e.g. the Laplace kernel [-1 -1 -1 / -1 8 -1 / -1 -1 -1]. The kernel is **convolved** across the image: multiply each pixel in a 3×3 patch by the matching weight, add the results, and write the sum to a new image. The first patch gives −255, the next −510, and so on. Values outside 0–255 are adjusted into range; edges are padded (usually 0).' },
+        { kind: 'p', text: 'The Laplace filter highlights **edges**. Other kernels blur, sharpen or invert. Because the filter is convolved across the image, this is called **convolutional filtering** — the key idea behind CNNs.' },
+      ],
+      terms: [
+        { term: 'Pixel', def: 'A single numeric value (or RGB triple) in an image array.' },
+        { term: 'Channel', def: 'One layer of an image, e.g. red, green or blue.' },
+        { term: 'Kernel', def: 'A small array of weights defining a filter.' },
+        { term: 'Convolution', def: 'Sliding a kernel across an image computing weighted sums.' },
+      ],
+      traps: [{ claim: 'Computer vision analyses image file names and metadata.', truth: 'It is based on manipulating and analysing pixel values.' }],
+      memory: 'Slide, multiply, sum, write.',
+      recap: ['Images = arrays of 0–255.', 'RGB = three channels.', 'Convolution creates new images from kernels.'],
+      references: [ref.vision],
+      checks: [
+        sc('q10-2a', 'Computer vision is based on the manipulation and analysis of what kinds of values in an image?', [
+          ['Timestamps in photograph metadata', 'No.'], ['Pixels', 'Correct.'], ['Image file names', 'No.'],
+        ], 1, ''),
+      ],
+      objectiveIds: ['wl-vision'],
+    },
+    {
+      id: 'l10-cnn',
+      title: 'Convolutional neural networks',
+      minutes: 11,
+      sources: ['notes'],
+      objectives: ['Describe the stages of a CNN for image classification.', 'Explain how CNN filters are learned.'],
+      intro: 'Filters apply effects in photo editors. In computer vision, the goal is to extract meaning — so the filters must be learned.',
+      blocks: [
+        { kind: 'sim', id: 'cnn-flow', caption: 'Follow a banana image through convolution, pooling, flattening, a fully connected network and softmax.' },
+        { kind: 'steps', items: [
+          { title: '1. Labelled images', text: 'Images with known labels (0: apple, 1: banana, 2: orange) are fed into the network.' },
+          { title: '2. Filter layers → feature maps', text: 'Filter kernels start with **random weights** and generate feature maps. Pooling layers downsize maps to emphasise key features.' },
+          { title: '3. Flatten', text: 'Feature maps are flattened into a one-dimensional array of feature values.' },
+          { title: '4. Fully connected network', text: 'Feature values feed a fully connected neural network.' },
+          { title: '5. Softmax output', text: 'A probability per class, e.g. [0.2, 0.5, 0.3].' },
+        ] },
+        { kind: 'p', text: 'During training, predictions are compared with the true label (a banana should be [0.0, 1.0, 0.0]). The difference is the **loss**; weights in both the fully connected network **and the filter kernels** are adjusted to reduce it. This repeats over many **epochs**. The trained filters end up extracting exactly the features that distinguish the classes.' },
+        { kind: 'p', text: 'CNNs were the core of computer vision for years and are the basis of more complex models — object detection combines CNN feature extraction with region identification.' },
+      ],
+      terms: [
+        { term: 'CNN', def: 'A deep learning architecture using learned convolutional filters for images.' },
+        { term: 'Feature map', def: 'The array produced by applying a filter to an image.' },
+        { term: 'Pooling', def: 'Downsizing feature maps to emphasise key features.' },
+      ],
+      traps: [{ claim: 'CNN filters exist to make images look better.', truth: 'They extract numeric features for the neural network to classify.' }],
+      memory: 'Filter, pool, flatten, connect, softmax.',
+      recap: ['Filters are learned, not hand-set.', 'Feature maps → flatten → dense → softmax.', 'Loss updates filters too.'],
+      references: [ref.vision],
+      checks: [
+        sc('q10-3a', 'What is the primary role of filters in a CNN used for image classification?', [
+          ['To apply visual effects to enhance image appearance.', 'No.'], ['To extract numeric features from images for use in a neural network.', 'Correct.'], ['To compress image size.', 'Pooling downsizes; filters extract features.'],
+        ], 1, ''),
+        ord('q10-3b', 'Order the CNN stages.', ['Convolutional filters create feature maps', 'Pooling downsizes the maps', 'Feature maps are flattened', 'A fully connected network processes the features', 'Softmax outputs class probabilities'], 'Filters create feature maps, pooling shrinks them, they are flattened into one array, a fully connected network processes them, and softmax outputs class probabilities.'),
+      ],
+      objectiveIds: ['wl-vision', 'model-how'],
+    },
+    {
+      id: 'l10-vit',
+      title: 'Vision transformers and multimodal models',
+      minutes: 11,
+      sources: ['notes'],
+      objectives: ['Describe how a vision transformer processes images.', 'Explain how multimodal models combine vision and language.'],
+      intro: 'Transformers revolutionised language. Researchers asked: would the same approach work for images?',
+      blocks: [
+        { kind: 'p', text: 'A **vision transformer (ViT)** extracts **patches** of pixel values from an image and generates a vector from each — instead of text tokens. The same **attention** technique determines contextual relationships between patches. Embeddings encode visual features (colour, shape, contrast, texture) rather than linguistic ones, creating a multi-dimensional "map" of visual features.' },
+        { kind: 'sim', id: 'vit-patches', caption: 'Split an image into patches, turn them into vectors, and see which patches attend to each other.' },
+        { kind: 'p', text: 'Features seen together get similar directions: the features of a **hat** relate to those of a **head**. The model doesn\'t know what a hat is — it infers relationships between visual characteristics.' },
+        { kind: 'h', text: 'Multimodal models' },
+        { kind: 'p', text: 'When training data includes images with text descriptions, the language and vision encoders can be combined in a **multimodal model** using **cross-modal attention** to build a unified representation. The model can then describe images it has never seen — "A person in a park with a hat and a backpack" — by recognising visual features and searching the shared space for associated language.' },
+        { kind: 'callout', tone: 'note', title: 'Terminology', text: 'The notes write "cross-model attention"; the standard term is **cross-modal attention** (attention across modalities — vision and language).' },
+      ],
+      terms: [
+        { term: 'Vision transformer (ViT)', def: 'A model using attention over image patches to create contextual embeddings.' },
+        { term: 'Patch', def: 'A small square region of an image treated like a token.' },
+        { term: 'Multimodal model', def: 'A model that combines multiple data types, such as images and text.' },
+        { term: 'Cross-modal attention', def: 'Attention linking embeddings from different modalities.' },
+      ],
+      traps: [{ claim: 'A ViT is an agent that converts an LLM into a vision model.', truth: 'A ViT uses attention to process image patches and create contextual embeddings.' }],
+      memory: 'Patches are the tokens of images.',
+      recap: ['ViT = transformer on patches.', 'Multimodal = shared vision–language space.', 'Enables captioning and visual Q&A.'],
+      references: [ref.vision],
+      checks: [
+        sc('q10-4a', 'Which description best matches a vision transformer (ViT)?', [
+          ['A tool that applies filters to images', 'No.'], ['An AI agent that converts an LLM to a vision model', 'No.'], ['A model that uses attention to process image patches and create contextual embeddings', 'Correct.'],
+        ], 2, ''),
+      ],
+      objectiveIds: ['wl-vision', 'model-how'],
+    },
+    {
+      id: 'l10-generation',
+      title: 'Image and video generation',
+      minutes: 9,
+      sources: ['notes'],
+      objectives: ['Explain how diffusion models generate images.', 'Describe what video generation adds.'],
+      intro: 'The same multimodal architecture that describes images can also create them.',
+      blocks: [
+        { kind: 'p', text: 'By identifying the visual features associated with language, an image-synthesis model takes a description and generates an image or video. Most modern image generators use **diffusion**: start from random pixels and iteratively **remove noise** to create structure, evaluating the image against the prompt after each iteration until it depicts the scene.' },
+        { kind: 'sim', id: 'diffusion', caption: '"A dog carrying a stick in its mouth" — scrub through the denoising steps.' },
+        { kind: 'p', text: '**Video generation** uses the same technique but also models physical behaviour (a dog walks with its feet on the ground) and temporal progression (a logical sequence of activity).' },
+        { kind: 'callout', tone: 'warn', title: 'Responsible use', text: 'Generated images and video can be misused (deepfakes, misinformation, copyright concerns). Foundry deployments apply content filters, and providers may add provenance metadata (content credentials). Disclose AI-generated media.' },
+      ],
+      terms: [{ term: 'Diffusion model', def: 'A generative model that creates images by iteratively denoising random noise guided by a prompt.' }],
+      traps: [{ claim: 'Diffusion models retrieve the closest matching photo from the internet.', truth: 'They generate new pixels by iterative denoising.' }],
+      memory: 'Noise → shapes → details → picture.',
+      recap: ['Diffusion = iterative denoising.', 'Prompt guides each step.', 'Video adds physics and time.'],
+      references: [ref.vision],
+      checks: [
+        sc('q10-5a', 'How does a diffusion model create an image?', [
+          ['By iteratively removing noise from random pixels, guided by the prompt', 'Correct.'], ['By stitching together stock photos', 'No.'], ['By applying OCR', 'No.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['wl-vision'],
+    },
+    {
+      id: 'l10-foundry',
+      title: 'Vision in Microsoft Foundry',
+      minutes: 9,
+      sources: ['official'],
+      objectives: ['Describe how to interpret visual input with a multimodal model in Foundry.', 'Describe image- and video-generation models and Azure Vision.'],
+      intro: 'In Foundry, vision capabilities come from multimodal models, image- and video-generation models, and Azure Vision in Foundry Tools.',
+      blocks: [
+        { kind: 'callout', tone: 'verify', title: 'Verified from Microsoft Learn', text: 'Based on "Get started with computer vision in Azure" (multimodal models, image generation, video generation), checked 29 October 2026. Specific model names change frequently — confirm in the model catalog.' },
+        { kind: 'table', headers: ['Need', 'Use', 'How'], rows: [
+          ['Describe/ask about an image', 'Deployed multimodal model (e.g. GPT multimodal, Phi-4-multimodal-instruct)', 'Send an image plus a text prompt in the chat playground or Responses API'],
+          ['Create an image', 'Image-generation model from the catalog', 'Prompt describing the image; configure size/quality'],
+          ['Create a video clip', 'Video-generation model', 'Prompt describing the scene; asynchronous job'],
+          ['Prebuilt image analysis, OCR', 'Azure Vision in Foundry Tools', 'Call the API for tags, captions, objects, read text'],
+        ] },
+        { kind: 'code', lang: 'python', caption: 'Asking a multimodal model about an image (Responses API, illustrative)', code: 'response = client.responses.create(\n    model="<multimodal-deployment>",\n    input=[{\n        "role": "user",\n        "content": [\n            {"type": "input_text", "text": "What vintage computer is this? List visible model numbers."},\n            {"type": "input_image", "image_url": "https://example.com/computer.jpg"},\n        ],\n    }],\n)\nprint(response.output_text)' },
+      ],
+      terms: [{ term: 'Azure Vision in Foundry Tools', def: 'Prebuilt image-analysis service (tags, captions, objects, OCR).' }],
+      traps: [{ claim: 'You must train your own CNN to describe images in Foundry.', truth: 'Deployed multimodal models and Azure Vision provide this without custom training.' }],
+      memory: 'Ask a multimodal model, generate with a generation model, analyse with Azure Vision.',
+      recap: ['Multimodal models interpret images in prompts.', 'Generation models create images/video.', 'Azure Vision offers prebuilt analysis.'],
+      references: [ref.foundryVision],
+      checks: [
+        sc('q10-6a', 'An app must answer free-form questions about uploaded photos. What is the simplest Foundry approach?', [
+          ['Send the image and question to a deployed multimodal model.', 'Correct.'], ['Train a CNN from scratch.', 'Unnecessary.'], ['Use speech synthesis.', 'Wrong workload.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['f-vis-in', 'f-vis-gen', 'f-vis-app', 'model-pick'],
+      handsOn: 'Complete the "Get started with computer vision in Microsoft Foundry" exercise. Requires an Azure subscription.',
+    },
+  ],
+  quiz: [
+    mt('c10-1', 'Match each output to its technique.', [
+      ['"banana" (single label)', 'Image classification'], ['Boxes around three fruits', 'Object detection'], ['Coloured mask over each fruit\'s pixels', 'Semantic segmentation'], ['"A person eating an apple"', 'Multimodal description'],
+    ], 'One label for the image = classification; boxes = detection; pixel masks = segmentation; a natural-language sentence = multimodal description.'),
+    sc('c10-2', 'How many channels does a typical colour image have?', [
+      ['Three (red, green, blue)', 'Correct.'], ['One', 'That is grayscale.'], ['256', 'That is the value range.'],
+    ], 0, ''),
+    ms('c10-3', 'Which statements about CNN training are true? (Choose all that apply.)', [
+      ['Filter weights start random.', 'True.'], ['Loss adjusts both filter and dense-layer weights.', 'True.'], ['Training repeats over multiple epochs.', 'True.'], ['Filters are fixed by a designer.', 'False.'],
+    ], [0, 1, 2], ''),
+    sc('c10-4', 'In a vision transformer, what plays the role of tokens?', [
+      ['Image patches', 'Correct.'], ['File names', 'No.'], ['Phonemes', 'Speech.'],
+    ], 0, ''),
+    sc('c10-5', 'Which technique do most modern image-generation models use?', [
+      ['Diffusion', 'Correct.'], ['TF-IDF', 'No.'], ['Beam search', 'Speech decoding.'],
+    ], 0, ''),
+  ],
+};

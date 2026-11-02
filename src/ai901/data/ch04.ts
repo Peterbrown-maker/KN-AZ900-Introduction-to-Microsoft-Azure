@@ -1,0 +1,251 @@
+import type { Chapter } from '../types';
+import { sc, ms, ord, mt, ref } from './helpers';
+
+const simplification = 'All visualisations in this chapter use **3-dimensional vectors and tiny vocabularies** so they can be drawn. Real models use vocabularies of hundreds of thousands of tokens and vectors with **thousands** of dimensions, and many stacked layers. The ideas are the same; the scale is not.';
+
+export const ch04: Chapter = {
+  id: 'transformers',
+  number: 4,
+  title: 'Tokens, Embeddings and Transformers',
+  short: 'Tokens & Transformers',
+  icon: 'Network',
+  accent: '#38bdf8',
+  tagline: 'How words become numbers — and numbers become meaning.',
+  description: 'Tokenisation, vocabularies, vectors and embeddings, cosine similarity, attention, the transformer architecture and next-token prediction.',
+  summary: [
+    'Tokenisation breaks text into tokens (words, sub-words, punctuation) and gives each a unique integer ID.',
+    'Each token gets a vector; training turns vectors into embeddings that capture meaning from context.',
+    'Similar meanings → similar vector directions; cosine similarity measures this.',
+    'Attention weighs how much each surrounding token influences the current one; multi-head attention does this for several aspects in parallel.',
+    'A transformer encoder builds embeddings; a decoder uses masked attention to predict the next token, repeatedly, until the sequence ends.',
+  ],
+  lessons: [
+    {
+      id: 'l4-tokens',
+      title: 'Tokenisation and vocabulary',
+      minutes: 10,
+      sources: ['notes'],
+      objectives: ['Explain what tokens are and why models use them.', 'Describe how a vocabulary assigns token IDs.'],
+      intro: 'Computers cannot do maths with words. The first step in every language model is to turn text into numbers.',
+      blocks: [
+        { kind: 'p', text: 'We think in words, but LLMs break their vocabulary into **tokens**. Tokens include whole words, but also **sub-words** (like the "un" in "unbelievable" and "unlikely"), punctuation and other common character sequences. Training begins by breaking the training text into distinct tokens and assigning each a **unique integer identifier**.' },
+        { kind: 'table', caption: 'Word-level example from the notes: "I heard a dog bark loudly at a cat"', headers: ['Token', 'ID'], rows: [
+          ['I', '1'], ['heard', '2'], ['a', '3'], ['dog', '4'], ['bark', '5'], ['loudly', '6'], ['at', '7'], ['a', '3 (already assigned)'], ['cat', '8'],
+        ] },
+        { kind: 'p', text: 'As more training data is added, more tokens join the vocabulary — "puppy", "skateboard", "car"… The latest LLMs have vocabularies of **hundreds of thousands** of tokens.' },
+        { kind: 'sim', id: 'tokenizer', caption: 'Type any sentence. See it split into tokens (including sub-words) with IDs from a simulated vocabulary.' },
+        { kind: 'callout', tone: 'note', title: 'Why sub-words?', text: 'Sub-word tokens let a model handle words it has never seen ("unforecastable" → "un" + "forecast" + "able") and keep the vocabulary manageable. It is also why API usage is measured in **tokens**, not words: roughly, one English word ≈ 1.3 tokens on average, but this varies by tokenizer and language.' },
+        { kind: 'callout', tone: 'warn', title: 'What the explorer simplifies', text: simplification },
+      ],
+      terms: [
+        { term: 'Token', def: 'A unit of text (word, sub-word, punctuation) that a model processes.' },
+        { term: 'Vocabulary', def: 'The set of all tokens a model knows, each with a unique ID.' },
+        { term: 'Tokenisation', def: 'Breaking text into tokens.' },
+      ],
+      traps: [{ claim: 'Tokenisation sorts words alphabetically or converts text into binary.', truth: 'Tokenisation breaks text into smaller units (tokens) and maps them to IDs.' }],
+      memory: 'Text → tokens → IDs. Models count tokens, not words.',
+      recap: ['Tokens can be words or pieces of words.', 'Each unique token has one ID.', 'Usage and limits are measured in tokens.'],
+      references: [ref.genAI],
+      checks: [
+        sc('q4-1a', 'What is the purpose of tokenisation?', [
+          ['To sort the words in a sentence alphabetically', 'No.'],
+          ['To break down text into smaller units', 'Correct.'],
+          ['To convert text into binary code', 'Not the purpose described.'],
+        ], 1, ''),
+        sc('q4-1b', 'In the vocabulary example, "a" appears twice in the sentence. How many IDs does it receive?', [
+          ['One — the same ID is reused', 'Correct.'], ['Two — one per occurrence', 'IDs identify distinct tokens.'], ['None — it is a stop word', 'LLMs keep such tokens.'],
+        ], 0, 'Each distinct token has a single ID.'),
+      ],
+      objectiveIds: ['model-how'],
+    },
+    {
+      id: 'l4-embeddings',
+      title: 'Vectors, embeddings and semantic space',
+      minutes: 12,
+      sources: ['notes'],
+      objectives: ['Explain vectors and embeddings.', 'Describe how embeddings capture semantic relationships.'],
+      intro: 'Token IDs are arbitrary labels: ID 4 ("dog") is not "closer" to ID 8 ("cat") in any meaningful way. Embeddings fix that.',
+      blocks: [
+        { kind: 'p', text: 'To relate tokens to each other, each token is assigned a **vector** — an array of numbers like [1, 23, 45]. Each element is a **dimension** that can encode linguistic and semantic attributes of the token.' },
+        { kind: 'p', text: 'Initially the vector values are **random**. Training transforms them into new vectors with semantic characteristics embedded, based on the contexts in which tokens appear. Because meaning is embedded in them, these vectors are called **embeddings**.' },
+        { kind: 'p', text: 'Think of each dimension as an axis in a multi-dimensional space. Tokens used in **similar contexts** end up with vectors pointing in **similar directions**: "dog" and "puppy" point roughly the same way, not far from "cat", but very differently from "skateboard" or "car".' },
+        { kind: 'sim', id: 'embedding-explorer', caption: 'Rotate the semantic space. Select words to see their vectors and which words point in similar directions.' },
+        { kind: 'h', text: 'From words to documents' },
+        { kind: 'p', text: 'Embeddings are not only for single tokens. Embedding models (e.g. **text-embedding-3-small** in Foundry) produce one vector for a whole sentence or passage. That is the foundation of **semantic search** and **RAG** (Chapter 6): a question about "business trip expenses" can find a passage about "company travel costs" because their vectors are close, even though the words differ.' },
+        { kind: 'callout', tone: 'warn', title: 'What the explorer simplifies', text: simplification },
+      ],
+      terms: [
+        { term: 'Vector', def: 'An ordered array of numbers representing a point/direction in space.' },
+        { term: 'Embedding', def: 'A vector that encodes semantic meaning learned from context.' },
+        { term: 'Dimension', def: 'One element (axis) of a vector.' },
+        { term: 'Semantic search', def: 'Search by meaning using vector similarity rather than exact words.' },
+      ],
+      traps: [{ claim: 'Embeddings are extra words a transformer adds to text.', truth: 'Embeddings are vector representations of tokens that capture semantic meaning.' }],
+      memory: 'Similar meaning, similar direction.',
+      recap: ['Vectors start random; training makes them embeddings.', 'Direction encodes meaning.', 'Embeddings power semantic search and RAG.'],
+      references: [ref.genAI, ref.language],
+      checks: [
+        sc('q4-2a', 'What are embeddings?', [
+          ['Extra words added by a transformer model', 'No.'],
+          ['Small language models used for specific tasks', 'No.'],
+          ['Vector-based representations of tokens that capture their semantic meaning', 'Correct.'],
+        ], 2, ''),
+      ],
+      objectiveIds: ['model-how'],
+    },
+    {
+      id: 'l4-cosine',
+      title: 'Cosine similarity and vector arithmetic',
+      minutes: 12,
+      sources: ['notes'],
+      objectives: ['Calculate and interpret cosine similarity.', 'Use vector arithmetic to solve analogies.'],
+      intro: 'Once meaning is encoded as direction, we can measure and even calculate with meaning.',
+      blocks: [
+        { kind: 'formula', text: 'cosine_similarity(A, B) = (A · B) / (‖A‖ × ‖B‖)', caption: 'A · B is the dot product; ‖A‖ is the magnitude (length) of A.' },
+        { kind: 'p', text: 'Cosine similarity measures the angle between two vectors. **1** means the same direction, **0** means unrelated (perpendicular), and **−1** means opposite. Because it ignores length, it compares *meaning* rather than *magnitude*.' },
+        { kind: 'table', caption: 'Worked example from the notes', headers: ['Pair', 'Dot product', 'Magnitudes', 'Cosine similarity'], rows: [
+          ['dog [0.8, 0.6, 0.1] · cat [0.7, 0.5, 0.2]', '0.56 + 0.30 + 0.02 = 0.88', '1.005 × 0.883', '≈ 0.992 (high)'],
+          ['dog · tree [0.2, 0.1, 0.9]', '0.16 + 0.06 + 0.09 = 0.31', '1.005 × 0.927', '≈ 0.333 (low)'],
+          ['cat · tree', '0.14 + 0.05 + 0.18 = 0.37', '0.883 × 0.927', '≈ 0.452 (low)'],
+        ] },
+        { kind: 'p', text: 'So "tree" is the odd one out. Try it yourself:' },
+        { kind: 'sim', id: 'cosine-lab', caption: 'Pick two words (or edit vectors) and the calculation updates step by step. Then try vector arithmetic.' },
+        { kind: 'h', text: 'Vector arithmetic' },
+        { kind: 'list', items: [
+          'dog + young = [0.8, 0.6, 0.1] + [0.1, 0.1, 0.3] = [0.9, 0.7, 0.4] = **puppy**',
+          'cat + young = [0.8, 0.6, 0.5] = **kitten**',
+          'puppy − young = **dog**; kitten − young = **cat**',
+          'Analogy: "puppy is to dog as kitten is to ?" → kitten − puppy + dog = [0.7, 0.5, 0.2] = **cat**',
+        ] },
+        { kind: 'callout', tone: 'note', title: 'In practice', text: 'Vector arithmetic rarely lands exactly on another word\'s vector. You search for the word whose vector is **closest** (highest cosine similarity) to the result.' },
+      ],
+      terms: [
+        { term: 'Cosine similarity', def: 'A measure (−1 to 1) of how closely two vectors point in the same direction.' },
+        { term: 'Dot product', def: 'Sum of element-wise products of two vectors.' },
+        { term: 'Magnitude', def: 'The length of a vector: √(sum of squared elements).' },
+      ],
+      traps: [{ claim: 'Cosine similarity of 0.99 means two words are spelled similarly.', truth: 'It means their embeddings point in nearly the same direction — similar meaning or usage, regardless of spelling.' }],
+      memory: 'Dot over lengths: the closer to 1, the closer in meaning.',
+      recap: ['Cosine similarity compares direction.', 'High similarity = related meaning.', 'Arithmetic on vectors can express relationships like "young".'],
+      references: [ref.language],
+      checks: [
+        sc('q4-3a', 'Two embeddings have a cosine similarity of 0.97. What does this suggest?', [
+          ['The tokens are used in very similar contexts and likely have related meanings.', 'Correct.'],
+          ['The tokens have the same number of letters.', 'Irrelevant.'],
+          ['The tokens never appear together.', 'Not implied.'],
+        ], 0, ''),
+        sc('q4-3b', 'Using the notes\' vectors, what is kitten − puppy + dog closest to?', [
+          ['cat', 'Correct: [0.7, 0.5, 0.2].'], ['tree', 'No.'], ['young', 'No.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['model-how'],
+    },
+    {
+      id: 'l4-attention',
+      title: 'Attention, multi-head attention and position',
+      minutes: 14,
+      sources: ['notes'],
+      objectives: ['Explain what an attention layer does.', 'Describe multi-head attention and positional encoding conceptually.'],
+      intro: 'The same word means different things in different sentences. Attention is how a model works out which surrounding words matter.',
+      blocks: [
+        { kind: 'p', text: 'An **attention layer** considers each token in turn, within the context of the sequence. The tokens around it are **weighted** to reflect their influence, and those weights are used to calculate the values of the current token\'s embedding.' },
+        { kind: 'p', text: 'When considering "bark" in "I heard a dog bark", the tokens "heard" and "dog" receive **more weight** than "I" or "a", because they are stronger indicators. (Compare "the bark of the old oak tree" — there, "tree" and "oak" would dominate, giving "bark" a different contextual embedding.)' },
+        { kind: 'sim', id: 'attention', caption: 'Click a token to see how strongly it attends to every other token. Switch heads to see different relationships.' },
+        { kind: 'h', text: 'Multi-head attention' },
+        { kind: 'p', text: '**Multi-head attention** runs several attention calculations in parallel, each able to focus on different elements of the vectors — for example one head tracking grammar, another tracking meaning, another tracking which noun a pronoun refers to. This makes encoding more efficient and richer.' },
+        { kind: 'h', text: 'Positional encoding' },
+        { kind: 'p', text: 'Attention on its own does not know word order. "Dog bites man" and "man bites dog" contain the same tokens. So token vectors are fed into the transformer together with a **positional encoding** indicating where each token appears in the sequence.' },
+        { kind: 'callout', tone: 'note', title: 'How the model learns attention', text: 'Initially the model does not "know" which tokens influence others. Exposed to vast amounts of text, it iteratively learns which tokens commonly appear together and adjusts its weights so the embeddings reflect linguistic and semantic characteristics.' },
+        { kind: 'callout', tone: 'warn', title: 'What the visualisation leaves out', text: 'Real attention uses learned "query", "key" and "value" projections and computes weights with matrix multiplication and softmax across every token pair in every layer. The weights shown here are hand-set illustrations of the *kind* of relationships heads learn, not outputs of a trained model.' },
+      ],
+      terms: [
+        { term: 'Attention', def: 'A mechanism that weights how much each token influences another token\'s representation.' },
+        { term: 'Multi-head attention', def: 'Several attention computations in parallel, each capturing different relationships.' },
+        { term: 'Positional encoding', def: 'Information added to token vectors to indicate their position in the sequence.' },
+      ],
+      traps: [{ claim: 'An attention layer removes irrelevant words or flags inappropriate content.', truth: 'It examines the relationships between each token and the tokens around it and weights their influence.' }],
+      memory: 'Attention asks: "Which other words should I listen to?"',
+      recap: ['Attention weights context.', 'Multiple heads = multiple perspectives.', 'Position must be encoded explicitly.'],
+      references: [ref.genAI, ref.attention],
+      checks: [
+        sc('q4-4a', 'What does an attention layer do in a transformer model?', [
+          ['Removes irrelevant words from the input text.', 'No.'],
+          ['Examines the relationships between each token and the tokens around it.', 'Correct.'],
+          ['Flags inappropriate content in generated text.', 'That is content filtering.'],
+        ], 1, ''),
+        sc('q4-4b', 'Why is positional encoding needed?', [
+          ['Because the order of tokens affects meaning and attention alone ignores order.', 'Correct.'],
+          ['To compress the vocabulary.', 'No.'],
+          ['To translate tokens into another language.', 'No.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['model-how'],
+    },
+    {
+      id: 'l4-transformer',
+      title: 'The transformer and next-token prediction',
+      minutes: 14,
+      sources: ['notes'],
+      objectives: ['Describe the encoder and decoder blocks.', 'Explain masked attention and iterative next-token prediction.'],
+      intro: 'Put it all together and you have the transformer — the architecture introduced in the 2017 paper "Attention Is All You Need", behind today\'s LLMs.',
+      blocks: [
+        { kind: 'steps', items: [
+          { title: 'Tokenise', text: 'Text is split into tokens with IDs.' },
+          { title: 'Initial vectors + positions', text: 'Each token gets a (random, then learned) vector plus a positional encoding.' },
+          { title: 'Encoder: attention', text: 'Multi-head attention weighs how each token is influenced by its neighbours.' },
+          { title: 'Encoder: feed-forward network', text: 'A fully connected neural network refines the result into the best embedding.' },
+          { title: 'Decoder: masked attention', text: 'To predict the next token, the decoder may only look at tokens that come **before** it.' },
+          { title: 'Decoder: predict', text: 'Attention + a feed-forward network score candidate next tokens; the most probable is chosen.' },
+          { title: 'Repeat', text: 'The chosen token is appended to the sequence and the process repeats until the model predicts the end.' },
+        ] },
+        { kind: 'sim', id: 'transformer-flow', caption: 'Step through "When my dog was a …" as it travels through encoder and decoder to predict "puppy".' },
+        { kind: 'h', text: 'Masked attention during training' },
+        { kind: 'p', text: 'The decoder is trained on text where the full sequence is already known. **Masked attention** hides the tokens after the current position. Because the real next token is known, the model compares it with its prediction and adjusts its weights to reduce the error. Over billions of examples, predictions improve.' },
+        { kind: 'p', text: 'When generating a new completion, the next token is unknown. The model calculates possible vectors for it, the feed-forward network picks the most probable candidate, it is added to the sequence, and the loop repeats.' },
+        { kind: 'callout', tone: 'note', title: 'Encoder-only, decoder-only and both', text: 'The notes describe the original encoder-decoder design. Many modern generative LLMs (such as the GPT family) are **decoder-only**: the same stacked decoder layers build context and predict the next token. Encoder-only models (like BERT) are used mainly to create embeddings and understand text. You do not need these details for AI-901, but they help explain model names you will see.' },
+        { kind: 'callout', tone: 'warn', title: 'What the visualisation leaves out', text: simplification },
+      ],
+      terms: [
+        { term: 'Transformer', def: 'A neural network architecture built on attention, used by modern language models.' },
+        { term: 'Encoder', def: 'The block that creates contextual embeddings from input tokens.' },
+        { term: 'Decoder', def: 'The block that predicts the next token from previous tokens.' },
+        { term: 'Masked attention', def: 'Attention that can only see earlier tokens, used to train next-token prediction.' },
+      ],
+      traps: [{ claim: 'The model generates the whole response in one step.', truth: 'It predicts one token at a time and feeds each prediction back in.' }],
+      memory: 'Encode the context, decode the next token, append, repeat.',
+      recap: ['Encoder → embeddings via attention + feed-forward.', 'Decoder → masked attention → next token.', 'Generation is a loop.'],
+      references: [ref.genAI, ref.attention],
+      checks: [
+        ord('q4-5a', 'Order the stages of generating text with a transformer.', [
+          'Break the prompt into tokens', 'Add positional encoding to token vectors', 'Apply attention to build contextual representations', 'Predict the most probable next token', 'Append the token and repeat',
+        ], 'Text is tokenised first, token vectors get positional information, attention builds context, the decoder predicts the next token, and the token is appended so the loop can repeat.'),
+        sc('q4-5b', 'What is masked attention used for?', [
+          ['Training the decoder to predict the next token using only preceding tokens', 'Correct.'],
+          ['Hiding personal data in responses', 'That is PII redaction.'],
+          ['Blocking harmful outputs', 'That is content filtering.'],
+        ], 0, ''),
+      ],
+      objectiveIds: ['model-how'],
+    },
+  ],
+  quiz: [
+    mt('c4-1', 'Match each concept to its role.', [
+      ['Tokenisation', 'Splits text into units with IDs'], ['Embedding', 'Vector capturing meaning'], ['Attention', 'Weights the influence of surrounding tokens'], ['Decoder', 'Predicts the next token'],
+    ], 'Tokenisation produces token IDs; embeddings turn tokens into meaning-bearing vectors; attention mixes in context from surrounding tokens; the decoder predicts what comes next.'),
+    sc('c4-2', 'Embeddings for "dog" and "puppy" point in nearly the same direction. Why?', [
+      ['They are used in similar contexts in the training data.', 'Correct.'], ['They have adjacent token IDs.', 'IDs are arbitrary.'], ['They are both nouns.', 'Grammar alone does not explain closeness.'],
+    ], 0, ''),
+    sc('c4-3', 'Which calculation best compares the semantic similarity of two embeddings?', [
+      ['Cosine similarity', 'Correct.'], ['Counting shared letters', 'No.'], ['Comparing token IDs', 'IDs carry no meaning.'],
+    ], 0, ''),
+    ms('c4-4', 'Which statements about multi-head attention are true? (Choose all that apply.)', [
+      ['It evaluates multiple aspects of tokens in parallel.', 'True.'], ['It makes the encoding process more efficient.', 'True per the notes.'], ['It replaces the need for training data.', 'False.'], ['It detects the language of the text.', 'False.'],
+    ], [0, 1], ''),
+    sc('c4-5', 'In the sentence "I heard a dog bark", which tokens receive the most attention weight when encoding "bark"?', [
+      ['"heard" and "dog"', 'Correct.'], ['"I" and "a"', 'These are weak indicators.'], ['All tokens equally', 'Attention weights vary.'],
+    ], 0, ''),
+    sc('c4-6', 'In real LLMs, how many dimensions do embedding vectors typically have?', [
+      ['Thousands', 'Correct.'], ['Exactly three', 'Only in teaching examples.'], ['One', 'No.'],
+    ], 0, ''),
+  ],
+};
